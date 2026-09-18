@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f1f5f9;
+    background-color: #f8fafc;
     padding: 25px;
     color: #1e293b;
 }
@@ -19,7 +19,7 @@ h1 {
 
 h2 {
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: #334155;
 }
 
@@ -27,11 +27,10 @@ section {
     margin-bottom: 30px;
 }
 
-/* Lưới gồm 4 cột bằng nhau */
+/* Khung lưới chung 2 cột */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-template-columns: 1fr 1fr;
     background-color: #cbd5e1;
     padding: 15px;
     border-radius: 6px;
@@ -40,26 +39,35 @@ section {
 .grid-item {
     background-color: #0284c7;
     color: #ffffff;
-    padding: 20px 10px;
+    padding: 20px;
     text-align: center;
     font-weight: bold;
     border-radius: 4px;
 }
 
-/* 1. Chỉ định bắt đầu từ vạch kẻ thứ 2 */
-.item-start-2 {
-    grid-column-start: 2;
-    background-color: #e11d48;
+/* 1. Khoảng cách giữa các hàng cố định 25px */
+.gap-length {
+    grid-row-gap: 25px;
+    row-gap: 25px; /* Cú pháp chuẩn hiện đại */
 }
 
-/* 2. Chỉ định độ dài kéo dài qua 3 cột */
-.item-span-3 {
-    grid-column-start: span 3;
-    background-color: #16a34a;
+/* 2. Khoảng cách giữa các hàng theo 5% chiều cao khung chứa */
+.gap-percent {
+    height: 300px;
+    grid-row-gap: 5%;
+    row-gap: 5%;
 }
 
-/* 3. Giá trị mặc định auto */
-.item-auto {
-    grid-column-start: auto;
-    background-color: #d97706;
+.item-green {
+    background-color: #059669;
+}
+
+/* 3. Đặt về giá trị ban đầu (initial = 0) */
+.gap-initial {
+    grid-row-gap: initial;
+    row-gap: initial;
+}
+
+.item-purple {
+    background-color: #7c3aed;
 }

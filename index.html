@@ -3,42 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thực hành CSS grid-column-start</title>
+    <title>Thực hành CSS grid-row-gap</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Thực hành thuộc tính grid-column-start</h1>
+    <h1>Thực hành thuộc tính grid-row-gap</h1>
 
-    <!-- Ví dụ 1: Sử dụng column-line để chỉ định cột bắt đầu -->
+    <!-- Ví dụ 1: Khoảng cách hàng theo đơn vị chiều dài cố định (length: 25px) -->
     <section>
-        <h2>1. Giá trị column-line: Bắt đầu tại đường kẻ cột 2 (grid-column-start: 2)</h2>
-        <div class="grid-container">
-            <div class="grid-item item-start-2">Phần tử 1 (bắt đầu từ cột 2)</div>
-            <div class="grid-item">Phần tử 2</div>
-            <div class="grid-item">Phần tử 3</div>
-            <div class="grid-item">Phần tử 4</div>
+        <h2>1. Đơn vị cố định (grid-row-gap: 25px)</h2>
+        <div class="grid-container gap-length">
+            <div class="grid-item">Hàng 1 - Cột 1</div>
+            <div class="grid-item">Hàng 1 - Cột 2</div>
+            <div class="grid-item">Hàng 2 - Cột 1</div>
+            <div class="grid-item">Hàng 2 - Cột 2</div>
+            <div class="grid-item">Hàng 3 - Cột 1</div>
+            <div class="grid-item">Hàng 3 - Cột 2</div>
         </div>
     </section>
 
-    <!-- Ví dụ 2: Sử dụng span n để kéo dài qua n cột -->
+    <!-- Ví dụ 2: Khoảng cách hàng theo tỷ lệ phần trăm (percentage: 5%) -->
     <section>
-        <h2>2. Giá trị span n: Kéo dài 3 cột (grid-column-start: span 3)</h2>
-        <div class="grid-container">
-            <div class="grid-item item-span-3">Phần tử 1 (span 3 cột)</div>
-            <div class="grid-item">Phần tử 2</div>
-            <div class="grid-item">Phần tử 3</div>
+        <h2>2. Tỷ lệ phần trăm (grid-row-gap: 5%)</h2>
+        <div class="grid-container gap-percent">
+            <div class="grid-item item-green">Hàng 1 - Cột 1</div>
+            <div class="grid-item item-green">Hàng 1 - Cột 2</div>
+            <div class="grid-item item-green">Hàng 2 - Cột 1</div>
+            <div class="grid-item item-green">Hàng 2 - Cột 2</div>
         </div>
     </section>
 
-    <!-- Ví dụ 3: Giá trị auto (mặc định) -->
+    <!-- Ví dụ 3: Giá trị toàn cục (global-value: initial) -->
     <section>
-        <h2>3. Giá trị auto: Xếp theo luồng tự động (grid-column-start: auto)</h2>
-        <div class="grid-container">
-            <div class="grid-item item-auto">Phần tử 1 (auto)</div>
-            <div class="grid-item">Phần tử 2</div>
-            <div class="grid-item">Phần tử 3</div>
-            <div class="grid-item">Phần tử 4</div>
+        <h2>3. Giá trị mặc định (grid-row-gap: initial - bằng 0)</h2>
+        <div class="grid-container gap-initial">
+            <div class="grid-item item-purple">Hàng 1 - Cột 1</div>
+            <div class="grid-item item-purple">Hàng 1 - Cột 2</div>
+            <div class="grid-item item-purple">Hàng 2 - Cột 1</div>
+            <div class="grid-item item-purple">Hàng 2 - Cột 2</div>
         </div>
     </section>
 
