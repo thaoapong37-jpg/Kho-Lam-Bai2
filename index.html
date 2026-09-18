@@ -2,70 +2,81 @@
 <html lang="vi">
 <head>
     <meta charset="utf-8">
-    <title>Danh sách sản phẩm</title>
+    <title>Lịch họp công ty</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 30px;
         }
 
+        h1 {
+            color: #2c3e50;
+        }
+
         table {
             width: 100%;
-            max-width: 600px;
+            max-width: 650px;
             border-collapse: collapse;
             margin-top: 15px;
         }
 
         th, td {
-            border: 1px solid #ddd;
-            padding: 10px 12px;
+            border: 1px solid #333;
+            padding: 10px 14px;
             text-align: left;
         }
 
         th {
-            background-color: #f4f6f9;
+            background-color: #f2f4f8;
             font-weight: bold;
         }
 
         tr:nth-child(even) {
-            background-color: #fbfbfb;
+            background-color: #fafafa;
         }
     </style>
 </head>
 <body>
 
-    <!-- Tiêu đề chính -->
-    <h1>Danh sách sản phẩm</h1>
+    <!-- Tiêu đề h1 theo yêu cầu đề bài -->
+    <h1>Lịch họp công ty</h1>
 
-    <!-- Bảng danh sách sản phẩm gồm 3 cột và 4 sản phẩm -->
+    <!-- Bảng lịch họp gồm các cột: Ngày, Giờ, Nội dung cuộc họp -->
     <table>
         <thead>
             <tr>
-                <th>Tên sản phẩm</th>
-                <th>Giá</th>
-                <th>Số lượng</th>
+                <th>Ngày</th>
+                <th>Giờ</th>
+                <th>Nội dung cuộc họp</th>
             </tr>
         </thead>
         <tbody>
+            <!-- Thứ Hai có 2 cuộc họp: Dùng rowspan="2" để gộp cột Ngày -->
             <tr>
-                <td>Laptop Dell XPS 13</td>
-                <td>25.000.000 VNĐ</td>
-                <td>10</td>
+                <td rowspan="2">Thứ Hai (22/09)</td>
+                <td>09:00 - 10:30</td>
+                <td>Họp giao ban đầu tuần phòng Kỹ thuật</td>
             </tr>
             <tr>
-                <td>Chuột không dây Logitech</td>
-                <td>450.000 VNĐ</td>
-                <td>50</td>
+                <td>14:00 - 15:30</td>
+                <td>Họp trao đổi yêu cầu dự án mới</td>
+            </tr>
+
+            <!-- Thứ Tư họp kéo dài nhiều giờ: Dùng colspan="2" để gộp cột Giờ và Nội dung -->
+            <tr>
+                <td>Thứ Tư (24/09)</td>
+                <td colspan="2">Họp chiến lược mở rộng thị trường quý IV (Kéo dài từ 08:30 - 16:30)</td>
+            </tr>
+
+            <!-- Thứ Sáu có 2 cuộc họp: Tiếp tục áp dụng rowspan="2" -->
+            <tr>
+                <td rowspan="2">Thứ Sáu (26/09)</td>
+                <td>10:00 - 11:30</td>
+                <td>Phỏng vấn ứng viên lập trình viên Front-End</td>
             </tr>
             <tr>
-                <td>Bàn phím cơ DareU</td>
-                <td>850.000 VNĐ</td>
-                <td>25</td>
-            </tr>
-            <tr>
-                <td>Tai nghe Sony WH-1000XM4</td>
-                <td>6.200.000 VNĐ</td>
-                <td>15</td>
+                <td>16:00 - 17:00</td>
+                <td>Tổng kết tuần và báo cáo tiến độ</td>
             </tr>
         </tbody>
     </table>
