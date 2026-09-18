@@ -19,7 +19,7 @@ h1 {
 
 h2 {
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: #334155;
 }
 
@@ -27,61 +27,62 @@ section {
     margin-bottom: 30px;
 }
 
-/* Khung bọc giới hạn chiều rộng 420px để dễ quan sát hiện tượng tràn phần tử */
+/* Khung bọc Flexbox */
 .flex-container {
     display: flex;
-    width: 420px;
     background-color: #cbd5e1;
-    padding: 10px;
+    padding: 12px;
     border-radius: 6px;
     gap: 10px;
 }
 
-/* Kích thước mỗi khối con là 100px */
 .item {
-    width: 100px;
-    height: 60px;
     background-color: #0284c7;
     color: #ffffff;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 18px;
     border-radius: 4px;
-    flex-shrink: 0;
+    padding: 0 10px;
 }
 
-/* 1. Không bọc dòng: các phần tử cố ép trên 1 hàng (tràn khung) */
-.wrap-nowrap {
-    flex-wrap: nowrap;
-    overflow-x: auto;
+/* 1. Thiết lập kích thước ban đầu theo pixel */
+.basis-100 {
+    flex-basis: 100px;
 }
 
-/* 2. Cho phép ngắt dòng khi vượt quá 420px */
-.wrap-wrap {
-    flex-wrap: wrap;
+.basis-200 {
+    flex-basis: 200px;
+}
+
+.basis-150 {
+    flex-basis: 150px;
+}
+
+/* 2. Giá trị auto: phụ thuộc vào kích thước nội dung bên trong item */
+.basis-auto {
+    flex-basis: auto;
 }
 
 .item-green {
     background-color: #16a34a;
 }
 
-/* 3. Ngắt dòng theo chiều ngược từ dưới lên trên */
-.wrap-reverse {
-    flex-wrap: wrap-reverse;
+/* 3. initial và inherit */
+.parent-basis {
+    flex-basis: 220px;
+}
+
+.basis-initial {
+    flex-basis: initial; /* Giá trị mặc định tương đương auto */
+}
+
+.basis-inherit {
+    flex-basis: inherit; /* Kế thừa 220px từ khung cha .parent-basis */
 }
 
 .item-orange {
     background-color: #ea580c;
-}
-
-/* 4. Giá trị ban đầu mặc định (nowrap) */
-.wrap-initial {
-    flex-wrap: initial;
-    overflow-x: auto;
-}
-
-.item-purple {
-    background-color: #7c3aed;
 }
