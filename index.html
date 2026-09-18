@@ -2,27 +2,37 @@
 <html lang="vi">
 <head>
     <meta charset="utf-8">
-    <title>Sử dụng danh sách trong HTML</title>
+    <title>Tạo liên kết trong HTML</title>
 </head>
 <body>
-    <!-- Tiêu đề chính và danh sách không có thứ tự (ít nhất 5 món) -->
-    <h1>Những món ăn yêu thích của tôi</h1>
+    <!-- Tiêu đề chính -->
+    <h1>Liên kết yêu thích của tôi</h1>
+
+    <!-- Danh sách liên kết đến các trang web khác nhau -->
+    <h2>Trang web yêu thích</h2>
     <ul>
-        <li>Phở bò</li>
-        <li>Bún chả</li>
-        <li>Bánh mì pate</li>
-        <li>Cơm tấm</li>
-        <li>Gỏi cuốn tôm thịt</li>
+        <li>
+            <!-- Liên kết mở tab mới với target="_blank" -->
+            <a href="https://www.google.com" target="_blank">Google (Mở trong tab mới)</a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com" target="_blank">YouTube</a>
+        </li>
+        <li>
+            <a href="https://github.com" target="_blank">GitHub</a>
+        </li>
     </ul>
 
-    <!-- Tiêu đề phụ và danh sách có thứ tự (ít nhất 5 bước) -->
-    <h2>Các bước chuẩn bị cho một chuyến du lịch</h2>
-    <ol>
-        <li>Lên kế hoạch và lựa chọn điểm đến</li>
-        <li>Đặt vé phương tiện di chuyển (vé máy bay, tàu hỏa, xe khách)</li>
-        <li>Tìm kiếm và đặt trước phòng khách sạn/homestay</li>
-        <li>Chuẩn bị hành lý, quần áo và đồ dùng cá nhân</li>
-        <li>Kiểm tra lại giấy tờ tùy thân và chi phí trước ngày khởi hành</li>
-    </ol>
+    <!-- Liên kết đến file HTML khác trong cùng thư mục -->
+    <h2>Liên kết nội bộ</h2>
+    <p>
+        Xem thông tin chi tiết tại: <a href="about.html">Trang giới thiệu (about.html)</a>
+    </p>
+
+    <!-- Liên kết gửi email -->
+    <h2>Liên hệ</h2>
+    <p>
+        Gửi thư cho tôi: <a href="mailto:thaoapong37@gmail.com">thaoapong37@gmail.com</a>
+    </p>
 </body>
 </html>
