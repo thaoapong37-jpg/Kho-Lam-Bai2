@@ -3,30 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bố cục với Float và Overflow</title>
+    <title>Responsive Navbar</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
 
-    <h1>Bố cục trang với float và overflow</h1>
+    <nav class="navbar">
+        <div class="logo">MyWebsite</div>
+        <ul class="nav-links">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Dịch vụ</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+        <div class="menu-icon">☰</div>
+    </nav>
 
-    <!-- Khung chứa 2 cột sử dụng float -->
-    <div class="container">
-        <div class="left-column">
-            <h3>Nội dung bên trái</h3>
-            <p>Cột này chiếm 50% chiều rộng và được căn lề float sang trái. Thuộc tính overflow: hidden ở khung cha giúp bao bọc trọn vẹn chiều cao của hai cột float.</p>
-        </div>
-        <div class="right-column">
-            <h3>Nội dung bên phải</h3>
-            <p>Cột này chiếm 48% chiều rộng và dạt sang phải nhờ thuộc tính float: right.</p>
-        </div>
-    </div>
-
-    <!-- Khối kiểm tra overflow xuất hiện thanh cuộn -->
-    <h2>Khối kiểm tra Overflow</h2>
-    <div class="overflow-box">
-        Đây là nội dung rất dài mà chúng ta kiểm tra overflow. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies nunc in mauris pharetra, a ultricies justo fermentum. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </div>
+    <!-- Khối nội dung để quan sát giao diện phía dưới thanh điều hướng -->
+    <main style="padding: 40px 20px; text-align: center;">
+        <h1>Chào mừng bạn đến với trang web!</h1>
+        <p style="margin-top: 15px; color: #555;">Hãy thử thu nhỏ kích thước trình duyệt hoặc mở F12 chuyển sang chế độ thiết bị di động để kiểm tra nút menu ☰.</p>
+    </main>
 
 </body>
 </html>
