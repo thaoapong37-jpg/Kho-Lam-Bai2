@@ -3,36 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thực hành CSS grid-template-columns</title>
+    <title>Thực hành CSS grid-column-start</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Thực hành thuộc tính grid-template-columns</h1>
+    <h1>Thực hành thuộc tính grid-column-start</h1>
 
-    <!-- Ví dụ 1: Chia cột theo kích thước cố định và auto -->
+    <!-- Ví dụ 1: Sử dụng column-line để chỉ định cột bắt đầu -->
     <section>
-        <h2>Ví dụ 1: Cố định kết hợp auto (120px auto 120px)</h2>
-        <div class="grid-container example-1">
-            <div class="grid-item">Cột 1 (120px)</div>
-            <div class="grid-item">Cột 2 (auto - chiếm phần còn lại)</div>
-            <div class="grid-item">Cột 3 (120px)</div>
-            <div class="grid-item">Mục 4</div>
-            <div class="grid-item">Mục 5</div>
-            <div class="grid-item">Mục 6</div>
+        <h2>1. Giá trị column-line: Bắt đầu tại đường kẻ cột 2 (grid-column-start: 2)</h2>
+        <div class="grid-container">
+            <div class="grid-item item-start-2">Phần tử 1 (bắt đầu từ cột 2)</div>
+            <div class="grid-item">Phần tử 2</div>
+            <div class="grid-item">Phần tử 3</div>
+            <div class="grid-item">Phần tử 4</div>
         </div>
     </section>
 
-    <!-- Ví dụ 2: Sử dụng tỉ lệ phân số fr và min/max-content -->
+    <!-- Ví dụ 2: Sử dụng span n để kéo dài qua n cột -->
     <section>
-        <h2>Ví dụ 2: Tỉ lệ linh hoạt (1fr 2fr 1fr)</h2>
-        <div class="grid-container example-2">
-            <div class="grid-item">Cột 1 (1fr)</div>
-            <div class="grid-item">Cột 2 (2fr - gấp đôi)</div>
-            <div class="grid-item">Cột 3 (1fr)</div>
-            <div class="grid-item">Dữ liệu A</div>
-            <div class="grid-item">Dữ liệu B</div>
-            <div class="grid-item">Dữ liệu C</div>
+        <h2>2. Giá trị span n: Kéo dài 3 cột (grid-column-start: span 3)</h2>
+        <div class="grid-container">
+            <div class="grid-item item-span-3">Phần tử 1 (span 3 cột)</div>
+            <div class="grid-item">Phần tử 2</div>
+            <div class="grid-item">Phần tử 3</div>
+        </div>
+    </section>
+
+    <!-- Ví dụ 3: Giá trị auto (mặc định) -->
+    <section>
+        <h2>3. Giá trị auto: Xếp theo luồng tự động (grid-column-start: auto)</h2>
+        <div class="grid-container">
+            <div class="grid-item item-auto">Phần tử 1 (auto)</div>
+            <div class="grid-item">Phần tử 2</div>
+            <div class="grid-item">Phần tử 3</div>
+            <div class="grid-item">Phần tử 4</div>
         </div>
     </section>
 

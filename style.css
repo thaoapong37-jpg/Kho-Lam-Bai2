@@ -6,8 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8fafc;
-    padding: 30px;
+    background-color: #f1f5f9;
+    padding: 25px;
     color: #1e293b;
 }
 
@@ -18,43 +18,48 @@ h1 {
 }
 
 h2 {
-    font-size: 18px;
-    margin-bottom: 12px;
+    font-size: 16px;
+    margin-bottom: 10px;
     color: #334155;
 }
 
 section {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
-/* Định dạng lưới chung */
+/* Lưới gồm 4 cột bằng nhau */
 .grid-container {
     display: grid;
-    gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
     background-color: #cbd5e1;
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 .grid-item {
     background-color: #0284c7;
     color: #ffffff;
-    padding: 20px;
+    padding: 20px 10px;
     text-align: center;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 4px;
 }
 
-/* Ví dụ 1: 3 cột với kích thước 120px - auto - 120px */
-.example-1 {
-    grid-template-columns: 120px auto 120px;
+/* 1. Chỉ định bắt đầu từ vạch kẻ thứ 2 */
+.item-start-2 {
+    grid-column-start: 2;
+    background-color: #e11d48;
 }
 
-/* Ví dụ 2: 3 cột theo tỉ lệ 1fr - 2fr - 1fr */
-.example-2 {
-    grid-template-columns: 1fr 2fr 1fr;
+/* 2. Chỉ định độ dài kéo dài qua 3 cột */
+.item-span-3 {
+    grid-column-start: span 3;
+    background-color: #16a34a;
 }
 
-.example-2 .grid-item {
-    background-color: #0d9488;
+/* 3. Giá trị mặc định auto */
+.item-auto {
+    grid-column-start: auto;
+    background-color: #d97706;
 }
