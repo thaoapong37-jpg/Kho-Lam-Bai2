@@ -1,181 +1,120 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #333333;
     line-height: 1.6;
-    scroll-behavior: smooth;
+    background-color: #f9f9f9;
 }
 
-/* Header */
+/* Phần Header */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1e293b;
-    padding: 18px 40px;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.nav ul {
-    list-style: none;
-    display: flex;
-}
-
-.nav ul li {
-    margin-left: 20px;
-}
-
-.nav ul li a {
-    text-decoration: none;
-    color: #e2e8f0;
-    font-weight: 500;
-    transition: color 0.2s ease;
-}
-
-.nav ul li a:hover {
-    color: #38bdf8;
-}
-
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 110px 20px;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url("https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200") center/cover no-repeat;
+    background-color: #9933cc;
     color: #ffffff;
-}
-
-.hero h1 {
-    font-size: 38px;
-    margin-bottom: 12px;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 25px;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #0284c7;
-    color: white;
-    padding: 12px 28px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.2s ease;
-}
-
-.btn:hover {
-    background-color: #0369a1;
-}
-
-/* Services Section */
-.services {
+    padding: 20px;
     text-align: center;
-    padding: 60px 20px;
-    background-color: #ffffff;
 }
 
-.services h2 {
-    font-size: 28px;
-    margin-bottom: 35px;
-    color: #1e293b;
-}
-
-.service-container {
+/* Hàng bọc 3 cột bằng Flexbox */
+.row {
     display: flex;
-    justify-content: center;
-    gap: 25px;
-    max-width: 1000px;
+    flex-wrap: wrap;
+    padding: 15px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.service {
-    background-color: #f0f9ff;
-    border: 1px solid #bae6fd;
-    border-radius: 8px;
-    padding: 25px;
-    flex: 1;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+/* Phân chia kích thước cột trên màn hình lớn (Desktop) */
+.col-3 {
+    width: 25%;
+    padding: 15px;
 }
 
-.service h3 {
-    color: #0369a1;
-    margin-bottom: 10px;
+.col-6 {
+    width: 50%;
+    padding: 15px;
 }
 
-/* Testimonials Section */
-.testimonials {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #f1f5f9;
+/* Menu bên trái */
+.menu ul {
+    list-style-type: none;
 }
 
-.testimonials h2 {
-    font-size: 28px;
-    margin-bottom: 25px;
-}
-
-.testimonial {
-    max-width: 600px;
-    margin: 15px auto;
-    background-color: #ffffff;
-    padding: 18px 24px;
-    border-left: 4px solid #0284c7;
+.menu li {
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    background-color: #33b5e5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-    font-style: italic;
+    transition: background-color 0.2s ease;
 }
 
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 25px;
-    background-color: #1e293b;
-    color: #94a3b8;
+.menu li:hover {
+    background-color: #0099cc;
+}
+
+.menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+/* Nội dung bài viết ở giữa */
+.content h1 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.content p {
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+/* Khối thông tin bổ sung bên phải */
+.aside {
+    background-color: #33b5e5;
+    padding: 15px;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+}
+
+.aside h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.aside h2:first-child {
+    margin-top: 0;
+}
+
+.aside p {
     font-size: 14px;
+    line-height: 1.4;
 }
 
-/* Responsive Media Queries cho thiết bị di động */
+/* Chân trang */
+.footer {
+    background-color: #0099cc;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Xử lý Responsive khi màn hình co nhỏ dưới 768px (Mobile & Tablet) */
 @media (max-width: 768px) {
-    .header {
-        padding: 15px 20px;
-    }
-
-    /* Ẩn thanh menu ngang trên mobile */
-    .nav ul {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    /* Chuyển các dịch vụ từ dàn hàng ngang sang xếp theo chiều dọc */
-    .service-container {
-        flex-direction: column;
-    }
-
-    .service {
+    .col-3,
+    .col-6 {
         width: 100%;
+        padding: 10px 15px;
     }
 }
