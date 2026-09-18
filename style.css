@@ -27,12 +27,10 @@ section {
     margin-bottom: 35px;
 }
 
-/* Khung lưới 3 cột, hàng tự động có chiều cao tối thiểu 70px */
+/* Khung lưới chung gồm 3 cột bằng nhau */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(70px, auto);
-    gap: 12px;
     background-color: #cbd5e1;
     padding: 15px;
     border-radius: 6px;
@@ -41,23 +39,25 @@ section {
 .grid-item {
     background-color: #0284c7;
     color: #ffffff;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 20px;
     text-align: center;
+    font-size: 18px;
     font-weight: bold;
     border-radius: 4px;
 }
 
-/* 1. Phần tử bắt đầu ở hàng 1 và kết thúc ở vạch hàng 3 (chiếm trọn 2 hàng) */
-.item-row-span {
-    grid-row: 1 / 3;
-    background-color: #e11d48;
+/* Ví dụ 1: Khoảng cách giữa hàng và cột đều là 15px */
+.gap-single {
+    grid-gap: 15px;
+    gap: 15px; /* Cú pháp chuẩn mới trong CSS3 */
 }
 
-/* 2. Phần tử bắt đầu từ vạch hàng 2 và kéo dài qua 2 hàng tiếp theo */
-.item-span-2 {
-    grid-row: 2 / span 2;
-    background-color: #16a34a;
+/* Ví dụ 2: Khoảng cách hàng là 30px, khoảng cách cột là 10px */
+.gap-double {
+    grid-gap: 30px 10px;
+    gap: 30px 10px;
+}
+
+.item-orange {
+    background-color: #ea580c;
 }

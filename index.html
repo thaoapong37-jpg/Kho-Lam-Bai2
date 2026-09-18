@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thực hành CSS grid-row</title>
+    <title>Thực hành CSS grid-gap</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Thực hành thuộc tính grid-row</h1>
+    <h1>Thực hành thuộc tính viết tắt grid-gap</h1>
 
-    <!-- Ví dụ 1: Phần tử chiếm từ đường kẻ hàng 1 đến đường kẻ hàng 3 -->
+    <!-- Ví dụ 1: 1 giá trị (khoảng cách hàng và cột bằng nhau) -->
     <section>
-        <h2>1. Kéo dài qua 2 hàng (grid-row: 1 / 3)</h2>
-        <div class="grid-container">
-            <div class="grid-item item-row-span">Phần tử 1 (grid-row: 1 / 3)</div>
-            <div class="grid-item">Phần tử 2</div>
-            <div class="grid-item">Phần tử 3</div>
-            <div class="grid-item">Phần tử 4</div>
-            <div class="grid-item">Phần tử 5</div>
+        <h2>1. Một giá trị duy nhất (grid-gap: 15px)</h2>
+        <div class="grid-container gap-single">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
         </div>
     </section>
 
-    <!-- Ví dụ 2: Dùng cú pháp span (grid-row: span 2) -->
+    <!-- Ví dụ 2: 2 giá trị (hàng 30px, cột 10px) -->
     <section>
-        <h2>2. Sử dụng cú pháp span (grid-row: 2 / span 2)</h2>
-        <div class="grid-container">
-            <div class="grid-item">Phần tử A</div>
-            <div class="grid-item item-span-2">Phần tử B (bắt đầu hàng 2, kéo dài 2 hàng)</div>
-            <div class="grid-item">Phần tử C</div>
-            <div class="grid-item">Phần tử D</div>
+        <h2>2. Hai giá trị riêng biệt (grid-gap: 30px 10px - Hàng 30px, Cột 10px)</h2>
+        <div class="grid-container gap-double">
+            <div class="grid-item item-orange">A</div>
+            <div class="grid-item item-orange">B</div>
+            <div class="grid-item item-orange">C</div>
+            <div class="grid-item item-orange">D</div>
+            <div class="grid-item item-orange">E</div>
+            <div class="grid-item item-orange">F</div>
         </div>
     </section>
 
