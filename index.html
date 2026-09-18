@@ -3,57 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Image Gallery</title>
+    <title>Thực hành CSS grid-template-columns</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="gallery-header">
-        <h2>Responsive Image Gallery</h2>
-        <p>Thu nhỏ hoặc mở rộng cửa sổ trình duyệt để quan sát các mốc hiển thị: 4 ảnh (>700px), 2 ảnh (≤700px), và 1 ảnh (≤500px).</p>
-    </header>
+    <h1>Thực hành thuộc tính grid-template-columns</h1>
 
-    <div class="gallery-container">
-        <!-- Ảnh 1 -->
-        <div class="gallery-item">
-            <div class="gallery-card">
-                <a target="_blank" href="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=500" alt="Cảnh núi rừng">
-                </a>
-                <div class="desc">Vẻ đẹp hùng vĩ của thung lũng và núi rừng tự nhiên.</div>
-            </div>
+    <!-- Ví dụ 1: Chia cột theo kích thước cố định và auto -->
+    <section>
+        <h2>Ví dụ 1: Cố định kết hợp auto (120px auto 120px)</h2>
+        <div class="grid-container example-1">
+            <div class="grid-item">Cột 1 (120px)</div>
+            <div class="grid-item">Cột 2 (auto - chiếm phần còn lại)</div>
+            <div class="grid-item">Cột 3 (120px)</div>
+            <div class="grid-item">Mục 4</div>
+            <div class="grid-item">Mục 5</div>
+            <div class="grid-item">Mục 6</div>
         </div>
+    </section>
 
-        <!-- Ảnh 2 -->
-        <div class="gallery-item">
-            <div class="gallery-card">
-                <a target="_blank" href="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800">
-                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=500" alt="Sương sớm trong rừng">
-                </a>
-                <div class="desc">Bình minh với làn sương mờ ảo trên sườn đồi.</div>
-            </div>
+    <!-- Ví dụ 2: Sử dụng tỉ lệ phân số fr và min/max-content -->
+    <section>
+        <h2>Ví dụ 2: Tỉ lệ linh hoạt (1fr 2fr 1fr)</h2>
+        <div class="grid-container example-2">
+            <div class="grid-item">Cột 1 (1fr)</div>
+            <div class="grid-item">Cột 2 (2fr - gấp đôi)</div>
+            <div class="grid-item">Cột 3 (1fr)</div>
+            <div class="grid-item">Dữ liệu A</div>
+            <div class="grid-item">Dữ liệu B</div>
+            <div class="grid-item">Dữ liệu C</div>
         </div>
-
-        <!-- Ảnh 3 -->
-        <div class="gallery-item">
-            <div class="gallery-card">
-                <a target="_blank" href="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800">
-                    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500" alt="Rừng cây xanh mát">
-                </a>
-                <div class="desc">Ánh nắng len lỏi qua từng kẽ lá trong rừng thông già.</div>
-            </div>
-        </div>
-
-        <!-- Ảnh 4 -->
-        <div class="gallery-item">
-            <div class="gallery-card">
-                <a target="_blank" href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500" alt="Bờ biển nhiệt đới">
-                </a>
-                <div class="desc">Bãi biển bờ cát trắng trải dài dưới làn nước trong xanh.</div>
-            </div>
-        </div>
-    </div>
+    </section>
 
 </body>
 </html>

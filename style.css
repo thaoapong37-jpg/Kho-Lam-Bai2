@@ -5,84 +5,56 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f7f9fb;
-    padding: 20px;
-    color: #333;
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+    padding: 30px;
+    color: #1e293b;
 }
 
-.gallery-header {
-    text-align: center;
+h1 {
+    font-size: 24px;
     margin-bottom: 25px;
+    color: #0f172a;
 }
 
-.gallery-header h2 {
-    color: #2c3e50;
-    margin-bottom: 8px;
+h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #334155;
 }
 
-.gallery-header p {
-    color: #666;
-    font-size: 14px;
+section {
+    margin-bottom: 35px;
 }
 
-/* Khung chứa các ô ảnh dạng Flexbox */
-.gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Định dạng lưới chung */
+.grid-container {
+    display: grid;
+    gap: 12px;
+    background-color: #cbd5e1;
+    padding: 15px;
+    border-radius: 8px;
 }
 
-/* Mặc định cho màn hình lớn (> 700px): Hiển thị 4 ảnh trên một dòng (25% mỗi cột) */
-.gallery-item {
-    flex: 0 0 25%;
-    max-width: 25%;
-    padding: 8px;
-}
-
-/* Thẻ bao bọc từng ảnh và mô tả */
-.gallery-card {
-    border: 1px solid #ccc;
-    background-color: #ffffff;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.gallery-card:hover {
-    border-color: #777;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.gallery-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-}
-
-.desc {
-    padding: 12px;
+.grid-item {
+    background-color: #0284c7;
+    color: #ffffff;
+    padding: 20px;
     text-align: center;
-    font-size: 13px;
-    line-height: 1.4;
-    color: #444;
+    font-weight: bold;
+    border-radius: 6px;
 }
 
-/* Mốc 1: Màn hình nhỏ hơn hoặc bằng 700px -> Hiển thị 2 ảnh trên một dòng (50% mỗi cột) */
-@media screen and (max-width: 700px) {
-    .gallery-item {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
+/* Ví dụ 1: 3 cột với kích thước 120px - auto - 120px */
+.example-1 {
+    grid-template-columns: 120px auto 120px;
 }
 
-/* Mốc 2: Màn hình nhỏ hơn hoặc bằng 500px -> Hiển thị 1 ảnh trên một dòng (100% mỗi cột) */
-@media screen and (max-width: 500px) {
-    .gallery-item {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
+/* Ví dụ 2: 3 cột theo tỉ lệ 1fr - 2fr - 1fr */
+.example-2 {
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+.example-2 .grid-item {
+    background-color: #0d9488;
 }
