@@ -1,79 +1,53 @@
-/* 1. Thiết lập màu nền (background-color) cho trang web */
 body {
-    background-color: #e9eff5;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
     margin: 0;
-    padding: 30px 20px;
-    text-align: center;
-    color: #333333;
-}
-
-h1 {
-    color: #1a365d;
-    margin-bottom: 10px;
-}
-
-.intro-text {
-    font-size: 16px;
-    color: #4a5568;
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-    line-height: 1.6;
-}
-
-/* 2. Thêm ảnh nền (background-image) và 3. Căn giữa nội dung trong khối <div> */
-.highlight-box {
-    /* Sử dụng background-image với ảnh phong cảnh chất lượng cao */
-    background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    max-width: 700px;
-    height: 320px;
-    margin: 0 auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    overflow: hidden;
-
-    /* Căn giữa nội dung theo cả chiều dọc và ngang */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Lớp phủ hỗ trợ làm nổi bật chữ trên ảnh nền */
-.overlay-content {
-    background-color: rgba(0, 0, 0, 0.55);
-    color: #ffffff;
     padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    width: 80%;
 }
 
-.overlay-content h2 {
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Định dạng chung cho 3 thẻ card theo yêu cầu */
+.card {
+    width: 280px;
+    height: 150px;
+    padding: 20px;
+    border: 5px solid #3498db;
+    margin: 20px;
+    color: #2c3e50;
+    border-radius: 6px;
+}
+
+.card h3 {
     margin-top: 0;
-    font-size: 24px;
+    font-size: 16px;
 }
 
-.overlay-content p {
-    font-size: 15px;
-    margin-bottom: 18px;
+.card p {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 0;
 }
 
-.overlay-content button {
-    background-color: #008060;
+/* Thẻ 1: content-box + màu nền xanh lá cây */
+.card:nth-child(1) {
+    box-sizing: content-box;
+    background-color: #2ecc71;
+}
+
+/* Thẻ 2: border-box + màu nền vàng */
+.card:nth-child(2) {
+    box-sizing: border-box;
+    background-color: #f1c40f;
+}
+
+/* Thẻ 3: border-box + màu nền đỏ */
+.card:nth-child(3) {
+    box-sizing: border-box;
+    background-color: #e74c3c;
     color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.overlay-content button:hover {
-    background-color: #005c45;
 }
