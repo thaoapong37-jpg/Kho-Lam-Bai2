@@ -3,34 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Grid Layout</title>
+    <title>Bố cục Responsive bằng CSS Grid</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
+    <div class="grid-layout">
+        <!-- 1. Header: Tiêu đề trang -->
         <header class="header">
-            <h1>Header - Tiêu đề Website</h1>
+            <h1>TechWorld Portal</h1>
+            <p>Trang thông tin công nghệ &amp; lập trình hiện đại</p>
         </header>
 
-        <nav class="sidebar">
-            <h3>Sidebar</h3>
+        <!-- 2. Navigation: Thanh menu điều hướng -->
+        <nav class="navigation">
             <ul>
                 <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Sản phẩm</a></li>
-                <li><a href="#">Dịch vụ</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Khóa học</a></li>
+                <li><a href="#">Cộng đồng</a></li>
                 <li><a href="#">Liên hệ</a></li>
             </ul>
         </nav>
 
-        <main class="content">
-            <h2>Nội dung chính</h2>
-            <p>Bố cục trang web này được xây dựng bằng thuộc tính CSS Grid với <code>grid-template-areas</code>. Trên màn hình máy tính, nội dung chính chiếm 3 phần và sidebar chiếm 1 phần.</p>
-            <p>Khi co màn hình về kích thước nhỏ hơn 768px (Mobile), giao diện sẽ tự động chuyển sang dạng một cột xếp chồng dọc.</p>
+        <!-- 3. Main Content: Khu vực nội dung chính -->
+        <main class="main-content">
+            <h2>Khám phá sức mạnh của CSS Grid trong thiết kế web hiện đại</h2>
+            <p>CSS Grid Layout là hệ thống bố cục lưới hai chiều mạnh mẽ nhất trong CSS. Khác với Flexbox (chủ yếu xử lý theo một chiều dọc hoặc ngang), Grid cho phép bạn kiểm soát đồng thời cả hàng và cột một cách chính xác.</p>
+            <p>Bằng cách kết hợp thuộc tính <code>grid-template-areas</code> và <code>media queries</code>, việc biến đổi một giao diện nhiều cột phức tạp trên máy tính thành bố cục một cột gọn gàng trên điện thoại trở nên đơn giản và mạch lạc hơn bao giờ hết.</p>
         </main>
 
+        <!-- 4. Sidebar: Nội dung phụ, tin tức bên lề -->
+        <aside class="sidebar">
+            <h3>Tin nổi bật</h3>
+            <ul>
+                <li><a href="#">Lộ trình học CSS Grid 2026</a></li>
+                <li><a href="#">So sánh Flexbox và Grid</a></li>
+                <li><a href="#">Mẹo tối ưu Responsive Web</a></li>
+            </ul>
+            <div class="ads-box">
+                <p>Khung quảng cáo / Widget phụ</p>
+            </div>
+        </aside>
+
+        <!-- 5. Footer: Chân trang -->
         <footer class="footer">
-            <p>&copy; 2026 Bản quyền thuộc về CSS Grid Layout Practice.</p>
+            <p>&copy; 2026 TechWorld Portal. Thiết kế hoàn toàn bằng CSS Grid Responsive.</p>
         </footer>
     </div>
 
