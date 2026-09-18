@@ -1,8 +1,85 @@
-/* PHẦN 3: External-style */
-.external-heading {
-    color: #d35400; /* Màu cam đậm */
+/* 1. ELEMENT SELECTOR: Đổi màu nền của toàn trang */
+body {
+    background-color: #eef2f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
 }
 
-.external-para {
-    color: #16a085; /* Màu xanh mòng két */
+/* 2. CLASS SELECTOR: Định khung trung tâm */
+.card-container {
+    max-width: 550px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+/* 3. GROUPING SELECTOR: Gom nhóm định dạng phông chữ cho h1 và h2 */
+h1, h2 {
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* ELEMENT SELECTOR: Căn giữa và chọn màu cho tiêu đề h1 */
+h1 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+h2 {
+    color: #34495e;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* 4. ID SELECTOR: Định dạng đoạn văn mô tả bản thân */
+#my-bio {
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.hobby-list {
+    list-style-type: square;
+    text-align: left;
+    display: inline-block;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+/* 5. PSEUDO-CLASS SELECTOR (:nth-child): Định dạng danh sách với các màu khác nhau */
+.hobby-list li:nth-child(1) {
+    color: #e67e22; /* Màu cam */
+    font-weight: 600;
+}
+
+.hobby-list li:nth-child(2) {
+    color: #27ae60; /* Màu xanh lá */
+    font-weight: 600;
+}
+
+.hobby-list li:nth-child(3) {
+    color: #2980b9; /* Màu xanh dương */
+    font-weight: 600;
+}
+
+/* ID SELECTOR: Định kiểu cho nút bấm */
+#btn-submit {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 24px;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* 6. PSEUDO-CLASS SELECTOR (:hover): Hiệu ứng rê chuột vào nút bấm */
+#btn-submit:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
 }

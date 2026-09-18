@@ -3,47 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thực hành Nhúng CSS vào HTML</title>
-
-    <!-- Phần 3: External-style (nhúng file CSS bên ngoài qua thẻ <link>) -->
+    <title>Sử dụng bộ chọn CSS</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Phần 2: Internal-style (viết mã CSS bên trong thẻ <style> ở <head>) -->
-    <style>
-        .internal-heading {
-            color: #27ae60; /* Màu xanh lá */
-        }
-        .internal-para {
-            color: #2980b9; /* Màu xanh dương */
-        }
-    </style>
 </head>
 <body>
 
-    <!-- PHẦN 1: Sử dụng Inline-style (thuộc tính style trực tiếp trong thẻ) -->
-    <section>
-        <h2>1. Inline-style</h2>
-        <h1 style="color: #c0392b;">Tiêu đề đổi màu bằng Inline-style</h1>
-        <p style="color: #8e44ad;">Đoạn văn này được định màu tím trực tiếp trong thuộc tính style của thẻ p.</p>
-    </section>
+    <div class="card-container">
+        <!-- Element h1 -->
+        <h1>Trang web của tôi</h1>
 
-    <hr>
+        <!-- Thẻ p có gắn ID selector -->
+        <p id="my-bio">Xin chào! Tôi là một học viên lập trình web, đam mê công nghệ và đang thực hành thành thạo HTML/CSS.</p>
 
-    <!-- PHẦN 2: Sử dụng Internal-style (sử dụng class được khai báo trong thẻ <style>) -->
-    <section>
-        <h2>2. Internal-style</h2>
-        <h1 class="internal-heading">Tiêu đề đổi màu bằng Internal-style</h1>
-        <p class="internal-para">Đoạn văn này nhận màu xanh dương thông qua class được viết trong cặp thẻ style ở thẻ head.</p>
-    </section>
+        <!-- Tiêu đề phụ dùng để minh họa Grouping Selector -->
+        <h2>Sở thích của tôi</h2>
 
-    <hr>
+        <!-- Danh sách ul có gắn Class selector -->
+        <ul class="hobby-list">
+            <li class="hobby-item">Đọc sách công nghệ và phát triển bản thân</li>
+            <li class="hobby-item">Chơi thể thao và rèn luyện sức khỏe</li>
+            <li class="hobby-item">Khám phá và trải nghiệm du lịch</li>
+        </ul>
 
-    <!-- PHẦN 3: Sử dụng External-style (sử dụng class được định nghĩa trong file style.css) -->
-    <section>
-        <h2>3. External-style</h2>
-        <h1 class="external-heading">Tiêu đề đổi màu bằng External-style</h1>
-        <p class="external-para">Đoạn văn này nhận màu sắc từ file style.css riêng biệt liên kết qua thẻ link.</p>
-    </section>
+        <br>
+        <!-- Nút bấm có gắn ID và hiệu ứng Pseudo-class :hover -->
+        <button id="btn-submit" type="button">Nhấn vào đây</button>
+    </div>
 
 </body>
 </html>
