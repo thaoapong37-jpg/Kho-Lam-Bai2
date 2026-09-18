@@ -3,107 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giới Thiệu Công Ty</title>
-    <!-- Nhúng Bootstrap 5 CSS qua CDN -->
+    <title>Bootstrap Grid System Layout</title>
+    <!-- Nhúng thư viện Bootstrap 5 qua CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100 bg-light">
 
-    <!-- 1. Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <!-- 1. Header: Tiêu đề trang web -->
+    <header class="bg-primary text-white py-4 shadow-sm">
+        <div class="container text-center">
+            <h1 class="fw-bold mb-1">Cổng Thông Tin Công Nghệ</h1>
+            <p class="lead mb-0 fs-6">Thực hành chia bố cục giao diện với Bootstrap Containers &amp; Grid System</p>
+        </div>
+    </header>
+
+    <!-- 2. Navbar: Thanh điều hướng với Menu Dropdown -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="#">Doanh Nghiệp</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand fw-bold" href="#">TechPortal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Trang Chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Về Chúng Tôi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Dịch Vụ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Liên Hệ</a></li>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tin tức</a>
+                    </li>
+                    <!-- Menu Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Khóa học
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">HTML5 &amp; CSS3</a></li>
+                            <li><a class="dropdown-item" href="#">Bootstrap 5 Framework</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">JavaScript Cơ Bản</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
                 </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Tìm kiếm bài viết..." aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Tìm</button>
+                </form>
             </div>
         </div>
     </nav>
 
-    <!-- 2. Hero Section -->
-    <header class="bg-primary text-white text-center py-5">
-        <div class="container py-4">
-            <h1 class="display-5 fw-bold mb-3">Chào mừng đến với Công Ty Chúng Tôi</h1>
-            <p class="lead mb-4">Chúng tôi cung cấp các giải pháp chuyên nghiệp cho doanh nghiệp của bạn</p>
-            <a href="#services" class="btn btn-light btn-lg px-4 fw-semibold shadow-sm">Tìm Hiểu Ngay</a>
-        </div>
-    </header>
+    <!-- 3. Khu vực nội dung chính & Sidebar áp dụng Bootstrap Grid System -->
+    <div class="container my-4 flex-grow-1">
+        <div class="row g-4">
+            
+            <!-- Main Content: Chiếm 8 cột trên Desktop (>=992px), chiếm trọn 12 cột trên Mobile (<992px) -->
+            <main class="col-12 col-lg-8">
+                <div class="card p-4 border-0 shadow-sm mb-4">
+                    <h2 class="card-title text-primary fw-bold mb-3">Hiểu Về Bootstrap Grid System</h2>
+                    <p class="text-secondary leading-relaxed">
+                        Hệ thống lưới (Grid System) của Bootstrap hoạt động dựa trên cơ chế Flexbox và chia màn hình thành tối đa <strong>12 cột</strong>. Bằng cách sử dụng kết hợp các tiền tố kích thước như <code>col-12</code>, <code>col-md-8</code> hoặc <code>col-lg-8</code>, bạn có thể dễ dàng kiểm soát tỷ lệ hiển thị của từng khối nội dung tương ứng trên từng thiết bị.
+                    </p>
+                    <p class="text-secondary">
+                        Khi hiển thị trên máy tính (kích thước lớn từ 992px trở lên), khu vực này tự động co giãn chiếm 8 cột, nhường 4 cột còn lại cho thanh Sidebar. Khi chuyển sang màn hình điện thoại hoặc máy tính bảng nhỏ, cả hai khối sẽ tự ngắt xuống dòng và xếp chồng theo chiều dọc (chiếm 12 cột).
+                    </p>
+                </div>
 
-    <!-- 3. About Section -->
-    <section id="about" class="container py-5">
-        <div class="row justify-content-center text-center">
-            <div class="col-lg-8">
-                <h2 class="fw-bold mb-3">Về Chúng Tôi</h2>
-                <div class="border-bottom border-primary border-3 w-25 mx-auto mb-4"></div>
-                <p class="lead text-secondary">
-                    Công ty chúng tôi chuyên cung cấp các dịch vụ công nghệ, thiết kế website và tiếp thị kỹ thuật số. Với đội ngũ giàu kinh nghiệm, chúng tôi cam kết mang lại giá trị bền vững và giải pháp tối ưu cho từng khách hàng.
-                </p>
-            </div>
-        </div>
-    </section>
+                <div class="card p-4 border-0 shadow-sm">
+                    <h3 class="h4 card-title text-dark fw-bold mb-3">Các Lợi Ích Chính Của Responsive Design</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item px-0">Tối ưu hóa trải nghiệm đọc trên điện thoại, máy tính bảng và máy tính để bàn.</li>
+                        <li class="list-group-item px-0">Tương thích với các chuẩn SEO của công cụ tìm kiếm Google.</li>
+                        <li class="list-group-item px-0">Giảm thiểu thời gian viết CSS Media Queries thủ công bằng các class có sẵn.</li>
+                    </ul>
+                </div>
+            </main>
 
-    <!-- 4. Services Section -->
-    <section id="services" class="bg-light py-5">
+            <!-- Sidebar: Chiếm 4 cột trên Desktop (>=992px), nằm dưới Main Content (12 cột) trên Mobile (<992px) -->
+            <aside class="col-12 col-lg-4">
+                <div class="card p-3 border-0 shadow-sm mb-4">
+                    <h4 class="h5 card-title text-dark fw-bold border-bottom pb-2 mb-3">Danh Mục Phổ Biến</h4>
+                    <div class="list-group list-group-flush">
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Lập trình Web
+                            <span class="badge bg-primary rounded-pill">14</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Thiết kế Giao diện
+                            <span class="badge bg-primary rounded-pill">8</span>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Mẹo Bootstrap
+                            <span class="badge bg-primary rounded-pill">5</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card p-3 border-0 shadow-sm bg-white">
+                    <h4 class="h5 card-title text-dark fw-bold border-bottom pb-2 mb-3">Thông Tin Phụ</h4>
+                    <p class="text-muted small mb-0">
+                        Thanh bên này được thiết kế để chứa các liên kết điều hướng nhanh, widget thông báo hoặc quảng cáo bổ trợ cho trang chính.
+                    </p>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- 4. Footer: Thông tin bản quyền -->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
         <div class="container">
-            <h2 class="text-center fw-bold mb-4">Dịch vụ của chúng tôi</h2>
-            <div class="row g-4">
-                <div class="col-md-4 text-center">
-                    <div class="card h-100 p-4 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="h4 card-title text-primary mb-3">Thiết kế Website</h3>
-                            <p class="card-text text-secondary">Thiết kế giao diện chuyên nghiệp, hiện đại và tối ưu hóa trải nghiệm người dùng trên mọi thiết bị.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="card h-100 p-4 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="h4 card-title text-primary mb-3">Marketing Online</h3>
-                            <p class="card-text text-secondary">Giải pháp tiếp thị số toàn diện giúp nhận diện thương hiệu và tăng trưởng doanh thu vượt bậc.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center">
-                    <div class="card h-100 p-4 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="h4 card-title text-primary mb-3">Hỗ trợ khách hàng</h3>
-                            <p class="card-text text-secondary">Chúng tôi cam kết đồng hành và hỗ trợ khách hàng 24/7 với thái độ tận tâm và chuyên nghiệp nhất.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. Contact Section -->
-    <section id="contact" class="container py-5 text-center">
-        <h2 class="fw-bold mb-4">Liên hệ với chúng tôi</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="p-4 bg-white rounded shadow-sm">
-                    <p class="fs-5 mb-2"><strong>Email:</strong> contact@company.com</p>
-                    <p class="fs-5 mb-0"><strong>Hotline:</strong> 0988 123 456</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. Footer -->
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <p class="mb-0 text-secondary">&copy; 2026 Công Ty Chúng Tôi. All rights reserved.</p>
+            <p class="mb-0 text-secondary">&copy; 2026 TechPortal. Thiết kế với Bootstrap 5 Grid System. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Nhúng Bootstrap 5 JS Bundle qua CDN -->
+    <!-- Nhúng thư viện JavaScript của Bootstrap (xử lý menu đóng mở và dropdown) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
