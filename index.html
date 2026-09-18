@@ -1,124 +1,288 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Form Đăng Ký Người Dùng</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Research Survey</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            padding: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f9f9f9;
+            color: #222;
+            padding: 20px;
         }
 
-        .form-card {
-            background-color: #ffffff;
-            max-width: 420px;
+        .survey-container {
+            max-width: 680px;
             margin: 0 auto;
-            padding: 25px 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
         }
 
-        .form-card h2 {
-            text-align: center;
-            color: #2c3e50;
+        h1 {
+            font-size: 24px;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 6px;
+            color: #111;
+        }
+
+        p.subtitle {
+            margin-top: 0;
+            margin-bottom: 25px;
+            color: #555;
+            font-size: 14px;
         }
 
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 22px;
         }
 
-        .form-group label {
-            display: block;
+        label.field-label {
             font-weight: bold;
-            margin-bottom: 6px;
-            color: #333;
+            font-size: 14px;
+            display: block;
+            margin-bottom: 8px;
         }
 
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="tel"] {
+        select {
             width: 100%;
-            padding: 9px 12px;
+            max-width: 480px;
+            padding: 7px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 14px;
-            box-sizing: border-box;
         }
 
-        .form-group input[type="text"]:focus,
-        .form-group input[type="email"]:focus,
-        .form-group input[type="tel"]:focus {
-            border-color: #007bff;
-            outline: none;
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
         }
 
-        .gender-options label {
-            display: inline-block;
-            font-weight: normal;
-            margin-right: 20px;
+        .options-list label {
+            font-size: 14px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .other-text-input {
+            margin-top: 5px;
+            margin-left: 22px;
+            padding: 6px 8px;
+            width: 180px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        /* Phần nhập giá tiền */
+        .price-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-item {
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .price-item input {
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        /* Bảng đánh giá Matrix */
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .matrix-table th, .matrix-table td {
+            padding: 10px 8px;
+            text-align: center;
+            border: 1px solid #e2e2e2;
+        }
+
+        .matrix-table th {
+            background-color: #f7f7f7;
+            font-weight: normal;
+        }
+
+        .matrix-table td:first-child {
+            text-align: left;
+            padding-left: 10px;
+            width: 40%;
+        }
+
+        .matrix-table tr:nth-child(even) {
+            background-color: #fafafa;
         }
 
         .btn-submit {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #ffffff;
+            background-color: #008060;
+            color: white;
             border: none;
+            padding: 9px 24px;
+            font-size: 15px;
             border-radius: 4px;
-            font-size: 16px;
-            font-weight: bold;
             cursor: pointer;
-            margin-top: 10px;
-            transition: background-color 0.2s;
+            margin-top: 15px;
         }
 
         .btn-submit:hover {
-            background-color: #0056b3;
+            background-color: #006e52;
         }
     </style>
 </head>
 <body>
 
-    <div class="form-card">
-        <h2>ĐĂNG KÝ NGƯỜI DÙNG</h2>
+<div class="survey-container">
+    <h1>Market Research Survey</h1>
+    <p class="subtitle">Please take a few moments to complete this satisfaction survey.</p>
 
-        <!-- Form cấu hình gửi dữ liệu lên server với method POST -->
-        <form action="http://demo.codegym.vn/6/registration_form/register.php" method="POST">
-            <!-- Họ và tên (name="name") -->
-            <div class="form-group">
-                <label for="name">Họ và tên:</label>
-                <input type="text" id="name" name="name" placeholder="Nhập họ và tên của bạn" required>
+    <form action="#" method="post">
+        <!-- 1. What is your age range? -->
+        <div class="form-group">
+            <label class="field-label" for="age-range">What is your age range?</label>
+            <select id="age-range" name="age_range">
+                <option value="18-24">18-24</option>
+                <option value="25-34">25-34</option>
+                <option value="35-50">35-50</option>
+                <option value="50+">50+</option>
+            </select>
+        </div>
+
+        <!-- 2. What is your yearly income range? -->
+        <div class="form-group">
+            <label class="field-label" for="income-range">What is your yearly income range?</label>
+            <select id="income-range" name="income_range">
+                <option value="0-25k">$0 - $25,000</option>
+                <option value="25k-50k">$25,001 - $50,000</option>
+                <option value="50k-100k">$50,001 - $100,000</option>
+                <option value="100k+">$100,000+</option>
+            </select>
+        </div>
+
+        <!-- 3. Gender Identity -->
+        <div class="form-group">
+            <label class="field-label">Gender Identity</label>
+            <div class="options-list">
+                <label><input type="radio" name="gender_identity" value="Male"> Male</label>
+                <label><input type="radio" name="gender_identity" value="Female"> Female</label>
+                <label><input type="radio" name="gender_identity" value="Nonbinary"> Nonbinary</label>
+                <label><input type="radio" name="gender_identity" value="Other"> Other</label>
+                <input type="text" class="other-text-input" name="gender_other" placeholder="">
             </div>
+        </div>
 
-            <!-- Email (name="email") -->
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="example@email.com" required>
+        <!-- 4. Which of the following products have you purchased... -->
+        <div class="form-group">
+            <label class="field-label">Which of the following products have your purchased in the last 2 months. Please check all that apply.</label>
+            <div class="options-list">
+                <label><input type="checkbox" name="purchased[]" value="Product 1"> Product 1</label>
+                <label><input type="checkbox" name="purchased[]" value="Product 2"> Product 2</label>
+                <label><input type="checkbox" name="purchased[]" value="Product 3"> Product 3</label>
             </div>
+        </div>
 
-            <!-- Số điện thoại (name="phone") -->
-            <div class="form-group">
-                <label for="phone">Số điện thoại:</label>
-                <input type="tel" id="phone" name="phone" placeholder="09xxxxxxxx" required>
+        <!-- 5. How often would you use our new product? -->
+        <div class="form-group">
+            <label class="field-label">How often would you use our new product?</label>
+            <div class="options-list">
+                <label><input type="radio" name="frequency" value="Daily"> Daily</label>
+                <label><input type="radio" name="frequency" value="Weekly"> Weekly</label>
+                <label><input type="radio" name="frequency" value="Monthly"> Monthly</label>
+                <label><input type="radio" name="frequency" value="Once a month"> Once a month</label>
             </div>
+        </div>
 
-            <!-- Giới tính (name="gender") -->
-            <div class="form-group">
-                <label>Giới tính:</label>
-                <div class="gender-options">
-                    <label><input type="radio" name="gender" value="Nam" checked> Nam</label>
-                    <label><input type="radio" name="gender" value="Nữ"> Nữ</label>
+        <!-- 6. What would you pay for our new product? -->
+        <div class="form-group">
+            <label class="field-label">What would you pay for our new product?</label>
+            <div class="price-group">
+                <span>$</span>
+                <div class="price-item">
+                    <input type="text" name="price_dollars" size="6">
+                    <span>Dollars</span>
+                </div>
+                <span>.</span>
+                <div class="price-item">
+                    <input type="text" name="price_cents" size="2">
+                    <span>Cents</span>
                 </div>
             </div>
+        </div>
 
-            <!-- Nút gửi form -->
-            <input type="submit" class="btn-submit" value="Đăng ký">
-        </form>
-    </div>
+        <!-- 7. Features -->
+        <div class="form-group">
+            <label class="field-label" for="features">What features would you like to see on the new product?</label>
+            <textarea id="features" name="features" rows="4"></textarea>
+        </div>
+
+        <!-- 8. Please rate your level of agreement... -->
+        <div class="form-group">
+            <label class="field-label">Please rate your level of agreement with the following statements.</label>
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Strongly Disagree</th>
+                        <th>Disagree</th>
+                        <th>Neutral</th>
+                        <th>Agree</th>
+                        <th>Strongly Agree</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Our products are priced fairly.</td>
+                        <td><input type="radio" name="fair_price" value="1"></td>
+                        <td><input type="radio" name="fair_price" value="2"></td>
+                        <td><input type="radio" name="fair_price" value="3"></td>
+                        <td><input type="radio" name="fair_price" value="4"></td>
+                        <td><input type="radio" name="fair_price" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td>Our products are high quality.</td>
+                        <td><input type="radio" name="quality" value="1"></td>
+                        <td><input type="radio" name="quality" value="2"></td>
+                        <td><input type="radio" name="quality" value="3"></td>
+                        <td><input type="radio" name="quality" value="4"></td>
+                        <td><input type="radio" name="quality" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td>You would recommend our product to a friend or colleague.</td>
+                        <td><input type="radio" name="recommend" value="1"></td>
+                        <td><input type="radio" name="recommend" value="2"></td>
+                        <td><input type="radio" name="recommend" value="3"></td>
+                        <td><input type="radio" name="recommend" value="4"></td>
+                        <td><input type="radio" name="recommend" value="5"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit</button>
+    </form>
+</div>
 
 </body>
 </html>
