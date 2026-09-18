@@ -3,79 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bố Cục 3 Cột Bootstrap Grid & Flexbox</title>
+    <title>Đăng Ký Tài Khoản</title>
     <!-- Nhúng Bootstrap 5.3.0 CSS từ CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Nhúng Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-light">
+<body class="bg-light min-vh-100 d-flex align-items-center py-5">
 
-    <!-- Header tiêu đề bài thực hành -->
-    <header class="bg-primary text-white py-4 shadow-sm text-center">
-        <div class="container">
-            <h1 class="h3 fw-bold mb-1">Thực Hành Bootstrap Grid &amp; Flexbox</h1>
-            <p class="mb-0 text-white-50">Kết hợp Grid 3 cột, Flexbox căn giữa, Spacing và Display Property</p>
-        </div>
-    </header>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-10">
+                <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                    <div class="row g-0">
+                        
+                        <!-- Cột 1: Carousel giới thiệu các lợi ích của dịch vụ (Ẩn trên màn hình rất nhỏ hoặc thu gọn trên desktop) -->
+                        <div class="col-lg-6 d-none d-lg-block bg-dark">
+                            <div id="benefitCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                                <!-- Chỉ số trang Carousel -->
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#benefitCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Lợi ích 1"></button>
+                                    <button type="button" data-bs-target="#benefitCarousel" data-bs-slide-to="1" aria-label="Lợi ích 2"></button>
+                                    <button type="button" data-bs-target="#benefitCarousel" data-bs-slide-to="2" aria-label="Lợi ích 3"></button>
+                                </div>
 
-    <!-- Bước 2: Áp dụng Margin & Padding để điều chỉnh khoảng cách -->
-    <section class="container my-5 py-3 bg-white rounded shadow-sm">
-        <h3 class="text-center text-primary fw-bold mb-2">Khoảng cách được điều chỉnh bằng Margin &amp; Padding</h3>
-        <p class="text-center text-muted mb-0">Khung chứa này áp dụng class <code>my-5</code> (margin dọc cấp 5) và <code>py-3</code> (padding dọc cấp 3).</p>
-    </section>
+                                <!-- Danh sách slide giới thiệu -->
+                                <div class="carousel-inner h-100">
+                                    <!-- Slide 1 -->
+                                    <div class="carousel-item active h-100" data-bs-interval="4500">
+                                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" class="d-block w-100 h-100 object-fit-cover opacity-50" alt="Bảo mật tối ưu">
+                                        <div class="carousel-caption d-flex flex-column justify-content-end text-start pb-5">
+                                            <div class="bg-dark bg-opacity-75 p-3 rounded-3">
+                                                <h4 class="fw-bold text-primary"><i class="fas fa-shield-halved me-2"></i>Bảo Mật Tuyệt Đối</h4>
+                                                <p class="small text-white-50 mb-0">Dữ liệu cá nhân của bạn được mã hóa an toàn theo chuẩn quốc tế cao nhất.</p>
+                                            </div>
+                                        </div>
+                                    </div>
 
-    <!-- Bước 1: Cấu trúc Grid với 3 cột kết hợp Flexbox căn giữa -->
-    <section class="container mb-5">
-        <h4 class="fw-bold text-secondary mb-3">1. Bố cục 3 cột (Grid &amp; Flexbox)</h4>
-        <div class="row g-3">
-            <!-- Cột 1 -->
-            <div class="col-12 col-md-4">
-                <div class="col-box d-flex justify-content-center align-items-center bg-light border p-4 rounded text-center">
-                    <div>
-                        <h5 class="fw-bold text-dark mb-1">Phần 1</h5>
-                        <p class="text-muted small mb-0">Căn giữa bằng Flexbox (d-flex)</p>
+                                    <!-- Slide 2 -->
+                                    <div class="carousel-item h-100" data-bs-interval="4500">
+                                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" class="d-block w-100 h-100 object-fit-cover opacity-50" alt="Đồng bộ linh hoạt">
+                                        <div class="carousel-caption d-flex flex-column justify-content-end text-start pb-5">
+                                            <div class="bg-dark bg-opacity-75 p-3 rounded-3">
+                                                <h4 class="fw-bold text-info"><i class="fas fa-bolt me-2"></i>Tốc Độ Vượt Trội</h4>
+                                                <p class="small text-white-50 mb-0">Trải nghiệm nền tảng điện toán đám mây với hiệu năng xử lý tức thì.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Slide 3 -->
+                                    <div class="carousel-item h-100" data-bs-interval="4500">
+                                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" class="d-block w-100 h-100 object-fit-cover opacity-50" alt="Hỗ trợ 24/7">
+                                        <div class="carousel-caption d-flex flex-column justify-content-end text-start pb-5">
+                                            <div class="bg-dark bg-opacity-75 p-3 rounded-3">
+                                                <h4 class="fw-bold text-warning"><i class="fas fa-headset me-2"></i>Hỗ Trợ 24/7</h4>
+                                                <p class="small text-white-50 mb-0">Đội ngũ kỹ thuật viên tận tâm luôn sẵn sàng giải đáp thắc mắc mọi thời điểm.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Nút chuyển slide -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#benefitCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Trước</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#benefitCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Tiếp</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Cột 2: Form Đăng Ký Người Dùng -->
+                        <div class="col-12 col-lg-6 p-4 p-md-5 bg-white">
+                            <div class="text-center mb-4">
+                                <h2 class="fw-bold text-dark">Tạo Tài Khoản</h2>
+                                <p class="text-muted small">Khám phá toàn bộ lợi ích khi trở thành thành viên</p>
+                            </div>
+
+                            <form action="#" method="POST">
+                                <!-- 1. Họ và tên -->
+                                <div class="mb-3">
+                                    <label for="fullName" class="form-label fw-semibold">Họ và tên</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="fas fa-user text-secondary"></i></span>
+                                        <input type="text" class="form-control" id="fullName" placeholder="Nhập đầy đủ họ và tên..." required>
+                                    </div>
+                                </div>
+
+                                <!-- 2. Email -->
+                                <div class="mb-3">
+                                    <label for="userEmail" class="form-label fw-semibold">Địa chỉ Email</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="fas fa-envelope text-secondary"></i></span>
+                                        <input type="email" class="form-control" id="userEmail" placeholder="example@domain.com" required>
+                                    </div>
+                                </div>
+
+                                <!-- 3. Mật khẩu -->
+                                <div class="mb-3">
+                                    <label for="password" class="form-label fw-semibold">Mật khẩu</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="fas fa-lock text-secondary"></i></span>
+                                        <input type="password" class="form-control" id="password" placeholder="Tối thiểu 8 ký tự..." required>
+                                    </div>
+                                </div>
+
+                                <!-- 4. Xác nhận mật khẩu -->
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label fw-semibold">Xác nhận mật khẩu</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light"><i class="fas fa-check-double text-secondary"></i></span>
+                                        <input type="password" class="form-control" id="confirmPassword" placeholder="Nhập lại mật khẩu..." required>
+                                    </div>
+                                </div>
+
+                                <!-- Đồng ý điều khoản -->
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                                    <label class="form-check-label text-muted small" for="termsCheck">
+                                        Tôi đồng ý với <a href="#" class="text-primary text-decoration-none">Điều khoản dịch vụ</a> và <a href="#" class="text-primary text-decoration-none">Chính sách bảo mật</a>
+                                    </label>
+                                </div>
+
+                                <!-- Nút Đăng ký -->
+                                <div class="d-grid mb-3">
+                                    <button type="submit" class="btn btn-primary btn-lg fw-semibold shadow-sm">
+                                        <i class="fas fa-user-plus me-2"></i>Đăng Ký Ngay
+                                    </button>
+                                </div>
+
+                                <div class="text-center">
+                                    <p class="small text-muted mb-0">Đã có tài khoản? <a href="#" class="text-primary text-decoration-none fw-semibold">Đăng nhập</a></p>
+                                </div>
+                            </form>
+                        </div>
+
                     </div>
                 </div>
             </div>
-
-            <!-- Cột 2 -->
-            <div class="col-12 col-md-4">
-                <div class="col-box d-flex justify-content-center align-items-center bg-secondary text-white p-4 rounded text-center shadow-sm">
-                    <div>
-                        <h5 class="fw-bold mb-1">Phần 2</h5>
-                        <p class="text-white-50 small mb-0">Nền tối bg-secondary</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cột 3 -->
-            <div class="col-12 col-md-4">
-                <div class="col-box d-flex justify-content-center align-items-center bg-light border p-4 rounded text-center">
-                    <div>
-                        <h5 class="fw-bold text-dark mb-1">Phần 3</h5>
-                        <p class="text-muted small mb-0">Căn giữa bằng Flexbox (d-flex)</p>
-                    </div>
-                </div>
-            </div>
         </div>
-    </section>
-
-    <!-- Bước 3: Sử dụng Display Property để ẩn / hiện nội dung theo kích thước màn hình -->
-    <section class="container mb-5">
-        <h4 class="fw-bold text-secondary mb-3">2. Ẩn / hiện theo kích thước màn hình (Display Property)</h4>
-        
-        <!-- Khối này chỉ hiển thị trên màn hình >= 768px (Desktop / Tablet ngang) -->
-        <div class="d-none d-md-block bg-warning text-dark text-center p-4 rounded shadow-sm mb-3">
-            <h5 class="fw-bold mb-1"><i class="bi bi-display"></i> Chế độ Desktop / Tablet (>= 768px)</h5>
-            <p class="mb-0">Nội dung này <strong>chỉ hiển thị</strong> khi chiều rộng màn hình từ 768px trở lên (áp dụng <code>d-none d-md-block</code>).</p>
-        </div>
-
-        <!-- Khối này chỉ hiển thị trên màn hình < 768px (Mobile) -->
-        <div class="d-block d-md-none bg-info text-white text-center p-4 rounded shadow-sm">
-            <h5 class="fw-bold mb-1">Chế độ Mobile (< 768px)</h5>
-            <p class="mb-0">Nội dung này <strong>chỉ hiển thị</strong> trên thiết bị di động nhỏ gọn (áp dụng <code>d-block d-md-none</code>).</p>
-        </div>
-    </section>
+    </div>
 
     <!-- Nhúng Bootstrap JavaScript Bundle từ CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
