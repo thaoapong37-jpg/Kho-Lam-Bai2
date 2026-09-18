@@ -3,30 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thực hành Mô hình hộp (CSS Box Model)</title>
+    <title>Thực hành Sử dụng Box Model 2</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f6f8;
-            padding: 20px;
+            background-color: #f9f9f9;
+            padding-top: 50px;
         }
 
-        /* Minh họa CSS Box Model: Tổng chiều rộng = 200 + 70 + 40 + 50 = 360px */
+        /* Khối div cha bên ngoài: bo tròn 50%, căn giữa với margin: auto */
         div {
-            margin: 25px;
+            margin: auto;
             padding: 35px;
-            width: 200px;
-            background-color: lightseagreen;
-            border: 20px dashed indianred;
-            color: #ffffff;
-            font-weight: bold;
+            width: 80px;
+            box-shadow: inset 0 0 22px indianred;
+            border-radius: 50%;
+        }
+
+        /* Khối div con lồng bên trong: padding dưới 100px tạo hình trụ bo góc nhẹ */
+        div > div {
+            padding: 0 0px 100px 0px;
+            border-radius: 3%;
+            box-shadow: inset 0 0 22px seagreen;
         }
     </style>
 </head>
 <body>
 
     <div>
-        Content demo box<br/>
+        <div></div>
     </div>
 
 </body>
