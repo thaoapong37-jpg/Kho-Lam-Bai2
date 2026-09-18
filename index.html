@@ -3,44 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Layout</title>
+    <title>Bố cục Responsive với Flexbox</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
+    <div class="site-container">
         <!-- 1. Header -->
         <header class="header">
-            <h1>Header - Website Layout</h1>
+            <h1>Tech Daily News</h1>
+            <p>Trang tin tức và chia sẻ kiến thức công nghệ hiện đại</p>
         </header>
 
         <!-- 2. Navigation -->
-        <nav class="nav">
+        <nav class="navigation">
             <a href="#">Trang chủ</a>
-            <a href="#">Giới thiệu</a>
-            <a href="#">Dịch vụ</a>
+            <a href="#">Công nghệ</a>
+            <a href="#">Lập trình</a>
+            <a href="#">Thiết kế</a>
             <a href="#">Liên hệ</a>
         </nav>
 
-        <!-- Khung chứa nội dung chính và sidebar -->
-        <div class="main-container">
+        <!-- Khung chứa thân trang gồm Nội dung chính & Sidebar -->
+        <div class="content-wrapper">
             <!-- 3. Main Content -->
-            <main class="content">
-                <h2>Nội dung chính (Main Content)</h2>
-                <p>Khu vực này sử dụng <code>flex: 3</code> để tự động mở rộng và chiếm 3 phần không gian ngang khả dụng trên màn hình máy tính.</p>
-                <p>Flexbox giúp cân đối tỷ lệ các cột mà không cần tính toán phần trăm cứng nhắc hay xử lý float/clear phức tạp.</p>
+            <main class="main-content">
+                <h2>Lợi ích của CSS Flexbox trong thiết kế Web Responsive</h2>
+                <p>CSS Flexbox (Flexible Box Layout) giúp phân bổ không gian đồng đều giữa các phần tử trong khung chứa và mang lại khả năng căn chỉnh linh hoạt vượt trội theo cả chiều dọc lẫn chiều ngang.</p>
+                <p>Khác với các phương pháp cũ như <code>float</code> hay <code>inline-block</code>, Flexbox tự động co giãn theo tỷ lệ đặt trước (<code>flex-grow</code>, <code>flex-shrink</code>, <code>flex-basis</code>), giúp xây dựng bố cục thích ứng đa màn hình dễ dàng hơn rất nhiều.</p>
             </main>
 
             <!-- 4. Sidebar -->
             <aside class="sidebar">
-                <h3>Sidebar</h3>
-                <p>Khu vực thanh bên sử dụng <code>flex: 1</code> để chiếm 1 phần không gian, thích hợp cho danh mục liên kết hoặc tin tức phụ.</p>
+                <h3>Bài viết xem nhiều</h3>
+                <ul>
+                    <li><a href="#">Làm chủ Flexbox trong 30 phút</a></li>
+                    <li><a href="#">Responsive Web Design từ cơ bản đến nâng cao</a></li>
+                    <li><a href="#">Xu hướng UI/UX năm 2026</a></li>
+                </ul>
             </aside>
         </div>
 
         <!-- 5. Footer -->
         <footer class="footer">
-            <p>&copy; 2026 Flexbox Layout Practice. Footer cố định phía cuối trang.</p>
+            <p>&copy; 2026 Tech Daily News. Thiết kế hoàn toàn bằng CSS Flexbox.</p>
         </footer>
     </div>
 
