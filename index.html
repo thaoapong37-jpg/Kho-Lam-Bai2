@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý Overflow</title>
+    <title>Bố cục bằng Float</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h2>Thực hành Quản lý tràn nội dung (CSS Overflow)</h2>
-
-    <!-- Khối div giới hạn chiều rộng 300px và chiều cao 100px -->
-    <div class="overflow-box">
-        Đây là một đoạn văn bản rất dài mà chúng ta sẽ kiểm tra cách <code>overflow</code> hoạt động khi nội dung vượt quá kích thước của phần tử. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies nunc in mauris pharetra, a ultricies justo fermentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    <div class="container">
+        <div class="left-column">
+            <h2>Cột bên trái chứa nội dung chính</h2>
+            <p>Khu vực này chiếm 60% độ rộng của khung chứa và được căn lề trôi sang trái bằng thuộc tính <code>float: left</code>.</p>
+        </div>
+        <div class="right-column">
+            <h2>Sidebar</h2>
+            <p>Khu vực này chiếm 38% độ rộng và trôi sang phải với <code>float: right</code>.</p>
+        </div>
     </div>
 
 </body>
