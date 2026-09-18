@@ -3,30 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bố cục với Float và Overflow</title>
+    <title>Landing Page Responsive</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Bố cục trang với float và overflow</h1>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="logo">MyBrand</div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#services">Dịch vụ</a></li>
+                <li><a href="#testimonials">Đánh giá</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Khung chứa 2 cột sử dụng float -->
-    <div class="container">
-        <div class="left-column">
-            <h3>Nội dung bên trái</h3>
-            <p>Cột này chiếm 50% chiều rộng và được căn lề float sang trái. Thuộc tính overflow: hidden ở khung cha giúp bao bọc trọn vẹn chiều cao của hai cột float.</p>
-        </div>
-        <div class="right-column">
-            <h3>Nội dung bên phải</h3>
-            <p>Cột này chiếm 48% chiều rộng và dạt sang phải nhờ thuộc tính float: right.</p>
-        </div>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Chào mừng đến với MyBrand</h1>
+        <p>Giải pháp số 1 cho sự phát triển doanh nghiệp của bạn</p>
+        <a href="#services" class="btn">Tìm hiểu thêm</a>
+    </section>
 
-    <!-- Khối kiểm tra overflow xuất hiện thanh cuộn -->
-    <h2>Khối kiểm tra Overflow</h2>
-    <div class="overflow-box">
-        Đây là nội dung rất dài mà chúng ta kiểm tra overflow. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies nunc in mauris pharetra, a ultricies justo fermentum. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </div>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Dịch vụ của chúng tôi</h2>
+        <div class="service-container">
+            <div class="service">
+                <h3>Thiết kế web</h3>
+                <p>Giao diện hiện đại, tối ưu chuẩn SEO và chuẩn UI/UX.</p>
+            </div>
+            <div class="service">
+                <h3>Phát triển phần mềm</h3>
+                <p>Hệ thống ổn định, bảo mật cao và vận hành linh hoạt.</p>
+            </div>
+            <div class="service">
+                <h3>Marketing số</h3>
+                <p>Tiếp cận đúng khách hàng mục tiêu và gia tăng doanh số.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>Khách hàng nói gì?</h2>
+        <div class="testimonial">"Dịch vụ tuyệt vời, hỗ trợ kỹ thuật rất nhanh chóng!" - Khách hàng A</div>
+        <div class="testimonial">"Tôi rất hài lòng với giải pháp từ MyBrand, hiệu quả rõ rệt." - Khách hàng B</div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <p>&copy; 2026 MyBrand. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
