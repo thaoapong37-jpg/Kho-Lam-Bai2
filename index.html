@@ -1,67 +1,83 @@
-[Thực hành] Xây dựng Trang Chủ với Bootstrap
-Mục tiêu:
-Luyện tập sử dụng Bootstrap để tạo bố cục linh hoạt, ứng dụng Display Property, Margin & Padding, Flexbox, Carousel, Font Awesome, và Form.
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bố Cục 3 Cột Bootstrap Grid & Flexbox</title>
+    <!-- Nhúng Bootstrap 5.3.0 CSS từ CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
 
-Bước 1: Cài đặt Bootstrap
-Bước 2: Tạo Navbar với Font Awesome
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#"><i class="fas fa-home"></i> MyWebsite</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-            </ul>
+    <!-- Header tiêu đề bài thực hành -->
+    <header class="bg-primary text-white py-4 shadow-sm text-center">
+        <div class="container">
+            <h1 class="h3 fw-bold mb-1">Thực Hành Bootstrap Grid &amp; Flexbox</h1>
+            <p class="mb-0 text-white-50">Kết hợp Grid 3 cột, Flexbox căn giữa, Spacing và Display Property</p>
         </div>
-    </div>
-</nav>
-📌 Sử dụng Font Awesome để thêm icon vào Navbar.
+    </header>
 
-Bước 3: Tạo Hero Section với Carousel
-<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="image1.jpg" class="d-block w-100" alt="Slide 1">
+    <!-- Bước 2: Áp dụng Margin & Padding để điều chỉnh khoảng cách -->
+    <section class="container my-5 py-3 bg-white rounded shadow-sm">
+        <h3 class="text-center text-primary fw-bold mb-2">Khoảng cách được điều chỉnh bằng Margin &amp; Padding</h3>
+        <p class="text-center text-muted mb-0">Khung chứa này áp dụng class <code>my-5</code> (margin dọc cấp 5) và <code>py-3</code> (padding dọc cấp 3).</p>
+    </section>
+
+    <!-- Bước 1: Cấu trúc Grid với 3 cột kết hợp Flexbox căn giữa -->
+    <section class="container mb-5">
+        <h4 class="fw-bold text-secondary mb-3">1. Bố cục 3 cột (Grid &amp; Flexbox)</h4>
+        <div class="row g-3">
+            <!-- Cột 1 -->
+            <div class="col-12 col-md-4">
+                <div class="col-box d-flex justify-content-center align-items-center bg-light border p-4 rounded text-center">
+                    <div>
+                        <h5 class="fw-bold text-dark mb-1">Phần 1</h5>
+                        <p class="text-muted small mb-0">Căn giữa bằng Flexbox (d-flex)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cột 2 -->
+            <div class="col-12 col-md-4">
+                <div class="col-box d-flex justify-content-center align-items-center bg-secondary text-white p-4 rounded text-center shadow-sm">
+                    <div>
+                        <h5 class="fw-bold mb-1">Phần 2</h5>
+                        <p class="text-white-50 small mb-0">Nền tối bg-secondary</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cột 3 -->
+            <div class="col-12 col-md-4">
+                <div class="col-box d-flex justify-content-center align-items-center bg-light border p-4 rounded text-center">
+                    <div>
+                        <h5 class="fw-bold text-dark mb-1">Phần 3</h5>
+                        <p class="text-muted small mb-0">Căn giữa bằng Flexbox (d-flex)</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="carousel-item">
-            <img src="image2.jpg" class="d-block w-100" alt="Slide 2">
+    </section>
+
+    <!-- Bước 3: Sử dụng Display Property để ẩn / hiện nội dung theo kích thước màn hình -->
+    <section class="container mb-5">
+        <h4 class="fw-bold text-secondary mb-3">2. Ẩn / hiện theo kích thước màn hình (Display Property)</h4>
+        
+        <!-- Khối này chỉ hiển thị trên màn hình >= 768px (Desktop / Tablet ngang) -->
+        <div class="d-none d-md-block bg-warning text-dark text-center p-4 rounded shadow-sm mb-3">
+            <h5 class="fw-bold mb-1"><i class="bi bi-display"></i> Chế độ Desktop / Tablet (>= 768px)</h5>
+            <p class="mb-0">Nội dung này <strong>chỉ hiển thị</strong> khi chiều rộng màn hình từ 768px trở lên (áp dụng <code>d-none d-md-block</code>).</p>
         </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </button>
-</div>
-📌 Ứng dụng Carousel để tạo slideshow hình ảnh.
 
-Bước 4: Thêm Section với Flexbox
-<div class="d-flex justify-content-center align-items-center bg-light py-5">
-    <h2>Chào mừng đến với trang web của chúng tôi!</h2>
-</div>
-📌 Sử dụng Flexbox để căn giữa nội dung.
+        <!-- Khối này chỉ hiển thị trên màn hình < 768px (Mobile) -->
+        <div class="d-block d-md-none bg-info text-white text-center p-4 rounded shadow-sm">
+            <h5 class="fw-bold mb-1">Chế độ Mobile (< 768px)</h5>
+            <p class="mb-0">Nội dung này <strong>chỉ hiển thị</strong> trên thiết bị di động nhỏ gọn (áp dụng <code>d-block d-md-none</code>).</p>
+        </div>
+    </section>
 
-Bước 5: Tạo Contact Form với Bootstrap Form
-<form class="container mt-4">
-    <div class="mb-3">
-        <label for="name" class="form-label">Tên của bạn</label>
-        <input type="text" class="form-control" id="name" placeholder="Nhập tên">
-    </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Nhập email">
-    </div>
-    <button type="submit" class="btn btn-primary">Gửi</button>
-</form>
-📌 Ứng dụng Bootstrap Form để tạo form liên hệ.
-
-Link:
-Nhập đường dẫn (URL)...
-
-Nộp bài
+    <!-- Nhúng Bootstrap JavaScript Bundle từ CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
