@@ -1,170 +1,87 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f1f5f9;
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+    padding: 25px;
+    color: #1e293b;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #0f172a;
+}
+
+h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
     color: #334155;
-    line-height: 1.6;
 }
 
-/* Khung lưới chính cho Desktop */
-.grid-layout {
-    display: grid;
-    grid-template-columns: 1fr 280px; /* Nội dung chính linh hoạt, Sidebar cố định 280px */
-    grid-template-rows: auto auto 1fr auto;
-    grid-template-areas:
-        "header  header"
-        "nav     nav"
-        "main    sidebar"
-        "footer  footer";
-    min-height: 100vh;
-    gap: 15px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px;
+section {
+    margin-bottom: 30px;
 }
 
-/* 1. Header */
-.header {
-    grid-area: header;
-    background-color: #1e3a8a;
-    color: #ffffff;
-    padding: 25px 20px;
-    text-align: center;
-    border-radius: 6px;
-}
-
-.header h1 {
-    font-size: 26px;
-    margin-bottom: 6px;
-}
-
-/* 2. Navigation */
-.navigation {
-    grid-area: nav;
-    background-color: #0f172a;
-    border-radius: 6px;
-}
-
-.navigation ul {
-    list-style: none;
+/* Khung bọc giới hạn chiều rộng 420px để dễ quan sát hiện tượng tràn phần tử */
+.flex-container {
     display: flex;
+    width: 420px;
+    background-color: #cbd5e1;
+    padding: 10px;
+    border-radius: 6px;
+    gap: 10px;
+}
+
+/* Kích thước mỗi khối con là 100px */
+.item {
+    width: 100px;
+    height: 60px;
+    background-color: #0284c7;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+/* 1. Không bọc dòng: các phần tử cố ép trên 1 hàng (tràn khung) */
+.wrap-nowrap {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+/* 2. Cho phép ngắt dòng khi vượt quá 420px */
+.wrap-wrap {
     flex-wrap: wrap;
 }
 
-.navigation ul li a {
-    display: block;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 12px 20px;
-    font-weight: bold;
-    font-size: 15px;
-    transition: background-color 0.2s ease;
+.item-green {
+    background-color: #16a34a;
 }
 
-.navigation ul li a:hover {
-    background-color: #2563eb;
-    border-radius: 4px;
+/* 3. Ngắt dòng theo chiều ngược từ dưới lên trên */
+.wrap-reverse {
+    flex-wrap: wrap-reverse;
 }
 
-/* 3. Main Content */
-.main-content {
-    grid-area: main;
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+.item-orange {
+    background-color: #ea580c;
 }
 
-.main-content h2 {
-    color: #0f172a;
-    margin-bottom: 15px;
+/* 4. Giá trị ban đầu mặc định (nowrap) */
+.wrap-initial {
+    flex-wrap: initial;
+    overflow-x: auto;
 }
 
-.main-content p {
-    margin-bottom: 12px;
-}
-
-/* 4. Sidebar */
-.sidebar {
-    grid-area: sidebar;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.sidebar h3 {
-    color: #1e3a8a;
-    margin-bottom: 12px;
-    border-bottom: 2px solid #2563eb;
-    padding-bottom: 5px;
-}
-
-.sidebar ul {
-    list-style-type: square;
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-
-.sidebar ul li {
-    margin-bottom: 8px;
-}
-
-.sidebar ul li a {
-    color: #0284c7;
-    text-decoration: none;
-}
-
-.sidebar ul li a:hover {
-    text-decoration: underline;
-}
-
-.ads-box {
-    background-color: #e2e8f0;
-    padding: 20px;
-    text-align: center;
-    border-radius: 4px;
-    font-size: 13px;
-    color: #64748b;
-}
-
-/* 5. Footer */
-.footer {
-    grid-area: footer;
-    background-color: #1e293b;
-    color: #94a3b8;
-    text-align: center;
-    padding: 18px 15px;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-/* Yêu cầu Responsive cho Mobile (Màn hình dưới 768px: Xếp dọc toàn bộ phần tử) */
-@media (max-width: 768px) {
-    .grid-layout {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "header"
-            "nav"
-            "main"
-            "sidebar"
-            "footer";
-        padding: 10px;
-        gap: 10px;
-    }
-
-    .navigation ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .navigation ul li a {
-        border-bottom: 1px solid #1e293b;
-    }
+.item-purple {
+    background-color: #7c3aed;
 }
