@@ -1,63 +1,111 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8fafc;
-    padding: 25px;
-    color: #1e293b;
+    color: #333333;
 }
 
-h1 {
+/* Khung lưới chính áp dụng Grid Template Areas */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header header"
+        "sidebar content"
+        "footer footer";
+    min-height: 100vh;
+}
+
+/* 1. Header */
+.header {
+    grid-area: header;
+    background-color: #1e293b;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.header h1 {
     font-size: 24px;
-    margin-bottom: 25px;
+}
+
+/* 2. Sidebar */
+.sidebar {
+    grid-area: sidebar;
+    background-color: #f1f5f9;
+    padding: 25px 20px;
+    border-right: 1px solid #e2e8f0;
+}
+
+.sidebar h3 {
+    margin-bottom: 15px;
     color: #0f172a;
 }
 
-h2 {
-    font-size: 16px;
-    margin-bottom: 12px;
-    color: #334155;
+.sidebar ul {
+    list-style: none;
 }
 
-section {
-    margin-bottom: 35px;
+.sidebar ul li {
+    margin-bottom: 10px;
 }
 
-/* Khung lưới chung gồm 3 cột bằng nhau */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background-color: #cbd5e1;
-    padding: 15px;
-    border-radius: 6px;
-}
-
-.grid-item {
-    background-color: #0284c7;
-    color: #ffffff;
-    padding: 20px;
-    text-align: center;
-    font-size: 18px;
+.sidebar ul li a {
+    text-decoration: none;
+    color: #0284c7;
     font-weight: bold;
-    border-radius: 4px;
 }
 
-/* Ví dụ 1: Khoảng cách giữa hàng và cột đều là 15px */
-.gap-single {
-    grid-gap: 15px;
-    gap: 15px; /* Cú pháp chuẩn mới trong CSS3 */
+.sidebar ul li a:hover {
+    text-decoration: underline;
 }
 
-/* Ví dụ 2: Khoảng cách hàng là 30px, khoảng cách cột là 10px */
-.gap-double {
-    grid-gap: 30px 10px;
-    gap: 30px 10px;
+/* 3. Nội dung chính (Content) */
+.content {
+    grid-area: content;
+    padding: 30px;
+    background-color: #ffffff;
+    line-height: 1.6;
 }
 
-.item-orange {
-    background-color: #ea580c;
+.content h2 {
+    color: #0f172a;
+    margin-bottom: 15px;
+}
+
+.content p {
+    margin-bottom: 12px;
+}
+
+/* 4. Footer */
+.footer {
+    grid-area: footer;
+    background-color: #1e293b;
+    color: #94a3b8;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* Responsive cho thiết bị di động (dưới 768px) */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas: 
+            "header"
+            "sidebar"
+            "content"
+            "footer";
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
 }
