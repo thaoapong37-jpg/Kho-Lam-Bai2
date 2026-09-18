@@ -6,115 +6,83 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #333333;
-    line-height: 1.6;
-    background-color: #f9f9f9;
-}
-
-/* Phần Header */
-.header {
-    background-color: #9933cc;
-    color: #ffffff;
+    background-color: #f7f9fb;
     padding: 20px;
-    text-align: center;
+    color: #333;
 }
 
-/* Hàng bọc 3 cột bằng Flexbox */
-.row {
+.gallery-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.gallery-header h2 {
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.gallery-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Khung chứa các ô ảnh dạng Flexbox */
+.gallery-container {
     display: flex;
     flex-wrap: wrap;
-    padding: 15px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Phân chia kích thước cột trên màn hình lớn (Desktop) */
-.col-3 {
-    width: 25%;
-    padding: 15px;
+/* Mặc định cho màn hình lớn (> 700px): Hiển thị 4 ảnh trên một dòng (25% mỗi cột) */
+.gallery-item {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 8px;
 }
 
-.col-6 {
-    width: 50%;
-    padding: 15px;
-}
-
-/* Menu bên trái */
-.menu ul {
-    list-style-type: none;
-}
-
-.menu li {
-    padding: 10px 12px;
-    margin-bottom: 8px;
-    background-color: #33b5e5;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+/* Thẻ bao bọc từng ảnh và mô tả */
+.gallery-card {
+    border: 1px solid #ccc;
+    background-color: #ffffff;
     border-radius: 4px;
-    transition: background-color 0.2s ease;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.menu li:hover {
-    background-color: #0099cc;
+.gallery-card:hover {
+    border-color: #777;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.menu li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
+.gallery-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
     display: block;
 }
 
-/* Nội dung bài viết ở giữa */
-.content h1 {
-    font-size: 26px;
-    margin-bottom: 15px;
-    color: #2c3e50;
-}
-
-.content p {
-    margin-bottom: 12px;
-    font-size: 15px;
-}
-
-/* Khối thông tin bổ sung bên phải */
-.aside {
-    background-color: #33b5e5;
-    padding: 15px;
-    color: #ffffff;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-    border-radius: 4px;
-}
-
-.aside h2 {
-    font-size: 18px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-.aside h2:first-child {
-    margin-top: 0;
-}
-
-.aside p {
-    font-size: 14px;
-    line-height: 1.4;
-}
-
-/* Chân trang */
-.footer {
-    background-color: #0099cc;
-    color: #ffffff;
+.desc {
+    padding: 12px;
     text-align: center;
-    font-size: 14px;
-    padding: 15px;
-    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #444;
 }
 
-/* Xử lý Responsive khi màn hình co nhỏ dưới 768px (Mobile & Tablet) */
-@media (max-width: 768px) {
-    .col-3,
-    .col-6 {
-        width: 100%;
-        padding: 10px 15px;
+/* Mốc 1: Màn hình nhỏ hơn hoặc bằng 700px -> Hiển thị 2 ảnh trên một dòng (50% mỗi cột) */
+@media screen and (max-width: 700px) {
+    .gallery-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+/* Mốc 2: Màn hình nhỏ hơn hoặc bằng 500px -> Hiển thị 1 ảnh trên một dòng (100% mỗi cột) */
+@media screen and (max-width: 500px) {
+    .gallery-item {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
