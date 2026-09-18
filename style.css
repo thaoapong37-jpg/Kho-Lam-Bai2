@@ -1,162 +1,78 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f0f2f5;
-    color: #333333;
-    line-height: 1.6;
-    padding: 20px 0;
-}
-
-/* Khung bọc giới hạn độ rộng toàn trang */
-.layout-container {
-    max-width: 980px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-/* Định dạng thẻ <header> */
-header {
-    background-color: #1e3a8a;
-    color: #ffffff;
-    padding: 30px 20px;
+    font-family: Arial, sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 30px 15px;
+    background-color: #f9fbfd;
 }
 
-header h1 {
-    font-size: 28px;
-    margin-bottom: 6px;
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
 }
 
-header p {
-    font-size: 14px;
-    opacity: 0.9;
-}
-
-/* Định dạng thẻ <nav> */
+/* Thanh điều hướng */
 nav {
-    background-color: #0f172a;
+    margin-bottom: 30px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-nav ul li a {
-    display: block;
-    color: #ffffff;
+nav a {
+    display: inline-block;
+    margin: 0 15px;
     text-decoration: none;
-    padding: 12px 20px;
-    font-size: 14px;
+    color: #333;
     font-weight: bold;
-    transition: background-color 0.2s ease;
-}
-
-nav ul li a:hover {
-    background-color: #2563eb;
-}
-
-/* Khung thân trang chứa Section và Aside */
-.main-wrapper {
-    display: flex;
-    gap: 20px;
-    padding: 25px 20px;
-}
-
-/* Định dạng thẻ <section>: chiếm 68% độ rộng */
-section {
-    flex: 68%;
-}
-
-/* Định dạng thẻ <article> bên trong <section> */
-article {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-}
-
-article:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-}
-
-article h2 {
-    color: #1e293b;
-    font-size: 20px;
-    margin-bottom: 6px;
-}
-
-.post-meta {
-    font-size: 12px;
-    color: #64748b;
-    margin-bottom: 10px;
-}
-
-/* Định dạng thẻ <aside>: chiếm 32% độ rộng làm Sidebar */
-aside {
-    flex: 32%;
-    background-color: #f8fafc;
-    border-left: 1px solid #e2e8f0;
-    padding: 15px 20px;
+    padding: 6px 12px;
     border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-aside h3 {
-    font-size: 16px;
-    color: #1e3a8a;
-    border-bottom: 2px solid #2563eb;
-    padding-bottom: 5px;
-    margin-bottom: 12px;
-    margin-top: 10px;
+nav a:hover {
+    background-color: #3498db;
+    color: #ffffff;
 }
 
-aside h3:first-of-type {
+/* Khối nội dung chính */
+section {
+    max-width: 960px;
+    margin: 20px auto 40px auto;
+}
+
+/* 3 cột hiển thị ngang hàng với display: inline-block */
+.box {
+    display: inline-block;
+    width: 28%;
+    max-width: 280px;
+    padding: 20px 15px;
+    background-color: lightblue;
+    margin: 10px;
+    border-radius: 6px;
+    vertical-align: top;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+.box h3 {
     margin-top: 0;
+    color: #1e3a8a;
 }
 
-aside ul {
-    list-style-type: square;
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-
-aside ul li {
-    margin-bottom: 8px;
-}
-
-aside ul li a {
-    color: #334155;
-    text-decoration: none;
+.box p {
+    margin-bottom: 0;
     font-size: 14px;
+    color: #334155;
+    line-height: 1.5;
 }
 
-aside ul li a:hover {
-    color: #2563eb;
-    text-decoration: underline;
-}
-
-aside p {
-    font-size: 13px;
-    color: #475569;
-}
-
-/* Định dạng thẻ <footer> */
+/* Chân trang */
 footer {
-    background-color: #0f172a;
-    color: #94a3b8;
-    text-align: center;
-    padding: 18px 15px;
-    font-size: 13px;
-    border-top: 1px solid #334155;
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+    color: #64748b;
+    font-size: 14px;
 }
