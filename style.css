@@ -1,85 +1,75 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 25px;
+    color: #333333;
 }
 
-/* Thanh điều hướng chính */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 15px 25px;
-    color: white;
-    position: relative;
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 1px;
+h2 {
+    color: #34495e;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
+/* 1. Khung bọc 2 cột float: dùng overflow: hidden để tránh sụp đổ chiều cao */
+.container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.nav-links li {
-    margin: 0 15px;
+/* 2. Cột trái chiếm 50%, float sang trái */
+.left-column {
+    width: 50%;
+    float: left;
+    background-color: lightgray;
+    padding: 20px;
+    min-height: 130px;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 17px;
-    transition: color 0.2s ease;
+/* 3. Cột phải chiếm 48%, float sang phải */
+.right-column {
+    width: 48%;
+    float: right;
+    background-color: lightgreen;
+    padding: 20px;
+    min-height: 130px;
 }
 
-.nav-links a:hover {
-    color: #4CAF50;
+.left-column h3, 
+.right-column h3 {
+    margin-top: 0;
+    color: #2c3e50;
 }
 
-/* Biểu tượng hamburger menu (mặc định ẩn trên màn hình lớn) */
-.menu-icon {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
+.left-column p, 
+.right-column p {
+    margin-bottom: 0;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-/* Responsive cho màn hình di động (dưới 768px) */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Ẩn menu mặc định trên mobile */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: #333;
-        width: 100%;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Hiển thị danh sách khi người dùng bấm vào nút ☰ */
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        padding: 15px 0;
-        border-top: 1px solid #444;
-        margin: 0;
-    }
-
-    .menu-icon {
-        display: block; /* Hiện nút ☰ trên mobile */
-    }
+/* 4. Khối giới hạn kích thước có overflow: auto tạo thanh cuộn */
+.overflow-box {
+    width: 300px;
+    height: 100px;
+    background-color: lightcoral;
+    padding: 12px;
+    overflow: auto;
+    border-radius: 4px;
+    line-height: 1.5;
+    color: #ffffff;
+    font-size: 14px;
 }
