@@ -1,4 +1,9 @@
-/* Tùy chỉnh bổ sung ngoài Bootstrap nếu cần */
-body {
-    background-color: #f8f9fa;
+/* Hiệu ứng nổi nhẹ khi di chuột vào các thẻ Card dịch vụ */
+.card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
 }
