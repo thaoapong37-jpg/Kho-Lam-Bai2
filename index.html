@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thực hành Màu nền và Ảnh nền CSS</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Thực hành Mô hình hộp (CSS Box Model)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            padding: 20px;
+        }
+
+        /* Minh họa CSS Box Model: Tổng chiều rộng = 200 + 70 + 40 + 50 = 360px */
+        div {
+            margin: 25px;
+            padding: 35px;
+            width: 200px;
+            background-color: lightseagreen;
+            border: 20px dashed indianred;
+            color: #ffffff;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Tiêu đề h1 theo yêu cầu -->
-    <h1>Chào mừng đến với trang web của tôi</h1>
-
-    <!-- Đoạn văn mô tả trang web -->
-    <p class="intro-text">Đây là trang web giới thiệu các dự án lập trình giao diện web và luyện tập kỹ năng định dạng với CSS background.</p>
-
-    <!-- Khối div chứa nội dung quan trọng có ảnh nền và căn giữa nội dung -->
-    <div class="highlight-box">
-        <div class="overlay-content">
-            <h2>Nội Dung Nổi Bật</h2>
-            <p>Khám phá thế giới lập trình web sáng tạo cùng HTML5 &amp; CSS3.</p>
-            <button type="button">Tìm hiểu thêm</button>
-        </div>
+    <div>
+        Content demo box<br/>
     </div>
 
 </body>
