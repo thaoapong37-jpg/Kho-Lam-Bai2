@@ -1,85 +1,79 @@
-/* 1. ELEMENT SELECTOR: Đổi màu nền của toàn trang */
+/* 1. Thiết lập màu nền (background-color) cho trang web */
 body {
-    background-color: #eef2f7;
-    font-family: Arial, sans-serif;
+    background-color: #e9eff5;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    padding: 40px 20px;
-}
-
-/* 2. CLASS SELECTOR: Định khung trung tâm */
-.card-container {
-    max-width: 550px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 30px 20px;
     text-align: center;
+    color: #333333;
 }
 
-/* 3. GROUPING SELECTOR: Gom nhóm định dạng phông chữ cho h1 và h2 */
-h1, h2 {
-    font-weight: bold;
-    margin-bottom: 12px;
-}
-
-/* ELEMENT SELECTOR: Căn giữa và chọn màu cho tiêu đề h1 */
 h1 {
-    color: #2c3e50;
-    text-align: center;
+    color: #1a365d;
+    margin-bottom: 10px;
 }
 
-h2 {
-    color: #34495e;
-    font-size: 18px;
-    margin-top: 20px;
-}
-
-/* 4. ID SELECTOR: Định dạng đoạn văn mô tả bản thân */
-#my-bio {
-    color: #555555;
-    font-size: 15px;
+.intro-text {
+    font-size: 16px;
+    color: #4a5568;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
     line-height: 1.6;
 }
 
-.hobby-list {
-    list-style-type: square;
-    text-align: left;
-    display: inline-block;
-    padding-left: 20px;
-    margin: 10px 0;
+/* 2. Thêm ảnh nền (background-image) và 3. Căn giữa nội dung trong khối <div> */
+.highlight-box {
+    /* Sử dụng background-image với ảnh phong cảnh chất lượng cao */
+    background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    max-width: 700px;
+    height: 320px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+
+    /* Căn giữa nội dung theo cả chiều dọc và ngang */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* 5. PSEUDO-CLASS SELECTOR (:nth-child): Định dạng danh sách với các màu khác nhau */
-.hobby-list li:nth-child(1) {
-    color: #e67e22; /* Màu cam */
-    font-weight: 600;
+/* Lớp phủ hỗ trợ làm nổi bật chữ trên ảnh nền */
+.overlay-content {
+    background-color: rgba(0, 0, 0, 0.55);
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    width: 80%;
 }
 
-.hobby-list li:nth-child(2) {
-    color: #27ae60; /* Màu xanh lá */
-    font-weight: 600;
+.overlay-content h2 {
+    margin-top: 0;
+    font-size: 24px;
 }
 
-.hobby-list li:nth-child(3) {
-    color: #2980b9; /* Màu xanh dương */
-    font-weight: 600;
+.overlay-content p {
+    font-size: 15px;
+    margin-bottom: 18px;
 }
 
-/* ID SELECTOR: Định kiểu cho nút bấm */
-#btn-submit {
-    background-color: #007bff;
+.overlay-content button {
+    background-color: #008060;
     color: #ffffff;
     border: none;
-    padding: 10px 24px;
-    font-size: 15px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    transition: background-color 0.2s ease;
 }
 
-/* 6. PSEUDO-CLASS SELECTOR (:hover): Hiệu ứng rê chuột vào nút bấm */
-#btn-submit:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+.overlay-content button:hover {
+    background-color: #005c45;
 }
