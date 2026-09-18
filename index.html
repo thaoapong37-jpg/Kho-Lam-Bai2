@@ -3,19 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bố cục bằng Float</title>
+    <title>Thực hành Tạo bố cục cơ bản</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="left-column">
-            <h2>Cột bên trái chứa nội dung chính</h2>
-            <p>Khu vực này chiếm 60% độ rộng của khung chứa và được căn lề trôi sang trái bằng thuộc tính <code>float: left</code>.</p>
+    <!-- Phân vùng bao bọc toàn bộ trang -->
+    <div id="main">
+        <!-- Phân vùng đầu trang: Banner / Logo -->
+        <div id="head">
+            <h1>Logo &amp; Banner Header</h1>
         </div>
-        <div class="right-column">
-            <h2>Sidebar</h2>
-            <p>Khu vực này chiếm 38% độ rộng và trôi sang phải với <code>float: right</code>.</p>
+
+        <!-- Phân vùng menu điều hướng đầu trang -->
+        <div id="head-link">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Students</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Phân vùng cột trái -->
+        <div id="left">
+            <h3>Menu Trái</h3>
+            <ul>
+                <li><a href="#">Liên kết 1</a></li>
+                <li><a href="#">Liên kết 2</a></li>
+                <li><a href="#">Liên kết 3</a></li>
+                <li><a href="#">Liên kết 4</a></li>
+            </ul>
+        </div>
+
+        <!-- Phân vùng nội dung chính ở giữa -->
+        <div id="content">
+            <h2>Nội Dung Chính (Content)</h2>
+            <p>Khu vực hiển thị bài viết nổi bật, slide ảnh và thông tin chi tiết của trang web.</p>
+            <p>Bố cục được chia thành 3 cột cân đối nhờ kỹ thuật <code>float: left</code> và <code>box-sizing</code>.</p>
+        </div>
+
+        <!-- Phân vùng cột phải -->
+        <div id="right">
+            <h3>Cột Phải</h3>
+            <p>Lịch công tác</p>
+            <p>Biểu đồ thống kê</p>
+            <p>Bản đồ vị trí</p>
+        </div>
+
+        <!-- Phân vùng chân trang -->
+        <div id="footer">
+            <p>&copy; 2026 Bản quyền thuộc về Website Cá Nhân. Thiết kế bằng HTML &amp; CSS.</p>
         </div>
     </div>
 
