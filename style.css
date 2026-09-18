@@ -1,15 +1,34 @@
-/* Tinh chỉnh đường viền và trạng thái focus cho các trường nhập liệu */
-.form-control:focus,
-.form-select:focus,
-.form-check-input:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
-}
-
-.card {
-    background-color: #ffffff;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Banner Hero có hình ảnh nền và lớp phủ tối màu để chữ nổi bật */
+.hero-banner {
+    min-height: 70vh;
+    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)),
+                url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+}
+
+/* Kích thước khối icon tính năng */
+.feature-icon {
+    width: 65px;
+    height: 65px;
+}
+
+/* Hiệu ứng nổi nhẹ khi di chuột vào thẻ tính năng */
+.feature-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
+}
+
+.leading-relaxed {
+    line-height: 1.7;
 }
