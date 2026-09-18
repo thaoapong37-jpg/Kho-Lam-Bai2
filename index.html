@@ -2,84 +2,154 @@
 <html lang="vi">
 <head>
     <meta charset="utf-8">
-    <title>Lịch họp công ty</title>
+    <title>Thực hành Danh sách trong CSS</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 30px;
+            background-color: #f7f9fa;
+            padding: 25px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         h1 {
             color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 12px;
         }
 
-        table {
-            width: 100%;
-            max-width: 650px;
-            border-collapse: collapse;
-            margin-top: 15px;
+        h2 {
+            color: #34495e;
+            margin-top: 25px;
+            font-size: 18px;
         }
 
-        th, td {
-            border: 1px solid #333;
-            padding: 10px 14px;
-            text-align: left;
+        /* 1. Thay đổi kiểu đánh dấu với list-style-type */
+        ul.circle-list {
+            list-style-type: circle;
         }
 
-        th {
-            background-color: #f2f4f8;
-            font-weight: bold;
+        ul.square-list {
+            list-style-type: square;
         }
 
-        tr:nth-child(even) {
-            background-color: #fafafa;
+        ol.roman-list {
+            list-style-type: upper-roman;
+        }
+
+        ol.alpha-list {
+            list-style-type: lower-alpha;
+        }
+
+        /* 2. Vị trí đánh dấu với list-style-position */
+        ul.pos-outside {
+            list-style-position: outside;
+            background-color: #eef6fc;
+            padding: 10px 30px;
+        }
+
+        ul.pos-inside {
+            list-style-position: inside;
+            background-color: #fef7e0;
+            padding: 10px 30px;
+        }
+
+        /* 3. Thuộc tính rút gọn list-style */
+        ul.shorthand-list {
+            list-style: square inside;
+        }
+
+        /* 4. Định kiểu màu sắc và giao diện danh sách */
+        ol.colored-list {
+            background: #ffeaa7;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        ol.colored-list li {
+            background: #fab1a0;
+            color: #2d3436;
+            padding: 6px 12px;
+            margin: 6px 0;
+            border-radius: 4px;
+            font-weight: 500;
         }
     </style>
 </head>
 <body>
 
-    <!-- Tiêu đề h1 theo yêu cầu đề bài -->
-    <h1>Lịch họp công ty</h1>
+<div class="container">
+    <h1>Thực Hành: Định Kiểu Danh Sách Bằng CSS</h1>
 
-    <!-- Bảng lịch họp gồm các cột: Ngày, Giờ, Nội dung cuộc họp -->
-    <table>
-        <thead>
-            <tr>
-                <th>Ngày</th>
-                <th>Giờ</th>
-                <th>Nội dung cuộc họp</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Thứ Hai có 2 cuộc họp: Dùng rowspan="2" để gộp cột Ngày -->
-            <tr>
-                <td rowspan="2">Thứ Hai (22/09)</td>
-                <td>09:00 - 10:30</td>
-                <td>Họp giao ban đầu tuần phòng Kỹ thuật</td>
-            </tr>
-            <tr>
-                <td>14:00 - 15:30</td>
-                <td>Họp trao đổi yêu cầu dự án mới</td>
-            </tr>
+    <!-- 1. list-style-type -->
+    <h2>1. Kiểu đánh dấu (list-style-type)</h2>
+    <p><strong>Danh sách không thứ tự kiểu hình tròn rỗng (circle):</strong></p>
+    <ul class="circle-list">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+    </ul>
 
-            <!-- Thứ Tư họp kéo dài nhiều giờ: Dùng colspan="2" để gộp cột Giờ và Nội dung -->
-            <tr>
-                <td>Thứ Tư (24/09)</td>
-                <td colspan="2">Họp chiến lược mở rộng thị trường quý IV (Kéo dài từ 08:30 - 16:30)</td>
-            </tr>
+    <p><strong>Danh sách không thứ tự kiểu hình vuông (square):</strong></p>
+    <ul class="square-list">
+        <li>Cấu trúc trang web</li>
+        <li>Định dạng giao diện</li>
+        <li>Tương tác người dùng</li>
+    </ul>
 
-            <!-- Thứ Sáu có 2 cuộc họp: Tiếp tục áp dụng rowspan="2" -->
-            <tr>
-                <td rowspan="2">Thứ Sáu (26/09)</td>
-                <td>10:00 - 11:30</td>
-                <td>Phỏng vấn ứng viên lập trình viên Front-End</td>
-            </tr>
-            <tr>
-                <td>16:00 - 17:00</td>
-                <td>Tổng kết tuần và báo cáo tiến độ</td>
-            </tr>
-        </tbody>
-    </table>
+    <p><strong>Danh sách có thứ tự chữ số La Mã hoa (upper-roman):</strong></p>
+    <ol class="roman-list">
+        <li>Phần giới thiệu</li>
+        <li>Nội dung chính</li>
+        <li>Tổng kết</li>
+    </ol>
+
+    <p><strong>Danh sách có thứ tự chữ cái thường (lower-alpha):</strong></p>
+    <ol class="alpha-list">
+        <li>Bước chuẩn bị môi trường lập trình</li>
+        <li>Bước viết mã nguồn</li>
+        <li>Bước kiểm thử sản phẩm</li>
+    </ol>
+
+    <!-- 2. list-style-position -->
+    <h2>2. Vị trí đánh dấu (list-style-position)</h2>
+    <p><strong>Vị trí bên ngoài (outside - mặc định):</strong></p>
+    <ul class="pos-outside">
+        <li>Dấu bullet nằm bên ngoài khối văn bản nội dung.</li>
+        <li>Dòng tiếp theo sẽ thụt lề thẳng hàng với dòng đầu.</li>
+    </ul>
+
+    <p><strong>Vị trí bên trong (inside):</strong></p>
+    <ul class="pos-inside">
+        <li>Dấu bullet được tính như một phần của dòng văn bản bên trong.</li>
+        <li>Dòng tiếp theo sẽ thẳng hàng với chính dấu bullet.</li>
+    </ul>
+
+    <!-- 3. Thuộc tính rút gọn list-style -->
+    <h2>3. Thuộc tính rút gọn (list-style: square inside)</h2>
+    <ul class="shorthand-list">
+        <li>Thiết lập kiểu hình vuông và nằm bên trong trong cùng 1 dòng khai báo.</li>
+        <li>Cú pháp ngắn gọn, dễ quản lý mã nguồn.</li>
+    </ul>
+
+    <!-- 4. Kiểu danh sách với màu sắc -->
+    <h2>4. Định kiểu màu sắc danh sách</h2>
+    <ol class="colored-list">
+        <li>Thẻ cha &lt;ol&gt; đặt màu nền vàng nhạt.</li>
+        <li>Mỗi thẻ con &lt;li&gt; có màu nền cam và viền bo góc.</li>
+        <li>Khoảng cách đệm giúp từng mục rõ ràng, bắt mắt.</li>
+    </ol>
+</div>
 
 </body>
 </html>
