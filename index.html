@@ -1,221 +1,65 @@
-[Thực hành] Tạo layout trong Bootstrap
-Mục tiêu
-Sử dụng các thành phần của Bootstrap để tạo bố cục cơ bản cho một trang web.
+[Thực hành] Xây dựng Trang Chủ với Bootstrap
+Mục tiêu:
+Luyện tập sử dụng Bootstrap để tạo bố cục linh hoạt, ứng dụng Display Property, Margin & Padding, Flexbox, Carousel, Font Awesome, và Form.
 
-Mô tả
-Hãy sử dụng các thành phần có sẵn của bootstrap để tạo bố cục và nội dung trang web như sau:
+Bước 1: Cài đặt Bootstrap
+Bước 2: Tạo Navbar với Font Awesome
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#"><i class="fas fa-home"></i> MyWebsite</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+📌 Sử dụng Font Awesome để thêm icon vào Navbar.
 
-Các bước thực hiện
-Bước 1: Tạo file layout.html
+Bước 3: Tạo Hero Section với Carousel
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="image1.jpg" class="d-block w-100" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+            <img src="image2.jpg" class="d-block w-100" alt="Slide 2">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+📌 Ứng dụng Carousel để tạo slideshow hình ảnh.
 
-Phân chia phần body trang web như sau
+Bước 4: Thêm Section với Flexbox
+<div class="d-flex justify-content-center align-items-center bg-light py-5">
+    <h2>Chào mừng đến với trang web của chúng tôi!</h2>
+</div>
+📌 Sử dụng Flexbox để căn giữa nội dung.
 
-Code tham khảo:
-
-<!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-     <title>Layout</title>
-     </head>
- <body>
- <div class="container" style = "height: auto">
-     <header class="row">
-         
-     </header>
-     <nav class="navbar navbar-inverse">
-         
-     </nav>
-     <div class = "row">
-         <article class="col-sm-9">
-             
-         </article>
-         <aside class="col-sm-3">
-             
-         </aside>
-     </div>
-     <footer class="panel panel-default">
-         <div class = "panel-heading text-center">
-             <p>CodeGym &copy; 2017</p>
-         </div>
-     </footer>
- </div>
- </body>
- </html>
-Bước 2: Thiết kế header
-
-Thêm phần mã sau vào <header>
-
-<div class = "shopping-mall">
-     <h1>Online shopping mall</h1>
-     <h5>The center point of the professional programming</h5>
- </div>
- <img class = "pull-right" src="images/header-object.png"/>
-Bước 3: Thiết kế header
-
-Chọn hình có kích thước phù hợp và đẩy sang phải với class là .pull-right đã được định nghĩa trong bootstrap
-
-Định dạng cho class .shopping-mall bằng cách bổ sung vào poly.css mã như sau:
-
-header {
-     position: relative;
- }
- .shopping-mall{
-     position: absolute;
-     bottom: 20px;
-     font-variant: small-caps;
- }
- .shopping-mall>h1{
-     font-family: Impact;
-     font-size: 50px;
-     color: white;
-     letter-spacing: 0.3px;
-     text-shadow: 0 0 2px black;
-     padding-bottom: 0px;
-     border-bottom: 1px dotted gray;
-     margin: 0px;
- }
- .shopping-mall>h5{
-     margin-top: 5px;
-     letter-spacing: 0.5px;
- }
-Bước 4: Thiết kế footer
-
-Thêm một panel vào <footer>
-
-<footer class="panel panel-default">
-     <div class = "panel-heading text-center">
-         <p>CodeGym &copy; 2017</p>
-     </div>
- </footer>
-Bước 5: Thiết kế <nav>
-
-Truy cập vào https://getbootstrap.com/docs/3.3/components/#navbar. Copy đoạn mã tạo nav vào thẻ <nav>. Sau đó làm theo hướng dẫn sau:
-
-– Đổi .navbar-default thành navbar-inverse
-
-– Xoá bỏ thẻ form
-
-– Hiệu chỉnh nội dung của menu như hình sau
-
-– Bổ sung các icon vào các mục menu như hình trên. Để bổ sung menu bạn cần thêm <span class = ?> sau đó vào https://getbootstrap.com/docs/3.3/components/#glyphicons lấy các icon phù hợp.
-
-<span class="glyphicon glyphicon-home"></span> Trang chủ
-<span class="glyphicon glyphicon-list-alt"></span> Giới thiệu
-<span class="glyphicon glyphicon-earphone"></span> Liên hệ
-<span class="glyphicon glyphicon-envelope"></span> Góp ý
-<span class="glyphicon glyphicon-question-sign"></span> Hỏi đáp
-<span class="glyphicon glyphicon-user"></span> Tài khoản
-Bước 6: Thiết kế <aside>
-
-Thiết kế giỏ hàng. Thêm đoạn mã sau vào phần <aside>
-
-<div class = "poly-cart">
-     <div class="panel panel-default">
-         <div class="panel-body">
-             <img class="col-sm-5" src="images/shoppingcart.gif"/>
-             <ul class="col-sm-7">
-                 <li>100 items</li>
-                 <li>$56.8</li>
-                 <li><a href="#">Xem giỏ hàng</a></li>
-             </ul>
-         </div>
-     </div>
- </div>
-Chia .panel-body thành 2 phần. Trong đó ảnh chiếm 5 cột còn <ul> chiếm 7 cột. Bổ sung vào file poly.css để định dạng giỏ hàng thông qua .poly-cart như sau:
-
-.poly-cart{
-     margin-top: 5px;
- }
- 
- .poly-cart ul {
-     padding: 0px;
-     margin: 0px;
-     list-style: none;
-     font-variant: small-caps;
- }
- 
- .poly-cart .panel-heading strong {
-     font-variant: small-caps;
-     font-size: larger;
-     text-shadow: 0 0 2px darkgray;
- }
-Thiết kế ô tìm kiếm. Sử dụng panel để thiết kế ô tìm kiếm với mã như sau:
-
-<div class="panel panel-default">
-     <div class="panel-body">
-         <form>
-             <input placeholder="Keywords" class="form-control"/>
-         </form>
-     </div>
- </div>
-Thiết kế loại hàng. Sử dụng list-group kết hợp với panel để thiết kế danh mục loại hàng với mã như sau:
-
-<div class="panel panel-default">
-     <div class="panel-heading">
-         <span class = "glyphicon glyphicon-th-list"></span>
-         <strong>Chủng Loại</strong>
-     </div>
-     <div class="list-group">
-         <a href="#" class="list-group-item">Điện thoại di động</a>
-         <a href="#" class="list-group-item">Máy tính xách tay</a>
-         <a href="#" class="list-group-item">Máy tính để bàn</a>
-         <a href="#" class="list-group-item">Quạt máy</a>
-         <a href="#" class="list-group-item">Tivi</a>
-         <a href="#" class="list-group-item">Tủ lạnh</a>
-     </div>
- </div>
-Bước 7: Thiết kế <article>
-
-Yêu cầu: mỗi sản phẩm gồm hình, tên và giá. Mỗi hàng 3 sản phẩm.
-
-Hướng dẫn:
-
-Sử dụng lưới để chia (mỗi sản phẩm 4 cột)
-
-<div class = "col-sm-4 poly-prod">
-     <div class = "panel panel-default">
-         <div class = "panel-heading">
-             <h4 class = "panel-title">
-                 Nokia
-             </h4>
-         </div>
-         <div class = "panel-body">
-             <img src="images/computer.png" height="228" width="292"/></div>
-         <div class = "panel-footer">
-                 $ 100.25
-         </div>
-     </div>
- </div>
-Sử dụng panel để thiết kế sản phẩm
-
-.panel-heading: tên sản phẩm
-
-.panel-body: hình ảnh
-
-.panel-footer: đơn giá
-
-Bổ sung .poly-prod để định dạng cho mỗi phẩm
-
-.poly-prod{
-     text-align:center;
-     padding:5px;
- }
- 
- .poly-prod .panel-body img{
-     height: 150px;
-     max-width: 95%;
- }
-Bước 8: Mở file laout.html bằng trình duyệt xem kết quả
-
-Kết luận
-Trong phần này bạn đã luyện tập sử dụng các phần tử của bootstrap để tạo bố cục và đưa từng nội dung vào trong trang web.
-
-Ứng dụng mẫu có thể xem ở đây: http://demo.codegym.vn/web/15/layout-bootstrap/
+Bước 5: Tạo Contact Form với Bootstrap Form
+<form class="container mt-4">
+    <div class="mb-3">
+        <label for="name" class="form-label">Tên của bạn</label>
+        <input type="text" class="form-control" id="name" placeholder="Nhập tên">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Nhập email">
+    </div>
+    <button type="submit" class="btn btn-primary">Gửi</button>
+</form>
+📌 Ứng dụng Bootstrap Form để tạo form liên hệ.
 
 Link:
 Nhập đường dẫn (URL)...
