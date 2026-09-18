@@ -3,53 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Web Cá Nhân</title>
-    <!-- Nhúng file CSS bên ngoài -->
+    <title>Thực hành Nhúng CSS vào HTML</title>
+
+    <!-- Phần 3: External-style (nhúng file CSS bên ngoài qua thẻ <link>) -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Phần 2: Internal-style (viết mã CSS bên trong thẻ <style> ở <head>) -->
+    <style>
+        .internal-heading {
+            color: #27ae60; /* Màu xanh lá */
+        }
+        .internal-para {
+            color: #2980b9; /* Màu xanh dương */
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Chào mừng đến với trang web cá nhân của tôi</h1>
-    </header>
 
-    <section class="profile">
-        <!-- Ảnh đại diện: nếu chưa có file avatar.jpg trên máy, ảnh online dự phòng sẽ tự hiển thị -->
-        <img 
-            src="avatar.jpg" 
-            onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'" 
-            alt="Ảnh đại diện" 
-            class="avatar"
-        >
-        <p>Xin chào! Tôi là <strong>Nguyễn Văn A</strong>, một lập trình viên yêu thích công nghệ.</p>
+    <!-- PHẦN 1: Sử dụng Inline-style (thuộc tính style trực tiếp trong thẻ) -->
+    <section>
+        <h2>1. Inline-style</h2>
+        <h1 style="color: #c0392b;">Tiêu đề đổi màu bằng Inline-style</h1>
+        <p style="color: #8e44ad;">Đoạn văn này được định màu tím trực tiếp trong thuộc tính style của thẻ p.</p>
     </section>
 
-    <section class="hobbies">
-        <h2>Sở thích</h2>
-        <ul>
-            <li>Đọc sách</li>
-            <li>Chơi thể thao</li>
-            <li>Lập trình</li>
-            <li>Du lịch</li>
-        </ul>
+    <hr>
+
+    <!-- PHẦN 2: Sử dụng Internal-style (sử dụng class được khai báo trong thẻ <style>) -->
+    <section>
+        <h2>2. Internal-style</h2>
+        <h1 class="internal-heading">Tiêu đề đổi màu bằng Internal-style</h1>
+        <p class="internal-para">Đoạn văn này nhận màu xanh dương thông qua class được viết trong cặp thẻ style ở thẻ head.</p>
     </section>
 
-    <section class="goals">
-        <h2>Mục tiêu học tập</h2>
-        <p>Tôi muốn trở thành một lập trình viên chuyên nghiệp, xây dựng các sản phẩm hữu ích.</p>
+    <hr>
+
+    <!-- PHẦN 3: Sử dụng External-style (sử dụng class được định nghĩa trong file style.css) -->
+    <section>
+        <h2>3. External-style</h2>
+        <h1 class="external-heading">Tiêu đề đổi màu bằng External-style</h1>
+        <p class="external-para">Đoạn văn này nhận màu sắc từ file style.css riêng biệt liên kết qua thẻ link.</p>
     </section>
 
-    <footer>
-        <h2>Thông tin liên hệ</h2>
-        <table>
-            <tr>
-                <th>Email</th>
-                <td>nguyenvana@example.com</td>
-            </tr>
-            <tr>
-                <th>Facebook</th>
-                <td><a href="https://facebook.com" target="_blank">facebook.com/nguyenvana</a></td>
-            </tr>
-        </table>
-    </footer>
 </body>
 </html>

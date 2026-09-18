@@ -1,64 +1,8 @@
-/* Định dạng chung */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+/* PHẦN 3: External-style */
+.external-heading {
+    color: #d35400; /* Màu cam đậm */
 }
 
-/* Định dạng thanh tiêu đề */
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    font-size: 24px;
-}
-
-/* Định dạng ảnh đại diện tròn */
-.avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #4CAF50;
-    margin: 20px auto;
-    object-fit: cover;
-    display: block;
-}
-
-/* Định dạng danh sách sở thích */
-ul {
-    list-style-type: square;
-    text-align: left;
-    display: inline-block;
-    margin-top: 10px;
-    padding-left: 20px;
-}
-
-/* Định dạng bảng liên hệ */
-table {
-    margin: 15px auto;
-    border-collapse: collapse;
-    width: 50%;
-    background-color: #ffffff;
-}
-
-th, td {
-    border: 1px solid #333;
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #4CAF50;
-    color: white;
-    width: 30%;
-}
-
-/* Định dạng chân trang */
-footer {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #ddd;
+.external-para {
+    color: #16a085; /* Màu xanh mòng két */
 }
