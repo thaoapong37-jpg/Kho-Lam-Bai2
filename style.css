@@ -27,11 +27,10 @@ section {
     margin-bottom: 30px;
 }
 
-/* Khung chứa flexbox có chiều rộng cố định để thấy rõ phần dư dôi được lấp đầy */
+/* Khung chứa giới hạn chiều rộng 400px để dễ quan sát ngắt dòng */
 .flex-container {
     display: flex;
-    width: 100%;
-    max-width: 750px;
+    width: 400px;
     background-color: #cbd5e1;
     padding: 12px;
     border-radius: 6px;
@@ -39,42 +38,40 @@ section {
 }
 
 .item {
+    width: 90px;
+    height: 55px;
     background-color: #0284c7;
     color: #ffffff;
-    height: 55px;
-    padding: 0 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    font-size: 18px;
     border-radius: 4px;
-    /* Mặc định flex-grow là 0, các item chỉ chiếm đúng kích thước nội dung */
+    flex-shrink: 0;
 }
 
-/* 1. Phần tử thứ 2 giãn ra để chiếm trọn toàn bộ khoảng trống còn lại */
-.grow-item {
-    flex-grow: 1;
-    background-color: #e11d48;
+/* 1. Viết tắt của: flex-direction: row + flex-wrap: nowrap */
+.flow-row-nowrap {
+    flex-flow: row nowrap;
+    overflow-x: auto;
 }
 
-/* 2. Chia tỷ lệ khoảng trống theo 1 : 2 : 3 */
-.grow-1 {
-    flex-grow: 1;
-    background-color: #059669;
+/* 2. Viết tắt của: flex-direction: row-reverse + flex-wrap: nowrap */
+.flow-row-reverse-nowrap {
+    flex-flow: row-reverse nowrap;
+    overflow-x: auto;
 }
 
-.grow-2 {
-    flex-grow: 2;
-    background-color: #d97706;
+.item-green {
+    background-color: #16a34a;
 }
 
-.grow-3 {
-    flex-grow: 3;
-    background-color: #7c3aed;
+/* 3. Viết tắt của: flex-direction: row + flex-wrap: wrap */
+.flow-row-wrap {
+    flex-flow: row wrap;
 }
 
-/* 3. Giá trị mặc định initial (tương đương flex-grow: 0) */
-.grow-initial {
-    flex-grow: initial;
-    background-color: #475569;
+.item-orange {
+    background-color: #ea580c;
 }

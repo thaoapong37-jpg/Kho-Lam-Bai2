@@ -3,42 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thực hành CSS flex-grow</title>
+    <title>Thực hành CSS flex-flow</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Thực hành thuộc tính CSS flex-grow</h1>
+    <h1>Thực hành thuộc tính CSS flex-flow</h1>
 
-    <!-- Ví dụ đề bài: 5 phần tử con, phần tử thứ 2 đặt flex-grow để chiếm phần còn lại -->
+    <!-- 1. flex-flow: row nowrap (Mặc định: xếp theo hàng, không xuống dòng) -->
     <section>
-        <h2>1. Áp dụng flex-grow: 1 cho div thứ 2 (4 div còn lại giữ nguyên)</h2>
-        <div class="flex-container">
+        <h2>1. flex-flow: row nowrap (Hướng hàng ngang, không ngắt dòng)</h2>
+        <div class="flex-container flow-row-nowrap">
             <div class="item">1</div>
-            <div class="item grow-item">2 (flex-grow: 1)</div>
+            <div class="item">2</div>
             <div class="item">3</div>
             <div class="item">4</div>
             <div class="item">5</div>
         </div>
     </section>
 
-    <!-- Ví dụ 2: So sánh tốc độ phát triển giữa các tỷ lệ flex-grow khác nhau -->
+    <!-- 2. flex-flow: row-reverse nowrap (Xếp ngược hướng hàng ngang) -->
     <section>
-        <h2>2. So sánh flex-grow: 1, 2 và 3 (chia sẻ khoảng trống theo tỷ lệ)</h2>
-        <div class="flex-container">
-            <div class="item grow-1">grow: 1</div>
-            <div class="item grow-2">grow: 2</div>
-            <div class="item grow-3">grow: 3</div>
+        <h2>2. flex-flow: row-reverse nowrap (Đảo ngược thứ tự hàng ngang, không ngắt dòng)</h2>
+        <div class="flex-container flow-row-reverse-nowrap">
+            <div class="item item-green">1</div>
+            <div class="item item-green">2</div>
+            <div class="item item-green">3</div>
+            <div class="item item-green">4</div>
+            <div class="item item-green">5</div>
         </div>
     </section>
 
-    <!-- Ví dụ 3: Giá trị initial (mặc định bằng 0 - không co giãn) -->
+    <!-- 3. flex-flow: row wrap (Xếp theo hàng ngang và tự động xuống dòng khi tràn) -->
     <section>
-        <h2>3. flex-grow: initial (mặc định = 0)</h2>
-        <div class="flex-container">
-            <div class="item grow-initial">initial (0)</div>
-            <div class="item grow-initial">initial (0)</div>
-            <div class="item grow-initial">initial (0)</div>
+        <h2>3. flex-flow: row wrap (Hướng hàng ngang, tự động xuống dòng)</h2>
+        <div class="flex-container flow-row-wrap">
+            <div class="item item-orange">1</div>
+            <div class="item item-orange">2</div>
+            <div class="item item-orange">3</div>
+            <div class="item item-orange">4</div>
+            <div class="item item-orange">5</div>
         </div>
     </section>
 
