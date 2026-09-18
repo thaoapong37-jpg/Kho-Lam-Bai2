@@ -1,17 +1,49 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #242424;
 }
 
-/* Đảm bảo khung Carousel có chiều cao tối thiểu đồng đều với Form */
-#benefitCarousel {
-    min-height: 520px;
+/* Biểu tượng 4 ô vuông logo Microsoft */
+.ms-brand-logo {
+    grid-template-columns: repeat(2, 9px);
+    grid-gap: 2px;
 }
 
-.input-group-text {
-    border-color: #dee2e6;
+.ms-brand-logo span {
+    width: 9px;
+    height: 9px;
 }
 
-.form-control:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+/* Ảnh nền Hero và căn chỉnh chiều cao */
+.hero-image {
+    max-height: 420px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Hiệu ứng tương tác danh mục và thẻ sản phẩm */
+.hover-light:hover {
+    background-color: #f1f5f9;
+}
+
+.surface-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.surface-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.surface-card img {
+    height: 180px;
+    object-fit: contain;
+}
+
+.leading-relaxed {
+    line-height: 1.7;
 }
