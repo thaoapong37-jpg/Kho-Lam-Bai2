@@ -3,48 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thực hành CSS flex-flow</title>
+    <title>Flexbox Layout</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Thực hành thuộc tính CSS flex-flow</h1>
+    <div class="container">
+        <!-- 1. Header -->
+        <header class="header">
+            <h1>Header - Website Layout</h1>
+        </header>
 
-    <!-- 1. flex-flow: row nowrap (Mặc định: xếp theo hàng, không xuống dòng) -->
-    <section>
-        <h2>1. flex-flow: row nowrap (Hướng hàng ngang, không ngắt dòng)</h2>
-        <div class="flex-container flow-row-nowrap">
-            <div class="item">1</div>
-            <div class="item">2</div>
-            <div class="item">3</div>
-            <div class="item">4</div>
-            <div class="item">5</div>
-        </div>
-    </section>
+        <!-- 2. Navigation -->
+        <nav class="nav">
+            <a href="#">Trang chủ</a>
+            <a href="#">Giới thiệu</a>
+            <a href="#">Dịch vụ</a>
+            <a href="#">Liên hệ</a>
+        </nav>
 
-    <!-- 2. flex-flow: row-reverse nowrap (Xếp ngược hướng hàng ngang) -->
-    <section>
-        <h2>2. flex-flow: row-reverse nowrap (Đảo ngược thứ tự hàng ngang, không ngắt dòng)</h2>
-        <div class="flex-container flow-row-reverse-nowrap">
-            <div class="item item-green">1</div>
-            <div class="item item-green">2</div>
-            <div class="item item-green">3</div>
-            <div class="item item-green">4</div>
-            <div class="item item-green">5</div>
-        </div>
-    </section>
+        <!-- Khung chứa nội dung chính và sidebar -->
+        <div class="main-container">
+            <!-- 3. Main Content -->
+            <main class="content">
+                <h2>Nội dung chính (Main Content)</h2>
+                <p>Khu vực này sử dụng <code>flex: 3</code> để tự động mở rộng và chiếm 3 phần không gian ngang khả dụng trên màn hình máy tính.</p>
+                <p>Flexbox giúp cân đối tỷ lệ các cột mà không cần tính toán phần trăm cứng nhắc hay xử lý float/clear phức tạp.</p>
+            </main>
 
-    <!-- 3. flex-flow: row wrap (Xếp theo hàng ngang và tự động xuống dòng khi tràn) -->
-    <section>
-        <h2>3. flex-flow: row wrap (Hướng hàng ngang, tự động xuống dòng)</h2>
-        <div class="flex-container flow-row-wrap">
-            <div class="item item-orange">1</div>
-            <div class="item item-orange">2</div>
-            <div class="item item-orange">3</div>
-            <div class="item item-orange">4</div>
-            <div class="item item-orange">5</div>
+            <!-- 4. Sidebar -->
+            <aside class="sidebar">
+                <h3>Sidebar</h3>
+                <p>Khu vực thanh bên sử dụng <code>flex: 1</code> để chiếm 1 phần không gian, thích hợp cho danh mục liên kết hoặc tin tức phụ.</p>
+            </aside>
         </div>
-    </section>
+
+        <!-- 5. Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Flexbox Layout Practice. Footer cố định phía cuối trang.</p>
+        </footer>
+    </div>
 
 </body>
 </html>

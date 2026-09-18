@@ -1,77 +1,102 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8fafc;
-    padding: 25px;
-    color: #1e293b;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+    line-height: 1.6;
 }
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 25px;
-    color: #0f172a;
-}
-
-h2 {
-    font-size: 16px;
-    margin-bottom: 12px;
-    color: #334155;
-}
-
-section {
-    margin-bottom: 30px;
-}
-
-/* Khung chứa giới hạn chiều rộng 400px để dễ quan sát ngắt dòng */
-.flex-container {
+/* Khung bọc ngoài cùng xếp theo cột dọc và trải kín màn hình */
+.container {
     display: flex;
-    width: 400px;
-    background-color: #cbd5e1;
-    padding: 12px;
-    border-radius: 6px;
-    gap: 10px;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.item {
-    width: 90px;
-    height: 55px;
-    background-color: #0284c7;
+/* Phần Header và Footer */
+.header,
+.footer {
+    background-color: #1e293b;
     color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+}
+
+/* Thanh Navigation */
+.nav {
+    background-color: #334155;
+    text-align: center;
+    padding: 12px;
+}
+
+.nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
     font-weight: bold;
-    font-size: 18px;
-    border-radius: 4px;
-    flex-shrink: 0;
+    font-size: 15px;
 }
 
-/* 1. Viết tắt của: flex-direction: row + flex-wrap: nowrap */
-.flow-row-nowrap {
-    flex-flow: row nowrap;
-    overflow-x: auto;
+.nav a:hover {
+    color: #38bdf8;
 }
 
-/* 2. Viết tắt của: flex-direction: row-reverse + flex-wrap: nowrap */
-.flow-row-reverse-nowrap {
-    flex-flow: row-reverse nowrap;
-    overflow-x: auto;
+/* Khung chứa ở giữa: tự động lấp đầy chiều cao còn lại bằng flex: 1 */
+.main-container {
+    display: flex;
+    flex: 1;
 }
 
-.item-green {
-    background-color: #16a34a;
+/* Nội dung chính chiếm tỷ lệ 3 */
+.content {
+    flex: 3;
+    padding: 30px;
+    background-color: #ffffff;
 }
 
-/* 3. Viết tắt của: flex-direction: row + flex-wrap: wrap */
-.flow-row-wrap {
-    flex-flow: row wrap;
+.content h2 {
+    color: #0f172a;
+    margin-bottom: 12px;
 }
 
-.item-orange {
-    background-color: #ea580c;
+.content p {
+    margin-bottom: 10px;
+}
+
+/* Sidebar chiếm tỷ lệ 1 */
+.sidebar {
+    flex: 1;
+    background-color: #f1f5f9;
+    padding: 30px 20px;
+    border-left: 1px solid #e2e8f0;
+}
+
+.sidebar h3 {
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+/* Responsive với Media Query cho màn hình nhỏ hơn hoặc bằng 768px (Mobile & Tablet) */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        border-left: none;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .nav a {
+        display: inline-block;
+        margin: 5px 10px;
+    }
 }
