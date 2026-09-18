@@ -1,98 +1,55 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="utf-8">
-    <title>Thực hành Bảng trong CSS</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 30px;
-            background-color: #f8f9fa;
-        }
-
-        h1 {
-            color: #2c3e50;
-        }
-
-        /* 1. Chiều rộng bảng, gộp đường viền đơn (border-collapse) */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-
-        /* 2. Đường viền và padding cho ô tiêu đề và ô dữ liệu */
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px 15px;
-        }
-
-        /* 3. Chiều cao, màu nền, màu chữ và căn lề ngang (text-align: left) cho th */
-        th {
-            height: 50px;
-            background-color: #04AA6D;
-            color: white;
-            text-align: left;
-        }
-
-        /* 4. Căn lề dọc (vertical-align: bottom) và chiều cao hàng cho td */
-        td {
-            height: 45px;
-            vertical-align: bottom;
-        }
-
-        /* 5. Màu sắc xen kẽ hàng và hiệu ứng hover giúp bảng dễ đọc */
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        tr:hover {
-            background-color: #e9f7ef;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Cá Nhân</title>
+    <!-- Nhúng file CSS bên ngoài -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Chào mừng đến với trang web cá nhân của tôi</h1>
+    </header>
 
-    <h1>Bảng Quản Lý Nhân Sự</h1>
-    <p>Bảng minh họa áp dụng <code>border-collapse</code>, <code>text-align</code>, <code>vertical-align</code>, <code>padding</code> và màu sắc bằng CSS:</p>
+    <section class="profile">
+        <!-- Ảnh đại diện: nếu chưa có file avatar.jpg trên máy, ảnh online dự phòng sẽ tự hiển thị -->
+        <img 
+            src="avatar.jpg" 
+            onerror="this.src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150'" 
+            alt="Ảnh đại diện" 
+            class="avatar"
+        >
+        <p>Xin chào! Tôi là <strong>Nguyễn Văn A</strong>, một lập trình viên yêu thích công nghệ.</p>
+    </section>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Họ và Tên</th>
-                <th>Vị trí</th>
-                <th>Phòng ban</th>
-                <th>Mức lương</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Nguyễn Văn An</td>
-                <td>Frontend Developer</td>
-                <td>Phát triển phần mềm</td>
-                <td>18.000.000 VNĐ</td>
-            </tr>
-            <tr>
-                <td>Trần Thị Bích</td>
-                <td>UI/UX Designer</td>
-                <td>Thiết kế sản phẩm</td>
-                <td>16.500.000 VNĐ</td>
-            </tr>
-            <tr>
-                <td>Lê Hoàng Cường</td>
-                <td>Backend Developer</td>
-                <td>Hệ thống dữ liệu</td>
-                <td>20.000.000 VNĐ</td>
-            </tr>
-            <tr>
-                <td>Phạm Mai Dung</td>
-                <td>QA/QC Engineer</td>
-                <td>Kiểm thử phần mềm</td>
-                <td>15.000.000 VNĐ</td>
-            </tr>
-        </tbody>
-    </table>
+    <section class="hobbies">
+        <h2>Sở thích</h2>
+        <ul>
+            <li>Đọc sách</li>
+            <li>Chơi thể thao</li>
+            <li>Lập trình</li>
+            <li>Du lịch</li>
+        </ul>
+    </section>
 
+    <section class="goals">
+        <h2>Mục tiêu học tập</h2>
+        <p>Tôi muốn trở thành một lập trình viên chuyên nghiệp, xây dựng các sản phẩm hữu ích.</p>
+    </section>
+
+    <footer>
+        <h2>Thông tin liên hệ</h2>
+        <table>
+            <tr>
+                <th>Email</th>
+                <td>nguyenvana@example.com</td>
+            </tr>
+            <tr>
+                <th>Facebook</th>
+                <td><a href="https://facebook.com" target="_blank">facebook.com/nguyenvana</a></td>
+            </tr>
+        </table>
+    </footer>
 </body>
 </html>
