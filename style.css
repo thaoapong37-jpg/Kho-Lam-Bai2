@@ -1,9 +1,12 @@
-/* Hiệu ứng nổi nhẹ khi di chuột vào các thẻ Card dịch vụ */
+html {
+    scroll-behavior: smooth;
+}
+
 .card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
 }
