@@ -1,155 +1,223 @@
+[Thực hành] Tạo layout trong Bootstrap
+Mục tiêu
+Sử dụng các thành phần của Bootstrap để tạo bố cục cơ bản cho một trang web.
+
+Mô tả
+Hãy sử dụng các thành phần có sẵn của bootstrap để tạo bố cục và nội dung trang web như sau:
+
+Các bước thực hiện
+Bước 1: Tạo file layout.html
+
+Phân chia phần body trang web như sau
+
+Code tham khảo:
+
 <!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page - Dịch Vụ &amp; Giải Pháp Số</title>
-    <!-- Nhúng Bootstrap 5.3.0 CSS từ CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <!-- Nhúng Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <title>Layout</title>
+     </head>
+ <body>
+ <div class="container" style = "height: auto">
+     <header class="row">
+         
+     </header>
+     <nav class="navbar navbar-inverse">
+         
+     </nav>
+     <div class = "row">
+         <article class="col-sm-9">
+             
+         </article>
+         <aside class="col-sm-3">
+             
+         </aside>
+     </div>
+     <footer class="panel panel-default">
+         <div class = "panel-heading text-center">
+             <p>CodeGym &copy; 2017</p>
+         </div>
+     </footer>
+ </div>
+ </body>
+ </html>
+Bước 2: Thiết kế header
 
-    <!-- 1. Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="#">
-                <i class="bi bi-rocket-takeoff-fill me-2"></i>TechInnovate
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#landingNav" aria-controls="landingNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="landingNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#features">Tính năng</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#cta">Đăng ký</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+Thêm phần mã sau vào <header>
 
-    <!-- 2. Banner / Hero Section với Hình ảnh nền & Nút Kêu Gọi Hành Động (CTA) -->
-    <header class="hero-banner text-white text-center d-flex align-items-center">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
-                    <h1 class="display-4 fw-bold mb-3">Đột Phá Doanh Thu Cùng Giải Pháp Số</h1>
-                    <p class="lead mb-4 text-light-50">Nền tảng công nghệ giúp tối ưu hóa hiệu suất làm việc và mở rộng thị trường số cho doanh nghiệp của bạn.</p>
-                    <div class="d-flex justify-content-center gap-3 flex-wrap">
-                        <a href="#cta" class="btn btn-primary btn-lg px-4 fw-semibold shadow">Đăng Ký Ngay</a>
-                        <a href="#about" class="btn btn-outline-light btn-lg px-4 fw-semibold">Xem Thêm</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+<div class = "shopping-mall">
+     <h1>Online shopping mall</h1>
+     <h5>The center point of the professional programming</h5>
+ </div>
+ <img class = "pull-right" src="images/header-object.png"/>
+Bước 3: Thiết kế header
 
-    <!-- 3. Giới thiệu: Hàng (row) chứa Hình ảnh (img-fluid) + Mô tả sản phẩm -->
-    <section id="about" class="py-5 bg-white">
-        <div class="container py-4">
-            <div class="row align-items-center g-5">
-                <!-- Cột hình ảnh sản phẩm/dịch vụ -->
-                <div class="col-12 col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
-                         alt="Đội ngũ làm việc sáng tạo" 
-                         class="img-fluid rounded-4 shadow">
-                </div>
-                <!-- Cột nội dung giới thiệu -->
-                <div class="col-12 col-lg-6">
-                    <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill mb-2 fw-semibold">Về Chúng Tôi</span>
-                    <h2 class="fw-bold mb-3">Kiến Tạo Tương Lai Số Cùng Đội Ngũ Chuyên Gia</h2>
-                    <p class="text-secondary leading-relaxed mb-3">
-                        Chúng tôi mang đến các bộ công cụ chuyển đổi số tinh gọn và tối ưu nhất cho các doanh nghiệp vừa và nhỏ. Mọi giải pháp đều được thiết kế tỉ mỉ từ giao diện người dùng đến hệ thống bảo mật phía sau.
-                    </p>
-                    <p class="text-secondary leading-relaxed mb-4">
-                        Với hơn 10 năm kinh nghiệm, chúng tôi tự tin đồng hành cùng bạn trên từng chặng đường xây dựng thương hiệu trực tuyến chuyên nghiệp và bền vững.
-                    </p>
-                    <a href="#features" class="btn btn-outline-primary fw-semibold px-4">Khám Phá Tính Năng</a>
-                </div>
-            </div>
-        </div>
-    </section>
+Chọn hình có kích thước phù hợp và đẩy sang phải với class là .pull-right đã được định nghĩa trong bootstrap
 
-    <!-- 4. Danh sách tính năng: Row 4 cột với Icon + Tiêu đề + Mô tả ngắn -->
-    <section id="features" class="py-5 bg-light">
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill mb-2 fw-semibold">Ưu Điểm Nổi Bật</span>
-                <h2 class="fw-bold">Tại Sao Nên Chọn TechInnovate?</h2>
-                <p class="text-muted">Các tính năng tiêu chuẩn giúp doanh nghiệp bứt phá nhanh chóng</p>
-            </div>
+Định dạng cho class .shopping-mall bằng cách bổ sung vào poly.css mã như sau:
 
-            <div class="row g-4">
-                <!-- Tính năng 1 -->
-                <div class="col-12 col-sm-6 col-lg-3 text-center">
-                    <div class="card h-100 p-4 border-0 shadow-sm rounded-4 feature-card">
-                        <div class="feature-icon bg-primary text-white mx-auto mb-3 rounded-circle d-flex align-items-center justify-content-center">
-                            <i class="bi bi-speedometer2 fs-3"></i>
-                        </div>
-                        <h3 class="h5 fw-bold mb-2">Tốc Độ Tối Ưu</h3>
-                        <p class="text-secondary small mb-0">Hệ thống xử lý siêu tốc, tải trang mượt mà trên mọi thiết bị di động.</p>
-                    </div>
-                </div>
+header {
+     position: relative;
+ }
+ .shopping-mall{
+     position: absolute;
+     bottom: 20px;
+     font-variant: small-caps;
+ }
+ .shopping-mall>h1{
+     font-family: Impact;
+     font-size: 50px;
+     color: white;
+     letter-spacing: 0.3px;
+     text-shadow: 0 0 2px black;
+     padding-bottom: 0px;
+     border-bottom: 1px dotted gray;
+     margin: 0px;
+ }
+ .shopping-mall>h5{
+     margin-top: 5px;
+     letter-spacing: 0.5px;
+ }
+Bước 4: Thiết kế footer
 
-                <!-- Tính năng 2 -->
-                <div class="col-12 col-sm-6 col-lg-3 text-center">
-                    <div class="card h-100 p-4 border-0 shadow-sm rounded-4 feature-card">
-                        <div class="feature-icon bg-success text-white mx-auto mb-3 rounded-circle d-flex align-items-center justify-content-center">
-                            <i class="bi bi-shield-check fs-3"></i>
-                        </div>
-                        <h3 class="h5 fw-bold mb-2">Bảo Mật Đa Tầng</h3>
-                        <p class="text-secondary small mb-0">Chuẩn hóa dữ liệu theo công nghệ mã hóa an toàn nhất hiện nay.</p>
-                    </div>
-                </div>
+Thêm một panel vào <footer>
 
-                <!-- Tính năng 3 -->
-                <div class="col-12 col-sm-6 col-lg-3 text-center">
-                    <div class="card h-100 p-4 border-0 shadow-sm rounded-4 feature-card">
-                        <div class="feature-icon bg-warning text-white mx-auto mb-3 rounded-circle d-flex align-items-center justify-content-center">
-                            <i class="bi bi-phone-flip fs-3"></i>
-                        </div>
-                        <h3 class="h5 fw-bold mb-2">Đa Nền Tảng</h3>
-                        <p class="text-secondary small mb-0">Giao diện tương thích hoàn hảo từ máy tính để bàn đến smartphone.</p>
-                    </div>
-                </div>
+<footer class="panel panel-default">
+     <div class = "panel-heading text-center">
+         <p>CodeGym &copy; 2017</p>
+     </div>
+ </footer>
+Bước 5: Thiết kế <nav>
 
-                <!-- Tính năng 4 -->
-                <div class="col-12 col-sm-6 col-lg-3 text-center">
-                    <div class="card h-100 p-4 border-0 shadow-sm rounded-4 feature-card">
-                        <div class="feature-icon bg-danger text-white mx-auto mb-3 rounded-circle d-flex align-items-center justify-content-center">
-                            <i class="bi bi-headset fs-3"></i>
-                        </div>
-                        <h3 class="h5 fw-bold mb-2">Hỗ Trợ 24/7</h3>
-                        <p class="text-secondary small mb-0">Đội ngũ kỹ thuật viên luôn túc trực hỗ trợ giải đáp mọi lúc, mọi nơi.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+Truy cập vào https://getbootstrap.com/docs/3.3/components/#navbar. Copy đoạn mã tạo nav vào thẻ <nav>. Sau đó làm theo hướng dẫn sau:
 
-    <!-- 5. Nút Kêu Gọi Hành Động (CTA Section) -->
-    <section id="cta" class="py-5 bg-primary text-white text-center">
-        <div class="container py-4">
-            <h2 class="display-6 fw-bold mb-3">Sẵn Sàng Nâng Tầm Doanh Nghiệp Của Bạn?</h2>
-            <p class="lead mb-4 text-white-50">Đăng ký dùng thử miễn phí trong vòng 30 ngày ngay hôm nay.</p>
-            <a href="#" class="btn btn-light btn-lg px-5 py-3 fw-bold text-primary shadow rounded-pill">
-                Đăng Ký Ngay <i class="bi bi-arrow-right ms-2"></i>
-            </a>
-        </div>
-    </section>
+– Đổi .navbar-default thành navbar-inverse
 
-    <!-- 6. Footer -->
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <p class="mb-0 text-secondary">&copy; 2026 TechInnovate. Thiết kế bằng Bootstrap 5 Containers, Grid &amp; Images.</p>
-        </div>
-    </footer>
+– Xoá bỏ thẻ form
 
-    <!-- Nhúng Bootstrap JavaScript Bundle từ CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+– Hiệu chỉnh nội dung của menu như hình sau
+
+– Bổ sung các icon vào các mục menu như hình trên. Để bổ sung menu bạn cần thêm <span class = ?> sau đó vào https://getbootstrap.com/docs/3.3/components/#glyphicons lấy các icon phù hợp.
+
+<span class="glyphicon glyphicon-home"></span> Trang chủ
+<span class="glyphicon glyphicon-list-alt"></span> Giới thiệu
+<span class="glyphicon glyphicon-earphone"></span> Liên hệ
+<span class="glyphicon glyphicon-envelope"></span> Góp ý
+<span class="glyphicon glyphicon-question-sign"></span> Hỏi đáp
+<span class="glyphicon glyphicon-user"></span> Tài khoản
+Bước 6: Thiết kế <aside>
+
+Thiết kế giỏ hàng. Thêm đoạn mã sau vào phần <aside>
+
+<div class = "poly-cart">
+     <div class="panel panel-default">
+         <div class="panel-body">
+             <img class="col-sm-5" src="images/shoppingcart.gif"/>
+             <ul class="col-sm-7">
+                 <li>100 items</li>
+                 <li>$56.8</li>
+                 <li><a href="#">Xem giỏ hàng</a></li>
+             </ul>
+         </div>
+     </div>
+ </div>
+Chia .panel-body thành 2 phần. Trong đó ảnh chiếm 5 cột còn <ul> chiếm 7 cột. Bổ sung vào file poly.css để định dạng giỏ hàng thông qua .poly-cart như sau:
+
+.poly-cart{
+     margin-top: 5px;
+ }
+ 
+ .poly-cart ul {
+     padding: 0px;
+     margin: 0px;
+     list-style: none;
+     font-variant: small-caps;
+ }
+ 
+ .poly-cart .panel-heading strong {
+     font-variant: small-caps;
+     font-size: larger;
+     text-shadow: 0 0 2px darkgray;
+ }
+Thiết kế ô tìm kiếm. Sử dụng panel để thiết kế ô tìm kiếm với mã như sau:
+
+<div class="panel panel-default">
+     <div class="panel-body">
+         <form>
+             <input placeholder="Keywords" class="form-control"/>
+         </form>
+     </div>
+ </div>
+Thiết kế loại hàng. Sử dụng list-group kết hợp với panel để thiết kế danh mục loại hàng với mã như sau:
+
+<div class="panel panel-default">
+     <div class="panel-heading">
+         <span class = "glyphicon glyphicon-th-list"></span>
+         <strong>Chủng Loại</strong>
+     </div>
+     <div class="list-group">
+         <a href="#" class="list-group-item">Điện thoại di động</a>
+         <a href="#" class="list-group-item">Máy tính xách tay</a>
+         <a href="#" class="list-group-item">Máy tính để bàn</a>
+         <a href="#" class="list-group-item">Quạt máy</a>
+         <a href="#" class="list-group-item">Tivi</a>
+         <a href="#" class="list-group-item">Tủ lạnh</a>
+     </div>
+ </div>
+Bước 7: Thiết kế <article>
+
+Yêu cầu: mỗi sản phẩm gồm hình, tên và giá. Mỗi hàng 3 sản phẩm.
+
+Hướng dẫn:
+
+Sử dụng lưới để chia (mỗi sản phẩm 4 cột)
+
+<div class = "col-sm-4 poly-prod">
+     <div class = "panel panel-default">
+         <div class = "panel-heading">
+             <h4 class = "panel-title">
+                 Nokia
+             </h4>
+         </div>
+         <div class = "panel-body">
+             <img src="images/computer.png" height="228" width="292"/></div>
+         <div class = "panel-footer">
+                 $ 100.25
+         </div>
+     </div>
+ </div>
+Sử dụng panel để thiết kế sản phẩm
+
+.panel-heading: tên sản phẩm
+
+.panel-body: hình ảnh
+
+.panel-footer: đơn giá
+
+Bổ sung .poly-prod để định dạng cho mỗi phẩm
+
+.poly-prod{
+     text-align:center;
+     padding:5px;
+ }
+ 
+ .poly-prod .panel-body img{
+     height: 150px;
+     max-width: 95%;
+ }
+Bước 8: Mở file laout.html bằng trình duyệt xem kết quả
+
+Kết luận
+Trong phần này bạn đã luyện tập sử dụng các phần tử của bootstrap để tạo bố cục và đưa từng nội dung vào trong trang web.
+
+Ứng dụng mẫu có thể xem ở đây: http://demo.codegym.vn/web/15/layout-bootstrap/
+
+Link:
+Nhập đường dẫn (URL)...
+
+Nộp bài
