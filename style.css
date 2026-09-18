@@ -1,141 +1,162 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 20px 0;
-    background-color: #eaeff2;
+    background-color: #f0f2f5;
     color: #333333;
+    line-height: 1.6;
+    padding: 20px 0;
 }
 
-/* 1. Phân vùng bao quanh toàn bộ: cố định rộng 960px và căn giữa */
-#main {
-    width: 960px;
+/* Khung bọc giới hạn độ rộng toàn trang */
+.layout-container {
+    max-width: 980px;
     margin: 0 auto;
     background-color: #ffffff;
-    border: 1px solid #dcdcdc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
-/* 2. Phân vùng đầu trang (head): Banner & Logo */
-#head {
-    height: 100px;
-    background-color: #3498db;
+/* Định dạng thẻ <header> */
+header {
+    background-color: #1e3a8a;
     color: #ffffff;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Định dạng thẻ <nav> */
+nav {
+    background-color: #0f172a;
+}
+
+nav ul {
+    list-style: none;
     display: flex;
-    align-items: center;
     justify-content: center;
-    border-bottom: 2px solid #2980b9;
+    flex-wrap: wrap;
 }
 
-#head h1 {
-    margin: 0;
-    font-size: 26px;
+nav ul li a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
 }
 
-/* 4. Phân vùng liên kết đầu trang (head-link) */
-#head-link {
-    background-color: #2c3e50;
-    padding: 0 15px;
+nav ul li a:hover {
+    background-color: #2563eb;
+}
+
+/* Khung thân trang chứa Section và Aside */
+.main-wrapper {
+    display: flex;
+    gap: 20px;
+    padding: 25px 20px;
+}
+
+/* Định dạng thẻ <section>: chiếm 68% độ rộng */
+section {
+    flex: 68%;
+}
+
+/* Định dạng thẻ <article> bên trong <section> */
+article {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+article:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+article h2 {
+    color: #1e293b;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.post-meta {
+    font-size: 12px;
+    color: #64748b;
     margin-bottom: 10px;
 }
 
-#head-link ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+/* Định dạng thẻ <aside>: chiếm 32% độ rộng làm Sidebar */
+aside {
+    flex: 32%;
+    background-color: #f8fafc;
+    border-left: 1px solid #e2e8f0;
+    padding: 15px 20px;
+    border-radius: 4px;
 }
 
-#head-link ul li a {
-    display: block;
-    color: #ecf0f1;
-    text-decoration: none;
-    padding: 10px 18px;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-#head-link ul li a:hover {
-    background-color: #1abc9c;
-}
-
-/* 6. Phân vùng bên trái (left): rộng 200px, float sang trái */
-#left {
-    width: 200px;
-    min-height: 400px;
-    float: left;
-    background-color: #f7f9fa;
-    border: 1px solid #e1e8ed;
-    padding: 15px;
-}
-
-#left h3 {
-    margin-top: 0;
+aside h3 {
     font-size: 16px;
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 6px;
-}
-
-#left ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-#left ul li {
-    padding: 6px 0;
-    border-bottom: 1px dashed #ccc;
-}
-
-#left ul li a {
-    color: #333;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-/* 8. Phân vùng nội dung chính ở giữa (content): rộng 540px, float sang trái */
-#content {
-    width: 540px;
-    min-height: 400px;
-    float: left;
-    background-color: #ffffff;
-    border: 1px solid #e1e8ed;
-    margin: 0 10px;
-    padding: 20px;
-}
-
-#content h2 {
-    margin-top: 0;
-    color: #2c3e50;
-}
-
-/* 8. Phân vùng bên phải (right): rộng 200px, float sang trái */
-#right {
-    width: 200px;
-    min-height: 400px;
-    float: left;
-    background-color: #f7f9fa;
-    border: 1px solid #e1e8ed;
-    padding: 15px;
-}
-
-#right h3 {
-    margin-top: 0;
-    font-size: 16px;
-    color: #2c3e50;
-    border-bottom: 2px solid #e67e22;
-    padding-bottom: 6px;
-}
-
-/* 10. Phân vùng chân trang (footer): xóa float bằng clear: both */
-#footer {
-    clear: both;
-    background-color: #34495e;
-    color: #ffffff;
-    text-align: center;
-    padding: 15px;
+    color: #1e3a8a;
+    border-bottom: 2px solid #2563eb;
+    padding-bottom: 5px;
+    margin-bottom: 12px;
     margin-top: 10px;
+}
+
+aside h3:first-of-type {
+    margin-top: 0;
+}
+
+aside ul {
+    list-style-type: square;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+aside ul li {
+    margin-bottom: 8px;
+}
+
+aside ul li a {
+    color: #334155;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+aside ul li a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+aside p {
     font-size: 13px;
+    color: #475569;
+}
+
+/* Định dạng thẻ <footer> */
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 18px 15px;
+    font-size: 13px;
+    border-top: 1px solid #334155;
 }

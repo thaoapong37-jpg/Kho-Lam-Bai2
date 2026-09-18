@@ -3,59 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thực hành Tạo bố cục cơ bản</title>
+    <title>Tạo layout với thẻ HTML5 và CSS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Phân vùng bao bọc toàn bộ trang -->
-    <div id="main">
-        <!-- Phân vùng đầu trang: Banner / Logo -->
-        <div id="head">
-            <h1>Logo &amp; Banner Header</h1>
-        </div>
+    <div class="layout-container">
+        <!-- 1. header: Tiêu đề đầu trang -->
+        <header>
+            <h1>Trang Tin Tức Lập Trình</h1>
+            <p>Chia sẻ kiến thức công nghệ và thiết kế giao diện web</p>
+        </header>
 
-        <!-- Phân vùng menu điều hướng đầu trang -->
-        <div id="head-link">
+        <!-- 2. nav: Thanh điều hướng trang -->
+        <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Students</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Khóa học</a></li>
+                <li><a href="#">Diễn đàn</a></li>
+                <li><a href="#">Liên hệ</a></li>
             </ul>
+        </nav>
+
+        <!-- Khung thân trang bao gồm Section và Aside -->
+        <div class="main-wrapper">
+            <!-- 3. section: Vùng chứa nội dung bài viết chính -->
+            <section>
+                <!-- 4. article: Mỗi bài viết độc lập bên trong section -->
+                <article>
+                    <h2>Lợi ích của việc dùng thẻ ngữ nghĩa HTML5</h2>
+                    <p class="post-meta">Đăng ngày 18/09/2026 bởi Ban Biên Tập</p>
+                    <p>HTML5 bổ sung các thẻ ngữ nghĩa như <code>header</code>, <code>nav</code>, <code>section</code>, <code>article</code>, <code>aside</code>, <code>footer</code> thay cho việc lạm dụng quá nhiều thẻ <code>div</code>. Điều này giúp cấu trúc tài liệu rõ ràng, hỗ trợ trình đọc màn hình cho người khiếm thị và tối ưu hóa công cụ tìm kiếm (SEO).</p>
+                </article>
+
+                <article>
+                    <h2>Tối ưu bố cục giao diện với CSS Flexbox</h2>
+                    <p class="post-meta">Đăng ngày 17/09/2026 bởi Frontend Team</p>
+                    <p>Khi phối hợp các thẻ HTML5 với thuộc tính Flexbox, việc phân chia tỉ lệ giữa vùng nội dung bài viết và cột thông tin bên cạnh trở nên linh hoạt, không còn gặp các vấn đề co giật layout hay phải dùng kỹ thuật xóa float phức tạp.</p>
+                </article>
+            </section>
+
+            <!-- 5. aside: Vùng chứa thông tin bổ sung, danh mục bên lề (sidebar) -->
+            <aside>
+                <h3>Chủ đề nổi bật</h3>
+                <ul>
+                    <li><a href="#">Cẩm nang HTML5 cơ bản</a></li>
+                    <li><a href="#">Thực hành CSS Box Model</a></li>
+                    <li><a href="#">Định dạng bảng và danh sách</a></li>
+                    <li><a href="#">Kỹ thuật Sticky Navigation</a></li>
+                </ul>
+
+                <h3>Bài viết mới nhất</h3>
+                <p>Khám phá lộ trình trở thành Frontend Developer từ con số 0 trong năm nay.</p>
+            </aside>
         </div>
 
-        <!-- Phân vùng cột trái -->
-        <div id="left">
-            <h3>Menu Trái</h3>
-            <ul>
-                <li><a href="#">Liên kết 1</a></li>
-                <li><a href="#">Liên kết 2</a></li>
-                <li><a href="#">Liên kết 3</a></li>
-                <li><a href="#">Liên kết 4</a></li>
-            </ul>
-        </div>
-
-        <!-- Phân vùng nội dung chính ở giữa -->
-        <div id="content">
-            <h2>Nội Dung Chính (Content)</h2>
-            <p>Khu vực hiển thị bài viết nổi bật, slide ảnh và thông tin chi tiết của trang web.</p>
-            <p>Bố cục được chia thành 3 cột cân đối nhờ kỹ thuật <code>float: left</code> và <code>box-sizing</code>.</p>
-        </div>
-
-        <!-- Phân vùng cột phải -->
-        <div id="right">
-            <h3>Cột Phải</h3>
-            <p>Lịch công tác</p>
-            <p>Biểu đồ thống kê</p>
-            <p>Bản đồ vị trí</p>
-        </div>
-
-        <!-- Phân vùng chân trang -->
-        <div id="footer">
-            <p>&copy; 2026 Bản quyền thuộc về Website Cá Nhân. Thiết kế bằng HTML &amp; CSS.</p>
-        </div>
+        <!-- 6. footer: Chân trang -->
+        <footer>
+            <p>&copy; 2026 Trang Tin Tức Lập Trình. Thiết kế chuẩn cấu trúc ngữ nghĩa HTML5 &amp; CSS.</p>
+        </footer>
     </div>
 
 </body>
