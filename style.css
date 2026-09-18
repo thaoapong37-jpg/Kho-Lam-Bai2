@@ -4,10 +4,10 @@
 
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
+    background-color: #f8f9fa;
     margin: 0;
-    padding: 30px 15px;
-    background-color: #f9fbfd;
+    padding: 25px;
+    color: #333333;
 }
 
 h1 {
@@ -15,64 +15,61 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Thanh điều hướng */
-nav {
-    margin-bottom: 30px;
+h2 {
+    color: #34495e;
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
-nav a {
-    display: inline-block;
-    margin: 0 15px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 6px 12px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-nav a:hover {
-    background-color: #3498db;
-    color: #ffffff;
-}
-
-/* Khối nội dung chính */
-section {
-    max-width: 960px;
-    margin: 20px auto 40px auto;
-}
-
-/* 3 cột hiển thị ngang hàng với display: inline-block */
-.box {
-    display: inline-block;
-    width: 28%;
-    max-width: 280px;
-    padding: 20px 15px;
-    background-color: lightblue;
-    margin: 10px;
+/* 1. Khung bọc 2 cột float: dùng overflow: hidden để tránh sụp đổ chiều cao */
+.container {
+    width: 100%;
+    overflow: hidden;
     border-radius: 6px;
-    vertical-align: top;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.box h3 {
+/* 2. Cột trái chiếm 50%, float sang trái */
+.left-column {
+    width: 50%;
+    float: left;
+    background-color: lightgray;
+    padding: 20px;
+    min-height: 130px;
+}
+
+/* 3. Cột phải chiếm 48%, float sang phải */
+.right-column {
+    width: 48%;
+    float: right;
+    background-color: lightgreen;
+    padding: 20px;
+    min-height: 130px;
+}
+
+.left-column h3, 
+.right-column h3 {
     margin-top: 0;
-    color: #1e3a8a;
+    color: #2c3e50;
 }
 
-.box p {
+.left-column p, 
+.right-column p {
     margin-bottom: 0;
     font-size: 14px;
-    color: #334155;
     line-height: 1.5;
 }
 
-/* Chân trang */
-footer {
-    margin-top: 40px;
-    padding-top: 15px;
-    border-top: 1px solid #e2e8f0;
-    color: #64748b;
+/* 4. Khối giới hạn kích thước có overflow: auto tạo thanh cuộn */
+.overflow-box {
+    width: 300px;
+    height: 100px;
+    background-color: lightcoral;
+    padding: 12px;
+    overflow: auto;
+    border-radius: 4px;
+    line-height: 1.5;
+    color: #ffffff;
     font-size: 14px;
 }

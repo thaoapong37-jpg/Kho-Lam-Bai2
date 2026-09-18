@@ -3,42 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bố cục với display</title>
+    <title>Bố cục với Float và Overflow</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Tiêu đề trang -->
-    <h1>Bố cục trang web với display</h1>
+    <h1>Bố cục trang với float và overflow</h1>
 
-    <!-- Thanh điều hướng dùng inline-block -->
-    <nav>
-        <a href="#">Trang chủ</a>
-        <a href="#">Giới thiệu</a>
-        <a href="#">Dịch vụ</a>
-        <a href="#">Liên hệ</a>
-    </nav>
+    <!-- Khung chứa 2 cột sử dụng float -->
+    <div class="container">
+        <div class="left-column">
+            <h3>Nội dung bên trái</h3>
+            <p>Cột này chiếm 50% chiều rộng và được căn lề float sang trái. Thuộc tính overflow: hidden ở khung cha giúp bao bọc trọn vẹn chiều cao của hai cột float.</p>
+        </div>
+        <div class="right-column">
+            <h3>Nội dung bên phải</h3>
+            <p>Cột này chiếm 48% chiều rộng và dạt sang phải nhờ thuộc tính float: right.</p>
+        </div>
+    </div>
 
-    <!-- Khối nội dung 3 cột dùng display: inline-block -->
-    <section>
-        <div class="box">
-            <h3>Cột 1</h3>
-            <p>Nội dung giới thiệu dịch vụ cơ bản.</p>
-        </div>
-        <div class="box">
-            <h3>Cột 2</h3>
-            <p>Nội dung về quy trình và tính năng chính.</p>
-        </div>
-        <div class="box">
-            <h3>Cột 3</h3>
-            <p>Thông tin hỗ trợ và chính sách khách hàng.</p>
-        </div>
-    </section>
-
-    <!-- Chân trang -->
-    <footer>
-        <p>Bản quyền &copy; 2026</p>
-    </footer>
+    <!-- Khối kiểm tra overflow xuất hiện thanh cuộn -->
+    <h2>Khối kiểm tra Overflow</h2>
+    <div class="overflow-box">
+        Đây là nội dung rất dài mà chúng ta kiểm tra overflow. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ultricies nunc in mauris pharetra, a ultricies justo fermentum. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
 
 </body>
 </html>
