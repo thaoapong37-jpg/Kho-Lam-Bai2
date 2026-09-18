@@ -27,9 +27,11 @@ section {
     margin-bottom: 30px;
 }
 
-/* Khung bọc Flexbox */
+/* Khung chứa flexbox có chiều rộng cố định để thấy rõ phần dư dôi được lấp đầy */
 .flex-container {
     display: flex;
+    width: 100%;
+    max-width: 750px;
     background-color: #cbd5e1;
     padding: 12px;
     border-radius: 6px;
@@ -39,50 +41,40 @@ section {
 .item {
     background-color: #0284c7;
     color: #ffffff;
-    height: 60px;
+    height: 55px;
+    padding: 0 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     border-radius: 4px;
-    padding: 0 10px;
+    /* Mặc định flex-grow là 0, các item chỉ chiếm đúng kích thước nội dung */
 }
 
-/* 1. Thiết lập kích thước ban đầu theo pixel */
-.basis-100 {
-    flex-basis: 100px;
+/* 1. Phần tử thứ 2 giãn ra để chiếm trọn toàn bộ khoảng trống còn lại */
+.grow-item {
+    flex-grow: 1;
+    background-color: #e11d48;
 }
 
-.basis-200 {
-    flex-basis: 200px;
+/* 2. Chia tỷ lệ khoảng trống theo 1 : 2 : 3 */
+.grow-1 {
+    flex-grow: 1;
+    background-color: #059669;
 }
 
-.basis-150 {
-    flex-basis: 150px;
+.grow-2 {
+    flex-grow: 2;
+    background-color: #d97706;
 }
 
-/* 2. Giá trị auto: phụ thuộc vào kích thước nội dung bên trong item */
-.basis-auto {
-    flex-basis: auto;
+.grow-3 {
+    flex-grow: 3;
+    background-color: #7c3aed;
 }
 
-.item-green {
-    background-color: #16a34a;
-}
-
-/* 3. initial và inherit */
-.parent-basis {
-    flex-basis: 220px;
-}
-
-.basis-initial {
-    flex-basis: initial; /* Giá trị mặc định tương đương auto */
-}
-
-.basis-inherit {
-    flex-basis: inherit; /* Kế thừa 220px từ khung cha .parent-basis */
-}
-
-.item-orange {
-    background-color: #ea580c;
+/* 3. Giá trị mặc định initial (tương đương flex-grow: 0) */
+.grow-initial {
+    flex-grow: initial;
+    background-color: #475569;
 }

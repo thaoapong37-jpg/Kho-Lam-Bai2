@@ -3,39 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thực hành CSS flex-basis</title>
+    <title>Thực hành CSS flex-grow</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Thực hành thuộc tính CSS flex-basis</h1>
+    <h1>Thực hành thuộc tính CSS flex-grow</h1>
 
-    <!-- Ví dụ 1: flex-basis với đơn vị độ dài cố định (px / %) -->
+    <!-- Ví dụ đề bài: 5 phần tử con, phần tử thứ 2 đặt flex-grow để chiếm phần còn lại -->
     <section>
-        <h2>1. flex-basis dạng đơn vị đo (px / %)</h2>
+        <h2>1. Áp dụng flex-grow: 1 cho div thứ 2 (4 div còn lại giữ nguyên)</h2>
         <div class="flex-container">
-            <div class="item basis-100">100px</div>
-            <div class="item basis-200">200px</div>
-            <div class="item basis-150">150px</div>
+            <div class="item">1</div>
+            <div class="item grow-item">2 (flex-grow: 1)</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
         </div>
     </section>
 
-    <!-- Ví dụ 2: flex-basis: auto (kích thước tính theo nội dung bên trong) -->
+    <!-- Ví dụ 2: So sánh tốc độ phát triển giữa các tỷ lệ flex-grow khác nhau -->
     <section>
-        <h2>2. flex-basis: auto (kích thước tự động co giãn theo nội dung)</h2>
+        <h2>2. So sánh flex-grow: 1, 2 và 3 (chia sẻ khoảng trống theo tỷ lệ)</h2>
         <div class="flex-container">
-            <div class="item basis-auto item-green">Ngắn</div>
-            <div class="item basis-auto item-green">Nội dung có độ dài vừa phải</div>
-            <div class="item basis-auto item-green">Dài hơn rất nhiều</div>
+            <div class="item grow-1">grow: 1</div>
+            <div class="item grow-2">grow: 2</div>
+            <div class="item grow-3">grow: 3</div>
         </div>
     </section>
 
-    <!-- Ví dụ 3: flex-basis: initial và inherit -->
+    <!-- Ví dụ 3: Giá trị initial (mặc định bằng 0 - không co giãn) -->
     <section>
-        <h2>3. flex-basis: initial (trả về auto) và inherit (kế thừa từ thẻ cha)</h2>
-        <div class="flex-container parent-basis">
-            <div class="item basis-initial item-orange">initial (auto)</div>
-            <div class="item basis-inherit item-orange">inherit (220px)</div>
+        <h2>3. flex-grow: initial (mặc định = 0)</h2>
+        <div class="flex-container">
+            <div class="item grow-initial">initial (0)</div>
+            <div class="item grow-initial">initial (0)</div>
+            <div class="item grow-initial">initial (0)</div>
         </div>
     </section>
 
