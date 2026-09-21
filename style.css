@@ -1,196 +1,37 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #1e293b;
-  background-color: #f8fafc;
-  line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #334155;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.max-w-600 {
+    max-width: 600px;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+.max-w-700 {
+    max-width: 700px;
 }
 
-.header {
-  background: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.header .navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 0;
-}
-.header .logo {
-  font-size: 22px;
-  font-weight: 700;
-  color: #2563eb;
-}
-.header .nav-links {
-  display: flex;
-  list-style: none;
-  gap: 24px;
-}
-.header .nav-links a {
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.header .nav-links a:hover {
-  color: #2563eb;
+.letter-spacing {
+    letter-spacing: 1px;
 }
 
-.hero {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: #ffffff;
-  padding: 80px 0;
-  text-align: center;
-}
-.hero h1 {
-  font-size: 36px;
-  margin-bottom: 16px;
-}
-.hero p {
-  font-size: 18px;
-  color: #94a3b8;
-  max-width: 600px;
-  margin: 0 auto;
+.card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.products-section {
-  padding: 60px 0;
-}
-.products-section .section-title {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 40px;
-}
-.products-section .product-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-}
-@media (min-width: 768px) {
-  .products-section .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (min-width: 1024px) {
-  .products-section .product-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-.products-section .product-card {
-  background: #ffffff;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
-  padding: 24px;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.products-section .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-.products-section .product-card h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-.products-section .product-card .price {
-  font-size: 22px;
-  color: #2563eb;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-.products-section .product-card .btn-buy {
-  display: inline-block;
-  background: #2563eb;
-  color: #ffffff;
-  padding: 10px 24px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-.products-section .product-card .btn-buy:hover {
-  background: rgb(7.619047619%, 31.2380952381%, 83.0476190476%);
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important;
 }
 
-.stats-section {
-  background: #ffffff;
-  padding: 50px 0;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
-}
-.stats-section .stats-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  text-align: center;
-}
-@media (min-width: 768px) {
-  .stats-section .stats-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-.stats-section .stat-item .stat-number {
-  font-size: 36px;
-  font-weight: 800;
-  color: #2563eb;
-  margin-bottom: 6px;
-}
-.stats-section .stat-item .stat-label {
-  font-size: 15px;
-  color: #64748b;
+.nav-link {
+    transition: color 0.2s ease;
 }
 
-.footer {
-  background: #0f172a;
-  color: #94a3b8;
-  padding: 50px 0 25px;
+.nav-link:hover, .nav-link.active {
+    color: #2563eb !important;
 }
-.footer .footer-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-  margin-bottom: 30px;
-}
-@media (min-width: 768px) {
-  .footer .footer-content {
-    grid-template-columns: 2fr 1fr 1fr;
-  }
-}
-.footer .footer-content h4 {
-  color: #ffffff;
-  font-size: 18px;
-  margin-bottom: 14px;
-}
-.footer .footer-content ul {
-  list-style: none;
-}
-.footer .footer-content ul li {
-  margin-bottom: 8px;
-}
-.footer .footer-content ul a:hover {
-  color: #ffffff;
-}
-.footer .footer-bottom {
-  text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid #334155;
-  font-size: 14px;
-}
-
-/*# sourceMappingURL=style.css.map */
