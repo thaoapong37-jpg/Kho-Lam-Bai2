@@ -1,1 +1,1 @@
-@mixin button-style($bg-color) { background: $bg-color; color: white; padding: $padding-standard; border-radius: 5px; border: none; cursor: pointer; font-size: 16px; font-weight: bold; transition: opacity 0.2s ease; &:hover { opacity: 0.85; } } @mixin box-style { background: white; padding: 20px; border-radius: 10px; box-shadow: $box-shadow-default; }
+@mixin tablet { @media (min-width: 768px) { @content; } } @mixin desktop { @media (min-width: 1024px) { @content; } }
