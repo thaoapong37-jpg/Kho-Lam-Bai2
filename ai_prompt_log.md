@@ -1,19 +1,19 @@
 @'
-# NHẬT KÝ TƯƠNG TÁC CÙNG AI TRONG TỐI ƯU HÓA HIỆU NĂNG TRUY VẤN
+# NHẬT KÝ TƯƠNG TÁC CÙNG AI VỀ CARDINALITY VÀ INNODB STORAGE
 
-## Prompt 1: Ý nghĩa cột type trong lệnh EXPLAIN
-* **Câu hỏi:** Trong MySQL, các giá trị trong cột type của lệnh EXPLAIN như ALL, index, range, ref, const có ý nghĩa gì và độ ưu tiên ra sao?
-* **Phản hồi từ AI:** Thứ tự hiệu năng từ nhanh nhất đến chậm nhất là: `system` -> `const` (tìm theo PK/Unique) -> `eq_ref` -> `ref` (dùng Non-Unique Index) -> `range` (quét khoảng index với <, >, BETWEEN) -> `index` (quét toàn bộ cây Index) -> `ALL` (Full Table Scan - quét ổ đĩa toàn bảng, chậm nhất và cần tối ưu).
+## Prompt 1: Tác hại của việc Index cột TEXT và BOOLEAN
+- **Câu hỏi:** Trong MySQL, nếu tôi tạo Index trên cột TEXT(255) và cột BOOLEAN (0 và 1) thì gây hại như thế nào đến RAM, Disk và Query Optimizer?
+- **Phản hồi từ AI:** Index trên cột TEXT chiếm dung lượng lớn trên mỗi nhánh B-Tree, làm giảm số lượng bản ghi trên một trang 16KB của InnoDB và đẩy nhanh quá trình phình to Disk/RAM. Với BOOLEAN, Cardinality chỉ bằng 2 khiến tính chọn lọc (Selectivity) cực thấp; Optimizer nhận định chi phí Index Scan + Random Read cao hơn Full Table Scan nên từ chối dùng Index, biến nó thành rác tiêu tốn tài nguyên bảo trì.
 
-## Prompt 2: Khái niệm SARGable và lý do bọc hàm gây hỏng Index
-* **Câu hỏi:** Thuật ngữ "SARGable" là gì? Tại sao `WHERE YEAR(created_at) = 2026` lại biến truy vấn thành Non-SARGable?
-* **Phản hồi từ AI:** SARGable viết tắt của Search Argument Able (có thể tìm kiếm được bằng đối số). B-Tree Index sắp xếp theo giá trị thô ban đầu của cột. Khi bọc hàm `YEAR(col)`, giá trị so sánh không còn là giá trị lưu trong cây B-Tree nữa, khiến Optimizer không thể tìm nhị phân mà phải lôi toàn bộ dữ liệu ra tính toán từng dòng. Viết lại thành khoảng ngày `col >= '2026-01-01' AND col < '2027-01-01'` sẽ giữ được tính SARGable.
+## Prompt 2: Lý do MySQL quét toàn bảng dù có Index trên cột BOOLEAN
+- **Câu hỏi:** Tại sao `SELECT * FROM Posts WHERE is_visible = 1` trên bảng hàng triệu dòng (99% là 1) lại chạy Full Table Scan thay vì dùng Index?
+- **Phản hồi từ AI:** MySQL sử dụng Cost-Based Optimizer (CBO). Khi 99% dòng dữ liệu mang giá trị 1, việc đọc Index rồi quay lại bảng chính để lấy dữ liệu (Bookmark Lookup) đòi hỏi hàng triệu lượt Random I/O rời rạc. Optimizer tính toán thấy đọc tuần tự toàn bộ bảng (Sequential I/O) nhanh hơn nhiều, do đó bỏ qua Index hoàn toàn.
 
-## Prompt 3: Thứ tự cột trong Composite Index
-* **Câu hỏi:** Trong Composite Index `(transaction_type, created_at)`, quy tắc đặt thứ tự cột là gì?
-* **Phản hồi từ AI:** Áp dụng nguyên tắc "Equality first, Range second" (Cột so sánh bằng đặt trước, cột so sánh khoảng đặt sau). Cột `transaction_type` dùng toán tử `=` nên đặt đầu tiên để thu hẹp tập dữ liệu nhanh nhất, sau đó mới đến `created_at` dùng toán tử so sánh khoảng `>=` và `<`.
+## Prompt 3: Xem kích thước Data và Index tính bằng MB
+- **Câu hỏi:** Cho tôi cú pháp SQL truy vấn bảng information_schema.TABLES để lấy kích thước Data_MB và Index_MB của bảng Posts?
+- **Phản hồi từ AI:** Sử dụng công thức `ROUND(data_length / 1024 / 1024, 2)` và `ROUND(index_length / 1024 / 1024, 2)` từ bảng `information_schema.TABLES` có điều kiện lọc theo `table_schema` và `table_name`.
 
-## Prompt 4: Rủi ro khi lạm dụng Index trên hệ thống OLTP cao
-* **Câu hỏi:** Nếu hệ thống có hàng nghìn thao tác INSERT/UPDATE/DELETE mỗi giây, việc đánh quá nhiều Index sẽ gây nguy cơ gì?
-* **Phản hồi từ AI:** Mỗi thao tác ghi (Write), MySQL ngoài việc ghi dữ liệu vào bảng còn phải cập nhật lại toàn bộ các cây B-Tree Index tương ứng và thực hiện phân tách trang (Page Split), làm tăng đáng kể độ trễ ghi (Write Latency), gây lãng phí dung lượng RAM (Buffer Pool) và nguy cơ Deadlock cao.
+## Prompt 4: Giải pháp tìm kiếm văn bản trong cột content
+- **Câu hỏi:** Để tìm kiếm từ khóa trong cột content mà không dùng B-Tree Index gây tốn dung lượng, giải pháp là gì?
+- **Phản hồi từ AI:** Sử dụng **FULLTEXT Index** trong MySQL. Cơ chế này áp dụng cấu trúc Inverted Index (chỉ mục đảo), chỉ lưu từ khóa và vị trí xuất hiện, kết hợp cùng các hàm `MATCH(...) AGAINST(...)`, tiết kiệm dung lượng hơn và giải quyết được bài toán tìm kiếm từ tự nhiên.
 '@ | Out-File -FilePath "ai_prompt_log.md" -Encoding utf8
