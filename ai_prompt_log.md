@@ -1,17 +1,19 @@
-# NHAT KY TUONG TAC CUNG AI TRONG THIET KE HE THONG HEALTHSYNC
+@'
+# NHẬT KÝ TƯƠNG TÁC CÙNG AI TRONG THIẾT KẾ HỆ THỐNG AUTORIDE
 
-## Prompt 1: Phan tich Anti-Pattern trang thai boolean
-- Cau hoi: Trong thiet ke CSDL, tai sao dung is_active BOOLEAN theo doi vong doi lich hen lai la Anti-pattern va nen thay the the nao?
-- Phan hoi tu AI: BOOLEAN chi phan anh 2 trang thai dong/mo, khong the luu vet duoc tien trinh da cap (PENDING -> CONFIRMED -> CHECKED_IN -> COMPLETED / CANCELLED). Nen dung ENUM hoac bang danh muc trang thai.
+## Prompt 1: Lựa chọn kiểu dữ liệu tài chính (DECIMAL vs FLOAT)
+- **Câu hỏi:** Trong MySQL, tại sao các cột tài chính như security_deposit, late_fee, damage_fee bắt buộc phải dùng DECIMAL(12,2) mà không dùng FLOAT hay DOUBLE?
+- **Phản hồi từ AI:** Kiểu FLOAT/DOUBLE lưu trữ dưới dạng số nhị phân dấu phẩy động (chuẩn IEEE 754), gây sai số làm tròn khi thực hiện phép trừ tính tiền hoàn cọc. DECIMAL(12,2) là kiểu số thực cố định (Exact Numeric), đảm bảo tính chính xác tuyệt đối từng đơn vị tiền tệ cho bộ phận kế toán.
 
-## Prompt 2: Kieu du lieu so cho tai chinh (FLOAT vs DECIMAL)
-- Cau hoi: Khi luu deposit_amount va penalty_fee, tai sao phai dung DECIMAL ma khong dung FLOAT/DOUBLE?
-- Phan hoi tu AI: FLOAT va DOUBLE gay ra sai so lam tron nhi phan (floating-point error). DECIMAL(12, 2) la so thuc co dinh chinh xac tuyet doi cho tinh toan ke toan.
+## Prompt 2: Lựa chọn quan hệ 1-1 hay 1-N cho bảng Inspections
+- **Câu hỏi:** Bảng Inspections nên liên kết với Rentals theo quan hệ 1-1 hay 1-N?
+- **Phản hồi từ AI:** Trong thực tế thuê xe, một hợp đồng thường có ít nhất 2 lần kiểm tra: khi giao xe (check-out) và khi nhận lại xe (check-in). Do đó, thiết kế quan hệ 1-N (1 hợp đồng có nhiều biên bản kiểm tra) giúp hệ thống mở rộng linh hoạt hơn so với 1-1.
 
-## Prompt 3: Ngan chan don thuoc rac o tang CSDL bang Triggers
-- Cau hoi: Lam the nao de chan chen don thuoc khi lich hen chua COMPLETED?
-- Phan hoi tu AI: Dung BEFORE INSERT TRIGGER tren bang Prescriptions kiem tra status cua Appointments, neu khac COMPLETED thi dung SIGNAL SQLSTATE '45000' de huy giao dich.
+## Prompt 3: Ngăn chặn chèn dữ liệu kiểm tra xe bằng Trigger
+- **Câu hỏi:** Làm thế nào để ngăn chặn nhân viên tạo biên bản kiểm tra xe (Inspections) khi hợp đồng đang ở trạng thái BOOKED?
+- **Phản hồi từ AI:** Sử dụng `BEFORE INSERT TRIGGER` trên bảng `Inspections` để truy vấn trạng thái hợp đồng trong `Rentals`. Nếu `status = 'BOOKED'`, phát tín hiệu lỗi `SIGNAL SQLSTATE '45000'` từ chối giao dịch.
 
-## Prompt 4: Tinh nhat quan giua UML Activity Diagram va ERD
-- Cau hoi: Su nhat quan giua Activity Diagram va ERD co vai tro gi khi chuyen giao BA va Dev?
-- Phan hoi tu AI: Activity Diagram mo ta quy trinh dong theo thoi gian, ERD luu tru trang thai tinh. Neu ERD thieu cac truong du lieu tu quy trinh thi lap trinh vien backend khong co noi luu du lieu, he thong se bao loi.
+## Prompt 4: Hậu quả của việc lệch pha giữa Activity Diagram và ERD lên UX
+- **Câu hỏi:** Sự thiếu đồng bộ giữa Activity Diagram và ERD gây ảnh hưởng gì tới trải nghiệm người dùng cuối?
+- **Phản hồi từ AI:** Giao diện ứng dụng (UI) có ô nhập thông tin hoặc hiển thị nút bấm nhưng khi bấm xác nhận thì API backend báo lỗi do CSDL không có cột lưu trữ. Điều này gây gián đoạn thanh toán, tranh chấp tiền cọc giữa khách và nhân viên, và làm mất uy tín dịch vụ.
+'@ | Out-File -FilePath "ai_prompt_log.md" -Encoding utf8
