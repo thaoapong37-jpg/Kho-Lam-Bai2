@@ -3,260 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iPhone 16 Pro - Thiết Kế & Hiệu Năng Đỉnh Cao</title>
-    <!-- Nhúng Bootstrap 5.3.0 CSS từ CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <!-- Nhúng Font Awesome 6 Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Simple Web Development Template</title>
+    <!-- Nhúng Google Fonts hỗ trợ cho font Piazzolla và Ubuntu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,opsz,wght@0,8..30,700;1,8..30,400&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-black text-white">
+<body>
 
-    <!-- 1. Thanh điều hướng phong cách Apple -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black bg-opacity-75 sticky-top backdrop-blur border-bottom border-dark">
-        <div class="container">
-            <a class="navbar-brand text-light fs-4" href="#">
-                <i class="fab fa-apple"></i>
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#appleNav" aria-controls="appleNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-center" id="appleNav">
-                <ul class="navbar-nav gap-lg-4 text-center small">
-                    <li class="nav-item"><a class="nav-link text-secondary text-hover-white" href="#overview">Tổng quan</a></li>
-                    <li class="nav-item"><a class="nav-link text-secondary text-hover-white" href="#design">Thiết kế Titanium</a></li>
-                    <li class="nav-item"><a class="nav-link text-secondary text-hover-white" href="#performance">Chip A18 Pro</a></li>
-                    <li class="nav-item"><a class="nav-link text-secondary text-hover-white" href="#camera">Hệ thống Camera</a></li>
-                    <li class="nav-item"><a class="nav-link text-secondary text-hover-white" href="#specs">Thông số kỹ thuật</a></li>
-                </ul>
+    <!-- 1. Thanh điều hướng cố định (Sticky Navbar) -->
+    <nav class="navbar background">
+        <ul class="nav-list">
+            <div class="logo">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=300&q=80" alt="Logo">
             </div>
-            <div class="d-none d-lg-flex align-items-center gap-3">
-                <a href="#buy" class="btn btn-primary btn-sm rounded-pill px-3 py-1 fw-semibold">Mua ngay</a>
-            </div>
+            <li><a href="#web">Web Technology</a></li>
+            <li><a href="#program">C Programming</a></li>
+            <li><a href="#course">Courses</a></li>
+        </ul>
+
+        <div class="rightnav">
+            <input type="text" name="search" id="search" placeholder="Search...">
+            <button class="btn btn-sm">Search</button>
         </div>
     </nav>
 
-    <!-- 2. Hero Section: Khối mở đầu giới thiệu sản phẩm -->
-    <header id="overview" class="text-center py-5">
-        <div class="container py-lg-5">
-            <p class="text-warning fw-bold text-uppercase small mb-2 tracking-wide">iPhone 16 Pro</p>
-            <h1 class="display-3 fw-bold mb-3">Titanium. Mạnh Mẽ. Siêu Phàm.</h1>
-            <p class="lead text-secondary col-lg-8 mx-auto mb-4">
-                Thiết kế titan cấp độ hàng không vũ trụ mới với viền màn hình mỏng nhất từng có trên iPhone, cùng sức mạnh bứt phá từ vi xử lý A18 Pro.
+    <!-- 2. Phần Web Technology -->
+    <section class="firstsection">
+        <div class="box-main">
+            <div class="firsthalf">
+                <h1 class="text-big" id="web">Web Technology</h1>
+                <p class="text-small">
+                    HTML stands for HyperText Markup Language. It is used to design web pages using a markup language. 
+                    HTML is the combination of Hypertext and Markup language. Hypertext defines the link between the web pages. 
+                    A markup language is used to define the text document within tags which defines the structure of web pages. 
+                    HTML is a markup language that is used by the browser to manipulate text, images, and other content to display it in the required format.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Phần C Programming -->
+    <section class="secondsection">
+        <div class="box-main">
+            <div class="firsthalf">
+                <h1 class="text-big" id="program">C Programming</h1>
+                <p class="text-small">
+                    C is a procedural programming language. It was initially developed by Dennis Ritchie as a system programming 
+                    language to write operating systems. The main features of C language include low-level access to memory, 
+                    simple set of keywords, and clean style. These features make C language suitable for system programming 
+                    like operating system or compiler development.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Phần Java (Hình ảnh bên phải, văn bản bên trái) -->
+    <section class="section" id="course">
+        <div class="paras">
+            <h1 class="sectionTag text-big">Java</h1>
+            <p class="sectionSubTag text-small">
+                Java has been one of the most popular programming languages for many years. Java is Object-Oriented. 
+                However, it is not considered pure object-oriented as it provides support for primitive data types (like int, char, etc.). 
+                The Java codes are first compiled into byte code (machine independent code). Then the byte code is run on 
+                Java Virtual Machine (JVM) regardless of the underlying architecture.
             </p>
-            
-            <div class="d-flex justify-content-center align-items-center gap-3 mb-5">
-                <a href="#buy" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold">Đặt mua từ 28.990.000đ</a>
-                <a href="#features" class="btn btn-outline-secondary rounded-pill px-4 py-2 text-light">Tìm hiểu thêm <i class="fas fa-chevron-right small ms-1"></i></a>
-            </div>
-
-            <div class="hero-image-wrapper mx-auto text-center">
-                <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1200&q=80" 
-                     alt="iPhone 16 Pro Titanium" 
-                     class="img-fluid rounded-4 shadow-lg hero-img">
-            </div>
         </div>
-    </header>
-
-    <!-- 3. Key Highlights Grid: 4 cột tính năng chính sử dụng Flexbox & Grid -->
-    <section id="features" class="py-5 bg-dark-subtle-box border-top border-bottom border-dark">
-        <div class="container py-4">
-            <div class="text-center mb-5">
-                <h2 class="display-6 fw-bold">Điểm nhấn đáng kinh ngạc</h2>
-                <p class="text-secondary">Những nâng cấp đột phá định hình chuẩn mực flagship mới</p>
-            </div>
-
-            <div class="row g-4">
-                <!-- Highlight 1: Chip -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card h-100 bg-dark text-white border-0 rounded-4 p-4 d-flex flex-column justify-content-between feature-card">
-                        <div>
-                            <div class="feature-icon text-warning mb-3 fs-2">
-                                <i class="fas fa-microchip"></i>
-                            </div>
-                            <h3 class="h5 fw-bold mb-2">Chip A18 Pro</h3>
-                            <p class="text-secondary small mb-0">Hiệu năng đồ họa ray-tracing tăng tốc phần cứng mượt mà và tiết kiệm pin vượt trội.</p>
-                        </div>
-                        <span class="badge bg-secondary-subtle text-light align-self-start mt-4 px-2 py-1">Nhanh hơn 20%</span>
-                    </div>
-                </div>
-
-                <!-- Highlight 2: Camera -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card h-100 bg-dark text-white border-0 rounded-4 p-4 d-flex flex-column justify-content-between feature-card">
-                        <div>
-                            <div class="feature-icon text-info mb-3 fs-2">
-                                <i class="fas fa-camera"></i>
-                            </div>
-                            <h3 class="h5 fw-bold mb-2">Camera Fusion 48MP</h3>
-                            <p class="text-secondary small mb-0">Quay phim chuẩn 4K Dolby Vision 120 fps cho khung hình điện ảnh sắc nét chân thực.</p>
-                        </div>
-                        <span class="badge bg-secondary-subtle text-light align-self-start mt-4 px-2 py-1">Zoom quang học 5x</span>
-                    </div>
-                </div>
-
-                <!-- Highlight 3: Pin -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card h-100 bg-dark text-white border-0 rounded-4 p-4 d-flex flex-column justify-content-between feature-card">
-                        <div>
-                            <div class="feature-icon text-success mb-3 fs-2">
-                                <i class="fas fa-battery-full"></i>
-                            </div>
-                            <h3 class="h5 fw-bold mb-2">Thời lượng pin cả ngày</h3>
-                            <p class="text-secondary small mb-0">Tối ưu hóa năng lượng toàn diện cho thời gian xem video liên tục lên đến 33 giờ.</p>
-                        </div>
-                        <span class="badge bg-secondary-subtle text-light align-self-start mt-4 px-2 py-1">Tăng thêm 4 giờ</span>
-                    </div>
-                </div>
-
-                <!-- Highlight 4: Nút điều khiển -->
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="card h-100 bg-dark text-white border-0 rounded-4 p-4 d-flex flex-column justify-content-between feature-card">
-                        <div>
-                            <div class="feature-icon text-danger mb-3 fs-2">
-                                <i class="fas fa-sliders"></i>
-                            </div>
-                            <h3 class="h5 fw-bold mb-2">Camera Control</h3>
-                            <p class="text-secondary small mb-0">Nút cảm biến xúc giác chuyên dụng giúp điều chỉnh khẩu độ, zoom và phơi sáng ngay lập tức.</p>
-                        </div>
-                        <span class="badge bg-secondary-subtle text-light align-self-start mt-4 px-2 py-1">Cảm ứng lực thông minh</span>
-                    </div>
-                </div>
-            </div>
+        <div class="thumbnail">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Laptop image">
         </div>
     </section>
 
-    <!-- 4. Chi tiết công nghệ: Flexbox căn giữa và đổi chiều linh hoạt -->
-    <section id="design" class="py-5">
-        <div class="container py-4">
-            <!-- Khối 1: Thiết kế Titanium -->
-            <div class="row align-items-center g-5 mb-5">
-                <div class="col-12 col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=800&q=80" 
-                         alt="Khung viền Titanium" 
-                         class="img-fluid rounded-4 shadow border border-dark">
-                </div>
-                <div class="col-12 col-lg-6">
-                    <span class="text-uppercase text-primary fw-bold small">Chất liệu cao cấp</span>
-                    <h2 class="display-6 fw-bold my-3">Khung viền Titanium Cấp 5 bền chắc khó tin</h2>
-                    <p class="text-secondary leading-relaxed mb-3">
-                        Titanium sở hữu một trong những tỷ lệ độ bền trên trọng lượng ấn tượng nhất trong mọi kim loại. Điều này làm cho các mẫu iPhone Pro vừa nhẹ hơn đáng kể, vừa có khả năng chống chịu va đập và trầy xước xuất sắc.
-                    </p>
-                    <p class="text-secondary leading-relaxed mb-4">
-                        Bề mặt hoàn thiện dạng chải xước tinh xảo với bốn tùy chọn màu titan sang trọng: Titan Tự Nhiên, Titan Sa Mạc, Titan Trắng và Titan Đen.
-                    </p>
-                    <div class="d-flex gap-4">
-                        <div>
-                            <h4 class="fw-bold text-light mb-0">Titanium</h4>
-                            <span class="text-secondary small">Cấp độ hàng không</span>
-                        </div>
-                        <div class="border-start border-secondary ps-4">
-                            <h4 class="fw-bold text-light mb-0">Ceramic Shield</h4>
-                            <span class="text-secondary small">Bền hơn kính thông thường 2x</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Khối 2: Hiệu năng vi xử lý A18 Pro -->
-            <div id="performance" class="row align-items-center g-5 flex-lg-row-reverse mt-4">
-                <div class="col-12 col-lg-6">
-                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" 
-                         alt="Chip Apple A18 Pro" 
-                         class="img-fluid rounded-4 shadow border border-dark">
-                </div>
-                <div class="col-12 col-lg-6">
-                    <span class="text-uppercase text-warning fw-bold small">Kiến trúc thế hệ mới</span>
-                    <h2 class="display-6 fw-bold my-3">A18 Pro. Cỗ máy quái vật dành cho AI</h2>
-                    <p class="text-secondary leading-relaxed mb-3">
-                        Được chế tạo trên quy trình 3nm thế hệ thứ 2, chip A18 Pro sở hữu Neural Engine 16 lõi được nâng cấp, giúp xử lý các mô hình ngôn ngữ lớn và thuật toán học máy trực tiếp trên thiết bị với độ trễ cực thấp.
-                    </p>
-                    <p class="text-secondary leading-relaxed mb-4">
-                        GPU 6 lõi đẳng cấp máy trạm mở ra kỷ nguyên chơi game AAA trên di động với hình ảnh đổ bóng và phản chiếu ánh sáng chân thực.
-                    </p>
-                    <ul class="list-unstyled text-secondary small d-flex flex-column gap-2">
-                        <li><i class="fas fa-check text-success me-2"></i> Băng thông bộ nhớ hợp nhất tăng 17%</li>
-                        <li><i class="fas fa-check text-success me-2"></i> Hỗ trợ Ray Tracing thời gian thực siêu tốc</li>
-                        <li><i class="fas fa-check text-success me-2"></i> Tích hợp công nghệ bảo vệ quyền riêng tư Apple Intelligence</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- 5. Phần mở rộng với row-reverse (Đảo chiều hình ảnh sang trái, văn bản sang phải) -->
+    <section class="section section-Left">
+        <div class="paras">
+            <h1 class="sectionTag text-big">Python Programming</h1>
+            <p class="sectionSubTag text-small">
+                Python is an interpreted, high-level, general-purpose programming language. Its design philosophy emphasizes code 
+                readability with the use of significant indentation. Its language constructs as well as its object-oriented approach 
+                aim to help programmers write clear, logical code for small and large-scale projects.
+            </p>
+        </div>
+        <div class="thumbnail">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Python code display">
         </div>
     </section>
 
-    <!-- 5. Bảng thông số kỹ thuật nhanh (Specs) -->
-    <section id="specs" class="py-5 bg-dark">
-        <div class="container py-4">
-            <h2 class="text-center fw-bold mb-5">Thông số kỹ thuật so sánh</h2>
-            <div class="table-responsive">
-                <table class="table table-dark table-hover align-middle border-secondary text-center">
-                    <thead>
-                        <tr class="border-bottom border-secondary">
-                            <th class="text-start py-3 fs-5">Đặc tính</th>
-                            <th class="py-3 fs-5 text-primary">iPhone 16 Pro</th>
-                            <th class="py-3 fs-5 text-warning">iPhone 16 Pro Max</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-secondary">
-                        <tr>
-                            <td class="text-start py-3 fw-semibold text-light">Màn hình</td>
-                            <td>6.3 inch Super Retina XDR</td>
-                            <td>6.9 inch Super Retina XDR</td>
-                        </tr>
-                        <tr>
-                            <td class="text-start py-3 fw-semibold text-light">Công nghệ hiển thị</td>
-                            <td>ProMotion 120Hz, Always-On</td>
-                            <td>ProMotion 120Hz, Always-On</td>
-                        </tr>
-                        <tr>
-                            <td class="text-start py-3 fw-semibold text-light">Vi xử lý</td>
-                            <td>Apple A18 Pro (3nm)</td>
-                            <td>Apple A18 Pro (3nm)</td>
-                        </tr>
-                        <tr>
-                            <td class="text-start py-3 fw-semibold text-light">Camera chính</td>
-                            <td>48MP Fusion + 48MP Ultra Wide</td>
-                            <td>48MP Fusion + 48MP Ultra Wide</td>
-                        </tr>
-                        <tr>
-                            <td class="text-start py-3 fw-semibold text-light">Cổng sạc &amp; truyền dữ liệu</td>
-                            <td>USB-C (Tốc độ chuẩn USB 3)</td>
-                            <td>USB-C (Tốc độ chuẩn USB 3)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. Call To Action: Đặt hàng -->
-    <section id="buy" class="py-5 text-center bg-black">
-        <div class="container py-4">
-            <h2 class="display-5 fw-bold mb-3">Sở hữu iPhone 16 Pro ngay hôm nay</h2>
-            <p class="lead text-secondary mb-4">Giao hàng miễn phí toàn quốc. Trả góp lãi suất 0% qua thẻ tín dụng.</p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <button type="button" class="btn btn-primary btn-lg rounded-pill px-5 fw-semibold">
-                    <i class="fas fa-bag-shopping me-2"></i>Thêm Vào Giỏ Hàng
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- 7. Footer chuẩn phong cách Apple -->
-    <footer class="border-top border-dark py-4 text-secondary small bg-black">
-        <div class="container">
-            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
-                <p class="mb-0">&copy; 2026 Apple Inc. Bản quyền thuộc về Apple. Trang thực hành thiết kế giao diện bằng Bootstrap 5 &amp; Font Awesome.</p>
-                <div class="d-flex gap-3">
-                    <a href="#" class="text-secondary text-decoration-none">Chính sách bảo mật</a>
-                    <a href="#" class="text-secondary text-decoration-none">Điều khoản sử dụng</a>
-                    <a href="#" class="text-secondary text-decoration-none">Hỗ trợ kỹ thuật</a>
-                </div>
-            </div>
-        </div>
+    <!-- 6. Chân trang (Footer) -->
+    <footer class="background">
+        <p class="text-footer">
+            Copyright &copy; 2026 - All rights are reserved
+        </p>
     </footer>
 
-    <!-- Nhúng Bootstrap JavaScript Bundle từ CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
