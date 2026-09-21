@@ -1,19 +1,19 @@
 @'
-# NHẬT KÝ TƯƠNG TÁC CÙNG AI TRONG THIẾT KẾ HỆ THỐNG AUTORIDE
+# NHẬT KÝ TƯƠNG TÁC CÙNG AI TRONG TỐI ƯU TRUY VẤN JOIN
 
-## Prompt 1: Lựa chọn kiểu dữ liệu tài chính (DECIMAL vs FLOAT)
-- **Câu hỏi:** Trong MySQL, tại sao các cột tài chính như security_deposit, late_fee, damage_fee bắt buộc phải dùng DECIMAL(12,2) mà không dùng FLOAT hay DOUBLE?
-- **Phản hồi từ AI:** Kiểu FLOAT/DOUBLE lưu trữ dưới dạng số nhị phân dấu phẩy động (chuẩn IEEE 754), gây sai số làm tròn khi thực hiện phép trừ tính tiền hoàn cọc. DECIMAL(12,2) là kiểu số thực cố định (Exact Numeric), đảm bảo tính chính xác tuyệt đối từng đơn vị tiền tệ cho bộ phận kế toán.
+## Prompt 1: Mặc định từ khóa JOIN trong MySQL
+- **Câu hỏi:** Trong cơ sở dữ liệu MySQL, mặc định từ khóa JOIN (khi không ghi rõ LEFT hay RIGHT) sẽ hoạt động như thế nào?
+- **Phản hồi từ AI:** Mặc định từ khóa `JOIN` tương đương với `INNER JOIN`. Nó chỉ trả về các bản ghi có sự trùng khớp (match) ở cả hai bảng, bỏ qua hoàn toàn các bản ghi mồ côi hoặc không khớp ở phía bên trái/phải.
 
-## Prompt 2: Lựa chọn quan hệ 1-1 hay 1-N cho bảng Inspections
-- **Câu hỏi:** Bảng Inspections nên liên kết với Rentals theo quan hệ 1-1 hay 1-N?
-- **Phản hồi từ AI:** Trong thực tế thuê xe, một hợp đồng thường có ít nhất 2 lần kiểm tra: khi giao xe (check-out) và khi nhận lại xe (check-in). Do đó, thiết kế quan hệ 1-N (1 hợp đồng có nhiều biên bản kiểm tra) giúp hệ thống mở rộng linh hoạt hơn so với 1-1.
+## Prompt 2: Sự khác biệt giữa COUNT(*) và COUNT(column) trong LEFT JOIN
+- **Câu hỏi:** Khi tôi sử dụng LEFT JOIN và đếm số lượng đơn hàng bằng hàm COUNT, tôi nên dùng COUNT() hay COUNT(khóa_chính_bảng_order)?
+- **Phản hồi từ AI:** Nên dùng `COUNT(o.order_id)`. `COUNT(*)` sẽ đếm cả dòng `NULL` do `LEFT JOIN` sinh ra và trả về kết quả `1` cho người chưa mua hàng. Trong khi đó, `COUNT(o.order_id)` bỏ qua giá trị `NULL`, giúp hiển thị chính xác số lượng đơn hàng là `0`.
 
-## Prompt 3: Ngăn chặn chèn dữ liệu kiểm tra xe bằng Trigger
-- **Câu hỏi:** Làm thế nào để ngăn chặn nhân viên tạo biên bản kiểm tra xe (Inspections) khi hợp đồng đang ở trạng thái BOOKED?
-- **Phản hồi từ AI:** Sử dụng `BEFORE INSERT TRIGGER` trên bảng `Inspections` để truy vấn trạng thái hợp đồng trong `Rentals`. Nếu `status = 'BOOKED'`, phát tín hiệu lỗi `SIGNAL SQLSTATE '45000'` từ chối giao dịch.
+## Prompt 3: Hiệu năng Anti-Join (LEFT JOIN ... IS NULL vs NOT IN)
+- **Câu hỏi:** Phân tích hiệu năng của LEFT JOIN kết hợp IS NULL so với subquery NOT IN khi tìm bản ghi không tồn tại.
+- **Phản hồi từ AI:** Trong MySQL, `LEFT JOIN ... IS NULL` (Anti-Join) thường được Optimizer tối ưu hóa rất tốt thông qua thuật toán Nested-Loop Join trên các cột đã được đánh chỉ mục (Index). Ngược lại, mệnh đề `NOT IN` có thể gặp vấn đề về hiệu năng nếu tập dữ liệu lớn và chứa giá trị `NULL` trong tập con truy vấn.
 
-## Prompt 4: Hậu quả của việc lệch pha giữa Activity Diagram và ERD lên UX
-- **Câu hỏi:** Sự thiếu đồng bộ giữa Activity Diagram và ERD gây ảnh hưởng gì tới trải nghiệm người dùng cuối?
-- **Phản hồi từ AI:** Giao diện ứng dụng (UI) có ô nhập thông tin hoặc hiển thị nút bấm nhưng khi bấm xác nhận thì API backend báo lỗi do CSDL không có cột lưu trữ. Điều này gây gián đoạn thanh toán, tranh chấp tiền cọc giữa khách và nhân viên, và làm mất uy tín dịch vụ.
+## Prompt 4: Giả lập FULL OUTER JOIN trong MySQL
+- **Câu hỏi:** Có cú pháp SQL nào kết hợp LEFT JOIN và RIGHT JOIN để giả lập FULL OUTER JOIN trong MySQL không?
+- **Phản hồi từ AI:** MySQL không hỗ trợ trực tiếp từ khóa `FULL OUTER JOIN`. Bạn có thể giả lập bằng cách dùng mệnh đề `UNION` để kết hợp kết quả của một `LEFT JOIN` và một `RIGHT JOIN`.
 '@ | Out-File -FilePath "ai_prompt_log.md" -Encoding utf8
