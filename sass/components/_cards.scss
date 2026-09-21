@@ -1,1 +1,1 @@
-.card { background: white; border: 1px solid $border-color; padding: 24px; border-radius: 8px; margin-bottom: 20px; @include box-shadow; h2 { margin-bottom: 12px; color: #1e293b; } p { margin-bottom: 16px; line-height: 1.6; } }
+.card { @include box-style; margin-bottom: 20px; }
