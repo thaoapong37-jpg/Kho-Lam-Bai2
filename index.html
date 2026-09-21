@@ -3,29 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thực hành SASS theo chuẩn</title>
+    <title>Landing Page Tái Cấu Trúc Bằng SASS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="card">
-            <h2>Khóa học Lập trình Web với SASS</h2>
-            <p>
-                SASS giúp mã nguồn CSS được tổ chức mạch lạc thông qua cấu trúc phân tầng (abstracts, base, layout, components). 
-                Việc tái sử dụng biến và mixin giúp tiết kiệm thời gian phát triển và hạn chế trùng lặp mã.
-            </p>
-            <button class="button">Đăng ký học ngay</button>
+    <!-- 1. Navigation & Header -->
+    <header class="header">
+        <div class="container navbar">
+            <div class="logo">TechLanding</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Trang chủ</a></li>
+                <li><a href="#products">Sản phẩm</a></li>
+                <li><a href="#stats">Thống kê</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
         </div>
+    </header>
 
-        <div class="card">
-            <h2>Lợi ích của Kiến trúc Partials</h2>
-            <p>
-                Tất cả các file thành phần được bắt đầu bằng dấu gạch dưới <code>_</code> và được gộp lại duy nhất tại <code>main.scss</code>.
-            </p>
-            <button class="button">Tìm hiểu thêm</button>
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1>Giải Pháp Công Nghệ Tương Lai</h1>
+            <p>Xây dựng giao diện phản hồi hiện đại, chuẩn kiến trúc module SCSS dễ bảo trì và mở rộng.</p>
         </div>
-    </div>
+    </section>
+
+    <!-- 2. Phần sản phẩm nổi bật -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <h3>Laptop Ultrabook Pro</h3>
+                    <p class="price">25.990.000đ</p>
+                    <p style="margin-bottom: 16px; color: #64748b;">Mỏng nhẹ, hiệu năng cao phục vụ chuyên sâu lập trình và thiết kế đồ họa.</p>
+                    <a href="#" class="btn-buy">Mua Ngay</a>
+                </div>
+                <div class="product-card">
+                    <h3>Màn Hình 4K Retina</h3>
+                    <p class="price">12.490.000đ</p>
+                    <p style="margin-bottom: 16px; color: #64748b;">Độ chuẩn màu 100% sRGB mang lại độ chi tiết hiển thị chân thực sắc nét.</p>
+                    <a href="#" class="btn-buy">Mua Ngay</a>
+                </div>
+                <div class="product-card">
+                    <h3>Bàn Phím Cơ Wireless</h3>
+                    <p class="price">2.890.000đ</p>
+                    <p style="margin-bottom: 16px; color: #64748b;">Switch êm ái, kết nối đa thiết bị cho trải nghiệm gõ code tốc độ cao.</p>
+                    <a href="#" class="btn-buy">Mua Ngay</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Phần số liệu thống kê -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">15,000+</div>
+                    <div class="stat-label">Khách hàng tin cậy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.8%</div>
+                    <div class="stat-label">Độ hài lòng</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Đối tác chiến lược</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Hỗ trợ kỹ thuật</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Phần Footer -->
+    <footer class="footer" id="contact">
+        <div class="container footer-content">
+            <div>
+                <h4>Về TechLanding</h4>
+                <p>Cung cấp giải pháp số hóa và linh kiện công nghệ chất lượng hàng đầu cho kỹ sư và lập trình viên.</p>
+            </div>
+            <div>
+                <h4>Liên kết</h4>
+                <ul>
+                    <li><a href="#hero">Trang chủ</a></li>
+                    <li><a href="#products">Sản phẩm</a></li>
+                    <li><a href="#stats">Về chúng tôi</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Hỗ trợ</h4>
+                <ul>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Trung tâm trợ giúp</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 TechLanding. Tái cấu trúc hoàn chỉnh bằng SASS.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
