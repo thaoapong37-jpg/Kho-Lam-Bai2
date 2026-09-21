@@ -3,70 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Template Structure</title>
+    <title>Thực hành SASS theo chuẩn</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="page-wrapper">
-        <!-- 1. Header: Chứa tiêu đề trang web -->
-        <header class="site-header">
-            <div class="header-container">
-                <h1>TechBlog Magazine</h1>
-                <p>Cập nhật tin tức và kiến thức phát triển phần mềm mỗi ngày</p>
-            </div>
-        </header>
-
-        <!-- 2. Navigation Menu: Tối thiểu 4 mục điều hướng -->
-        <nav class="site-navbar">
-            <ul class="nav-links">
-                <li><a href="#" class="active">Trang chủ</a></li>
-                <li><a href="#">Tin tức</a></li>
-                <li><a href="#">Hướng dẫn Lập trình</a></li>
-                <li><a href="#">Đánh giá Công nghệ</a></li>
-                <li><a href="#">Liên hệ</a></li>
-            </ul>
-        </nav>
-
-        <!-- 3. Content Section: Nội dung bài viết và cột thông tin phụ -->
-        <div class="content-wrapper">
-            <!-- Khu vực nội dung chính -->
-            <main class="main-content">
-                <article class="featured-post">
-                    <h2>Tầm quan trọng của Semantic HTML trong cấu trúc Website</h2>
-                    <div class="post-meta">Đăng bởi Ban Biên Tập &bull; Cập nhật: 2026</div>
-                    
-                    <div class="post-image">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Hình ảnh lập trình web">
-                    </div>
-
-                    <p>
-                        Việc tổ chức mã HTML rõ ràng thông qua các thẻ ngữ nghĩa như <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, và <code>&lt;footer&gt;</code> không chỉ giúp mã nguồn dễ bảo trì mà còn hỗ trợ tối ưu hóa công cụ tìm kiếm (SEO) và cải thiện khả năng tiếp cận của trang web.
-                    </p>
-                    <p>
-                        Khi kết hợp cùng CSS Flexbox hoặc Grid, các khối nội dung được sắp xếp mạch lạc, tự động co giãn theo kích thước màn hình thiết bị người dùng.
-                    </p>
-                </article>
-            </main>
-
-            <!-- Cột bên phụ (Sidebar) -->
-            <aside class="sidebar">
-                <div class="widget">
-                    <h3>Chủ đề nổi bật</h3>
-                    <ul>
-                        <li><a href="#">HTML5 &amp; CSS3 Cơ bản</a></li>
-                        <li><a href="#">Bố cục Flexbox &amp; Grid</a></li>
-                        <li><a href="#">Tối ưu hóa UI/UX</a></li>
-                        <li><a href="#">Xu hướng Web Design</a></li>
-                    </ul>
-                </div>
-            </aside>
+    <div class="container">
+        <div class="card">
+            <h2>Khóa học Lập trình Web với SASS</h2>
+            <p>
+                SASS giúp mã nguồn CSS được tổ chức mạch lạc thông qua cấu trúc phân tầng (abstracts, base, layout, components). 
+                Việc tái sử dụng biến và mixin giúp tiết kiệm thời gian phát triển và hạn chế trùng lặp mã.
+            </p>
+            <button class="button">Đăng ký học ngay</button>
         </div>
 
-        <!-- 4. Footer: Chứa thông tin bản quyền -->
-        <footer class="site-footer">
-            <p>&copy; 2026 TechBlog Magazine. Toàn bộ bản quyền được bảo lưu.</p>
-        </footer>
+        <div class="card">
+            <h2>Lợi ích của Kiến trúc Partials</h2>
+            <p>
+                Tất cả các file thành phần được bắt đầu bằng dấu gạch dưới <code>_</code> và được gộp lại duy nhất tại <code>main.scss</code>.
+            </p>
+            <button class="button">Tìm hiểu thêm</button>
+        </div>
     </div>
 
 </body>
