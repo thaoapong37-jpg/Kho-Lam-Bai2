@@ -3,98 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Web Development Template</title>
-    <!-- Nhúng Google Fonts hỗ trợ cho font Piazzolla và Ubuntu -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital,opsz,wght@0,8..30,700;1,8..30,400&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Creative Web Design</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. Thanh điều hướng cố định (Sticky Navbar) -->
-    <nav class="navbar background">
-        <ul class="nav-list">
-            <div class="logo">
-                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=300&q=80" alt="Logo">
-            </div>
-            <li><a href="#web">Web Technology</a></li>
-            <li><a href="#program">C Programming</a></li>
-            <li><a href="#course">Courses</a></li>
+    <!-- 1. Thanh điều hướng cố định khi cuộn trang -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#services">Dịch vụ</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Liên hệ</a></li>
         </ul>
-
-        <div class="rightnav">
-            <input type="text" name="search" id="search" placeholder="Search...">
-            <button class="btn btn-sm">Search</button>
-        </div>
     </nav>
 
-    <!-- 2. Phần Web Technology -->
-    <section class="firstsection">
-        <div class="box-main">
-            <div class="firsthalf">
-                <h1 class="text-big" id="web">Web Technology</h1>
-                <p class="text-small">
-                    HTML stands for HyperText Markup Language. It is used to design web pages using a markup language. 
-                    HTML is the combination of Hypertext and Markup language. Hypertext defines the link between the web pages. 
-                    A markup language is used to define the text document within tags which defines the structure of web pages. 
-                    HTML is a markup language that is used by the browser to manipulate text, images, and other content to display it in the required format.
-                </p>
+    <!-- 2. Header với nền ảnh và hiệu ứng phủ mờ -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Creative Web Design</h1>
+            <p>Thiết kế website chuyên nghiệp - Hiện đại - Ấn tượng</p>
+            <a href="#services" class="btn">Khám phá ngay</a>
+        </div>
+    </header>
+
+    <!-- 3. Content Section với Card Layout (CSS Grid) -->
+    <section class="content" id="services">
+        <h2>Dịch vụ của chúng tôi</h2>
+        <div class="card-container">
+            <!-- Dịch vụ 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Thiết kế Website">
+                <h3>Thiết kế Website</h3>
+                <p>• Chúng tôi tạo ra những trang web chuyên nghiệp, thân thiện với người dùng.</p>
+            </div>
+
+            <!-- Dịch vụ 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="SEO & Marketing">
+                <h3>SEO & Marketing</h3>
+                <p>• Giúp website của bạn đạt thứ hạng cao trên công cụ tìm kiếm.</p>
+            </div>
+
+            <!-- Dịch vụ 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Hỗ trợ 24/7">
+                <h3>Hỗ trợ 24/7</h3>
+                <p>• Đội ngũ hỗ trợ luôn sẵn sàng giúp bạn giải quyết mọi vấn đề.</p>
             </div>
         </div>
     </section>
 
-    <!-- 3. Phần C Programming -->
-    <section class="secondsection">
-        <div class="box-main">
-            <div class="firsthalf">
-                <h1 class="text-big" id="program">C Programming</h1>
-                <p class="text-small">
-                    C is a procedural programming language. It was initially developed by Dennis Ritchie as a system programming 
-                    language to write operating systems. The main features of C language include low-level access to memory, 
-                    simple set of keywords, and clean style. These features make C language suitable for system programming 
-                    like operating system or compiler development.
-                </p>
-            </div>
+    <!-- 4. Footer 2 cột với Flexbox -->
+    <footer class="footer">
+        <div class="footer-left">
+            <p>• &copy; 2026 Creative Web. All rights reserved.</p>
         </div>
-    </section>
-
-    <!-- 4. Phần Java (Hình ảnh bên phải, văn bản bên trái) -->
-    <section class="section" id="course">
-        <div class="paras">
-            <h1 class="sectionTag text-big">Java</h1>
-            <p class="sectionSubTag text-small">
-                Java has been one of the most popular programming languages for many years. Java is Object-Oriented. 
-                However, it is not considered pure object-oriented as it provides support for primitive data types (like int, char, etc.). 
-                The Java codes are first compiled into byte code (machine independent code). Then the byte code is run on 
-                Java Virtual Machine (JVM) regardless of the underlying architecture.
-            </p>
+        <div class="footer-right">
+            <p>• Theo dõi chúng tôi:</p>
+            <p>• Facebook | Twitter | LinkedIn</p>
         </div>
-        <div class="thumbnail">
-            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="Laptop image">
-        </div>
-    </section>
-
-    <!-- 5. Phần mở rộng với row-reverse (Đảo chiều hình ảnh sang trái, văn bản sang phải) -->
-    <section class="section section-Left">
-        <div class="paras">
-            <h1 class="sectionTag text-big">Python Programming</h1>
-            <p class="sectionSubTag text-small">
-                Python is an interpreted, high-level, general-purpose programming language. Its design philosophy emphasizes code 
-                readability with the use of significant indentation. Its language constructs as well as its object-oriented approach 
-                aim to help programmers write clear, logical code for small and large-scale projects.
-            </p>
-        </div>
-        <div class="thumbnail">
-            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Python code display">
-        </div>
-    </section>
-
-    <!-- 6. Chân trang (Footer) -->
-    <footer class="background">
-        <p class="text-footer">
-            Copyright &copy; 2026 - All rights are reserved
-        </p>
     </footer>
 
 </body>
