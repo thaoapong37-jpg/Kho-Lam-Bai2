@@ -3,198 +3,173 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f9;
+    color: #333333;
 }
 
-/* 1. Navbar: Cố định trên đầu khi cuộn trang */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #24292e;
-    padding: 14px 0;
+/* Khung bao toàn bộ trang web */
+.page-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+/* 1. Header */
+.site-header {
+    background-color: #1e293b;
+    color: #ffffff;
+    padding: 35px 25px;
     text-align: center;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.navbar ul {
+.site-header h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.site-header p {
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+/* 2. Navigation Menu */
+.site-navbar {
+    background-color: #0f172a;
+    border-bottom: 3px solid #2563eb;
+}
+
+.nav-links {
+    list-style: none;
     display: flex;
     justify-content: center;
-    list-style: none;
+    flex-wrap: wrap;
 }
 
-.navbar ul li {
-    margin: 0 18px;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: 0.3s;
-}
-
-.navbar ul li a:hover {
-    color: #f39c12;
-    background: rgba(255, 255, 255, 0.08);
-}
-
-/* 2. Header: Nền ảnh với lớp phủ mờ (overlay) */
-.header {
-    background: url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    color: white;
-    text-align: center;
-    padding: 150px 20px 100px;
-    position: relative;
-}
-
-.header::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(2px);
-}
-
-.header-content {
-    position: relative;
-    z-index: 2;
-}
-
-.header h1 {
-    font-size: 2.8rem;
-    margin-bottom: 12px;
-    letter-spacing: 1px;
-}
-
-.header p {
-    font-size: 1.25rem;
-    margin-bottom: 25px;
+.nav-links li a {
+    display: block;
     color: #e2e8f0;
-}
-
-.btn {
-    display: inline-block;
-    background: #1abc9c;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 6px;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: 0.3s ease;
-    box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3);
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.btn:hover {
-    background: #16a085;
-    transform: translateY(-2px);
+.nav-links li a:hover,
+.nav-links li a.active {
+    background-color: #2563eb;
+    color: #ffffff;
 }
 
-/* 3. Content Section & Card Layout (CSS Grid) */
-.content {
-    text-align: center;
-    padding: 70px 20px;
-    background-color: #f8fafc;
+/* 3. Content Section (Layout 2 cột bằng Flexbox) */
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    gap: 25px;
+    padding: 25px;
 }
 
-.content h2 {
-    font-size: 2.2rem;
-    color: #2c3e50;
-    margin-bottom: 35px;
+/* Cột chính */
+.main-content {
+    flex: 7;
 }
 
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 10px;
+.featured-post h2 {
+    font-size: 24px;
+    color: #0f172a;
+    margin-bottom: 6px;
 }
 
-.card {
-    background: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    padding: 22px;
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
+.post-meta {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 16px;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-}
-
-.card img {
+.post-image img {
     width: 100%;
-    height: 200px;
+    max-height: 360px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 18px;
+    border-radius: 6px;
+    margin-bottom: 16px;
 }
 
-.card h3 {
-    color: #1abc9c;
-    font-size: 1.3rem;
+.featured-post p {
+    margin-bottom: 14px;
+    color: #475569;
+    text-align: justify;
+}
+
+/* Cột bên (Sidebar) */
+.sidebar {
+    flex: 3;
+    border-left: 1px solid #e2e8f0;
+    padding-left: 20px;
+}
+
+.widget h3 {
+    font-size: 18px;
+    color: #0f172a;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #2563eb;
+}
+
+.widget ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.widget ul li {
     margin-bottom: 10px;
 }
 
-.card p {
-    color: #555555;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-/* 4. Footer: 2 cột phân chia bằng Flexbox */
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 50px;
-    background: #2c3e50;
-    color: #ecf0f1;
+.widget ul li a {
+    color: #2563eb;
+    text-decoration: none;
     font-size: 14px;
 }
 
-.footer-left p,
-.footer-right p {
-    margin: 4px 0;
+.widget ul li a:hover {
+    text-decoration: underline;
 }
 
-.footer-right {
-    text-align: right;
+/* 4. Footer */
+.site-footer {
+    background-color: #1e293b;
+    color: #94a3b8;
+    text-align: center;
+    padding: 18px;
+    font-size: 14px;
+    margin-top: auto;
 }
 
-/* Responsive: Tối ưu cho thiết bị di động & Tablet */
-@media (max-width: 768px) {
-    .card-container {
-        grid-template-columns: 1fr;
-    }
-
-    .header h1 {
-        font-size: 2rem;
-    }
-
-    .footer {
+/* Responsive: Chuyển sang xếp dọc trên màn hình di động */
+@media screen and (max-width: 768px) {
+    .nav-links {
         flex-direction: column;
-        gap: 15px;
         text-align: center;
     }
 
-    .footer-right {
-        text-align: center;
+    .content-wrapper {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .sidebar {
+        border-left: none;
+        border-top: 1px solid #e2e8f0;
+        padding-left: 0;
+        padding-top: 20px;
     }
 }

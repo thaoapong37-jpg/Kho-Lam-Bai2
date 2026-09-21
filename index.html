@@ -3,67 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Web Design</title>
+    <title>Website Template Structure</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- 1. Thanh điều hướng cố định khi cuộn trang -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#services">Dịch vụ</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Liên hệ</a></li>
-        </ul>
-    </nav>
-
-    <!-- 2. Header với nền ảnh và hiệu ứng phủ mờ -->
-    <header class="header">
-        <div class="header-content">
-            <h1>Creative Web Design</h1>
-            <p>Thiết kế website chuyên nghiệp - Hiện đại - Ấn tượng</p>
-            <a href="#services" class="btn">Khám phá ngay</a>
-        </div>
-    </header>
-
-    <!-- 3. Content Section với Card Layout (CSS Grid) -->
-    <section class="content" id="services">
-        <h2>Dịch vụ của chúng tôi</h2>
-        <div class="card-container">
-            <!-- Dịch vụ 1 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" alt="Thiết kế Website">
-                <h3>Thiết kế Website</h3>
-                <p>• Chúng tôi tạo ra những trang web chuyên nghiệp, thân thiện với người dùng.</p>
+    <div class="page-wrapper">
+        <!-- 1. Header: Chứa tiêu đề trang web -->
+        <header class="site-header">
+            <div class="header-container">
+                <h1>TechBlog Magazine</h1>
+                <p>Cập nhật tin tức và kiến thức phát triển phần mềm mỗi ngày</p>
             </div>
+        </header>
 
-            <!-- Dịch vụ 2 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="SEO & Marketing">
-                <h3>SEO & Marketing</h3>
-                <p>• Giúp website của bạn đạt thứ hạng cao trên công cụ tìm kiếm.</p>
-            </div>
+        <!-- 2. Navigation Menu: Tối thiểu 4 mục điều hướng -->
+        <nav class="site-navbar">
+            <ul class="nav-links">
+                <li><a href="#" class="active">Trang chủ</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Hướng dẫn Lập trình</a></li>
+                <li><a href="#">Đánh giá Công nghệ</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
 
-            <!-- Dịch vụ 3 -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" alt="Hỗ trợ 24/7">
-                <h3>Hỗ trợ 24/7</h3>
-                <p>• Đội ngũ hỗ trợ luôn sẵn sàng giúp bạn giải quyết mọi vấn đề.</p>
-            </div>
-        </div>
-    </section>
+        <!-- 3. Content Section: Nội dung bài viết và cột thông tin phụ -->
+        <div class="content-wrapper">
+            <!-- Khu vực nội dung chính -->
+            <main class="main-content">
+                <article class="featured-post">
+                    <h2>Tầm quan trọng của Semantic HTML trong cấu trúc Website</h2>
+                    <div class="post-meta">Đăng bởi Ban Biên Tập &bull; Cập nhật: 2026</div>
+                    
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Hình ảnh lập trình web">
+                    </div>
 
-    <!-- 4. Footer 2 cột với Flexbox -->
-    <footer class="footer">
-        <div class="footer-left">
-            <p>• &copy; 2026 Creative Web. All rights reserved.</p>
+                    <p>
+                        Việc tổ chức mã HTML rõ ràng thông qua các thẻ ngữ nghĩa như <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, và <code>&lt;footer&gt;</code> không chỉ giúp mã nguồn dễ bảo trì mà còn hỗ trợ tối ưu hóa công cụ tìm kiếm (SEO) và cải thiện khả năng tiếp cận của trang web.
+                    </p>
+                    <p>
+                        Khi kết hợp cùng CSS Flexbox hoặc Grid, các khối nội dung được sắp xếp mạch lạc, tự động co giãn theo kích thước màn hình thiết bị người dùng.
+                    </p>
+                </article>
+            </main>
+
+            <!-- Cột bên phụ (Sidebar) -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3>Chủ đề nổi bật</h3>
+                    <ul>
+                        <li><a href="#">HTML5 &amp; CSS3 Cơ bản</a></li>
+                        <li><a href="#">Bố cục Flexbox &amp; Grid</a></li>
+                        <li><a href="#">Tối ưu hóa UI/UX</a></li>
+                        <li><a href="#">Xu hướng Web Design</a></li>
+                    </ul>
+                </div>
+            </aside>
         </div>
-        <div class="footer-right">
-            <p>• Theo dõi chúng tôi:</p>
-            <p>• Facebook | Twitter | LinkedIn</p>
-        </div>
-    </footer>
+
+        <!-- 4. Footer: Chứa thông tin bản quyền -->
+        <footer class="site-footer">
+            <p>&copy; 2026 TechBlog Magazine. Toàn bộ bản quyền được bảo lưu.</p>
+        </footer>
+    </div>
 
 </body>
 </html>
