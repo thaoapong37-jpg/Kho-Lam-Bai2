@@ -1,0 +1,242 @@
+@'
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f1f1;
+            color: #333333;
+        }
+
+        /* 1. THANH ĐIỀU HƯỚNG (NAVBAR) */
+        .navbar {
+            background-color: #2b2b2b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #dddddd;
+            text-decoration: none;
+            padding: 14px 18px;
+            font-size: 14px;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+
+        .navbar a:hover {
+            background-color: #111111;
+            color: #ffffff;
+        }
+
+        .navbar a.active {
+            background-color: #000000;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* 2. VÙNG THÂN TRANG (3 CỘT NẰM TRONG .ROW) */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 520px;
+        }
+
+        /* Cột bên trái: Liên kết */
+        .sidebar-left {
+            flex: 1.5;
+            background-color: #f1f1f1;
+            padding: 25px 20px;
+        }
+
+        .sidebar-left a {
+            display: block;
+            color: #337ab7;
+            text-decoration: none;
+            margin-bottom: 14px;
+            font-size: 14px;
+        }
+
+        .sidebar-left a:hover {
+            text-decoration: underline;
+        }
+
+        /* Cột ở giữa: Nội dung chính */
+        .main-content {
+            flex: 7;
+            background-color: #ffffff;
+            padding: 30px 40px;
+        }
+
+        .main-content h1 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            font-weight: bold;
+            color: #222222;
+        }
+
+        .main-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #444444;
+            text-align: justify;
+        }
+
+        .divider {
+            border: 0;
+            border-top: 1px solid #eeeeee;
+            margin: 25px 0 20px 0;
+        }
+
+        .main-content h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #222222;
+        }
+
+        /* Cột bên phải: Khu vực quảng cáo */
+        .sidebar-right {
+            flex: 2;
+            background-color: #f1f1f1;
+            padding: 25px 20px;
+        }
+
+        .ad-box {
+            background-color: #ffffff;
+            border: 1px solid #dcdcdc;
+            border-radius: 4px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #333333;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 3. CHÂN TRANG (FOOTER) */
+        .footer {
+            background-color: #4a4a4a;
+            color: #ffffff;
+            text-align: center;
+            padding: 24px 0;
+            font-size: 14px;
+        }
+
+        /* 4. RESPONSIVE WEB DESIGN (MEDIA QUERIES) */
+        @media screen and (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0;
+            }
+
+            .nav-left, .nav-right {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .navbar a {
+                width: 100%;
+                text-align: left;
+                border-bottom: 1px solid #3a3a3a;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+
+            .sidebar-left, 
+            .main-content, 
+            .sidebar-right {
+                flex: none;
+                width: 100%;
+            }
+
+            .sidebar-left {
+                text-align: center;
+            }
+
+            .sidebar-left a {
+                display: inline-block;
+                margin: 0 10px 10px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Thanh menu điều hướng phía trên -->
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="#">Logo</a>
+            <a href="#" class="active">Home</a>
+            <a href="#">About</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="nav-right">
+            <a href="#">&#10148; Login</a>
+        </div>
+    </div>
+
+    <!-- Khối thân trang 3 cột -->
+    <div class="row">
+        <!-- Cột menu liên kết bên trái -->
+        <div class="sidebar-left">
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+        </div>
+
+        <!-- Cột nội dung chính ở giữa -->
+        <div class="main-content">
+            <h1>Welcome</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                commodo consequat.
+            </p>
+
+            <hr class="divider">
+
+            <h3>Test</h3>
+            <p>Lorem ipsum...</p>
+        </div>
+
+        <!-- Cột quảng cáo bên phải -->
+        <div class="sidebar-right">
+            <div class="ad-box">ADS</div>
+            <div class="ad-box">ADS</div>
+        </div>
+    </div>
+
+    <!-- Chân trang -->
+    <div class="footer">
+        Footer Text
+    </div>
+
+</body>
+</html>
+'@ | Out-File -FilePath "layout_rwd.html" -Encoding utf8
