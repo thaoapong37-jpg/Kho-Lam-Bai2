@@ -1,0 +1,112 @@
+@'
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Định dạng văn bản với CSS</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333333;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 35px 45px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e0e0;
+        }
+
+        /* 1. Tiêu đề chính: Căn giữa, viết hoa, khoảng cách chữ */
+        h1 {
+            color: #0d6efd;
+            font-size: 28px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+
+        /* 2. Tiêu đề phụ: Chữ nghiêng, căn giữa, màu xám nhạt */
+        .sub-title {
+            text-align: center;
+            font-style: italic;
+            color: #6c757d;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        /* 3. Đoạn trích dẫn: Chữ nghiêng, viền nhấn bên trái */
+        .quote-lead {
+            font-size: 17px;
+            font-style: italic;
+            color: #198754;
+            text-align: justify;
+            line-height: 1.8;
+            padding: 10px 20px;
+            border-left: 4px solid #198754;
+            background-color: #f6fcf8;
+            margin-bottom: 20px;
+        }
+
+        /* 4. Đoạn văn thân bài: Căn đều 2 bên, thụt lề dòng đầu tiên */
+        p.content {
+            font-size: 16px;
+            color: #212529;
+            text-align: justify;
+            text-indent: 35px; /* Thụt lề đầu dòng */
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        /* 5. Từ khóa nổi bật: In đậm, gạch chân, đổi màu */
+        .highlight {
+            font-weight: bold;
+            color: #d63384;
+            text-decoration: underline;
+        }
+
+        /* 6. Chữ ký tác giả: Căn phải, chữ nghiêng */
+        .author {
+            text-align: right;
+            font-weight: bold;
+            font-size: 16px;
+            font-style: italic;
+            color: #495057;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Vẻ Đẹp Đất Nước Việt Nam</h1>
+        <div class="sub-title">Trích đoạn ký sự văn học & danh lam thắng cảnh</div>
+
+        <p class="quote-lead">
+            "Việt Nam đất nước ta ơi, mênh mông biển lúa đâu trời đẹp hơn. Cánh cò bay lả rập rờn, mây mờ che đỉnh Trường Sơn sớm chiều..."
+        </p>
+
+        <p class="content">
+            Trải dài từ địa đầu Móng Cái đến mũi Cà Mau, mảnh đất hình chữ S mang trong mình những cảnh quan kỳ vĩ cùng bề dày nghìn năm lịch sử. Những dãy núi non trùng điệp của Hoàng Liên Sơn, các thửa ruộng bậc thang kỳ ảo tại Mù Cang Chải, cho tới vịnh Hạ Long với hàng ngàn hòn đảo đá vôi nhấp nhô trên mặt biển ngọc bích đều là những <span class="highlight">kỳ quan thiên nhiên vô giá</span> được bạn bè quốc tế ngợi ca.
+        </p>
+
+        <p class="content">
+            Không chỉ có thiên nhiên tươi đẹp, con người Việt Nam luôn giữ trọn đức tính cần cù, kiên cường và lòng mến khách nồng hậu. Bất kỳ ai đặt chân đến nơi đây đều có thể cảm nhận được nhịp sống thanh bình, thưởng thức nét ẩm thực phong phú và bắt gặp những nụ cười rạng rỡ của người dân bản địa.
+        </p>
+
+        <div class="author">
+            — Nguyễn Du
+        </div>
+    </div>
+
+</body>
+</html>
+'@ | Out-File -FilePath "dinh_dang_van_ban.html" -Encoding utf8
