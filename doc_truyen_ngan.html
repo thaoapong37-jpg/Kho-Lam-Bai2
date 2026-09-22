@@ -1,0 +1,215 @@
+@'
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Đọc Truyện Ngắn - Hẹn Ước Mùa Thu</title>
+    <style>
+        /* Thiết lập chuyển động cuộn trang mượt mà khi nhấn vào liên kết mục lục */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: #f7f5f0;
+            color: #2b2b2b;
+            margin: 0;
+            padding: 30px 15px;
+            line-height: 1.8;
+        }
+
+        .story-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e8e4dc;
+        }
+
+        /* Bước 4: Định dạng ảnh bìa truyện đặt ở đầu trang */
+        .story-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .cover-image {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            margin-bottom: 20px;
+        }
+
+        .story-title {
+            font-size: 32px;
+            color: #8b4513;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 10px 0 5px 0;
+        }
+
+        .story-author {
+            font-style: italic;
+            color: #6c757d;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        /* Bước 1 & Bước 5: Mục lục truyện sử dụng thẻ <h5> */
+        .table-of-contents {
+            background-color: #fcfbf9;
+            border: 1px dashed #c8b79b;
+            border-radius: 8px;
+            padding: 20px 30px;
+            margin-bottom: 40px;
+        }
+
+        .toc-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #5c3a21;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ecdcc9;
+            padding-bottom: 8px;
+        }
+
+        /* Bước 5: Các đầu mục lục được bọc bởi thẻ <h5> */
+        .table-of-contents h5 {
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Bước 3: Tạo liên kết từ mục lục tới nội dung tương ứng */
+        .table-of-contents h5 a {
+            text-decoration: none;
+            color: #2c5282;
+            transition: all 0.2s ease-in-out;
+            display: inline-block;
+        }
+
+        .table-of-contents h5 a:hover {
+            color: #c53030;
+            transform: translateX(6px);
+            text-decoration: underline;
+        }
+
+        /* Bước 2: Định dạng nội dung từng chương */
+        .chapter {
+            padding-top: 25px;
+            margin-bottom: 45px;
+            border-bottom: 1px solid #eee8df;
+            padding-bottom: 30px;
+        }
+
+        .chapter:last-child {
+            border-bottom: none;
+        }
+
+        .chapter-title {
+            color: #7b341e;
+            font-size: 22px;
+            border-left: 4px solid #7b341e;
+            padding-left: 12px;
+            margin-bottom: 18px;
+        }
+
+        .chapter-content p {
+            font-size: 17px;
+            text-align: justify;
+            text-indent: 32px;
+            margin-bottom: 16px;
+        }
+
+        /* Nút quay lại mục lục */
+        .back-to-toc {
+            display: inline-block;
+            font-size: 14px;
+            font-style: italic;
+            color: #718096;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .back-to-toc:hover {
+            color: #2b6cb0;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="story-container">
+        <!-- Bước 4: Ảnh truyện đặt ở đầu trang -->
+        <header class="story-header" id="top">
+            <img class="cover-image" 
+                 src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Bìa truyện ngắn - Hẹn Ước Mùa Thu">
+            <h1 class="story-title">Hẹn Ước Mùa Thu</h1>
+            <div class="story-author">Tác phẩm: Truyện ngắn chọn lọc</div>
+        </header>
+
+        <!-- Bước 1 & 5: Khu vực mục lục truyện dùng thẻ <h5> -->
+        <nav class="table-of-contents">
+            <div class="toc-title">Mục Lục Truyện</div>
+            <h5><a href="#chuong-1">Chương 1: Tiếng Chuông Gió Bên Cửa Sổ</a></h5>
+            <h5><a href="#chuong-2">Chương 2: Ngọn Hải Đăng Cổ Kính</a></h5>
+            <h5><a href="#chuong-3">Chương 3: Hẹn Ước Dưới Tán Cây Phong</a></h5>
+        </nav>
+
+        <!-- Bước 2 & 3: Nội dung chi tiết ứng với từng mục lục (liên kết qua id) -->
+        <main class="story-body">
+            <!-- Chương 1 -->
+            <section class="chapter" id="chuong-1">
+                <h2 class="chapter-title">Chương 1: Tiếng Chuông Gió Bên Cửa Sổ</h2>
+                <div class="chapter-content">
+                    <p>
+                        Cơn gió đầu thu mang theo hơi thở lành lạnh luồn qua khe cửa gỗ nhỏ, làm chiếc chuông gió bằng vỏ ốc kêu lên những tiếng leng keng thanh thoát. An ngồi bên bàn làm việc, khẽ nâng tách trà hoa cúc còn nghi ngút khói, phóng tầm mắt ra khoảng vườn xanh biếc trước hiên nhà.
+                    </p>
+                    <p>
+                        Những chiếc lá bàng đã bắt đầu ngả sang sắc đỏ sẫm. Mùa thu luôn mang lại cho lòng người một cảm giác hoài niệm khó tả, như thể mỗi hạt bụi rơi trong nắng chiều đều chứa đựng ký ức của một thời tuổi trẻ đã trôi qua rất xa.
+                    </p>
+                </div>
+                <a href="#top" class="back-to-toc">↑ Quay về đầu trang mục lục</a>
+            </section>
+
+            <!-- Chương 2 -->
+            <section class="chapter" id="chuong-2">
+                <h2 class="chapter-title">Chương 2: Ngọn Hải Đăng Cổ Kính</h2>
+                <div class="chapter-content">
+                    <p>
+                        Cách thị trấn chừng năm cây số về phía bờ đông là ngọn hải đăng bằng đá trắng sừng sững trên vách núi. Nơi đây từng là điểm hẹn quen thuộc của nhóm bạn thời niên thiếu vào mỗi kỳ nghỉ hè. Thời gian trôi qua, lớp sơn trắng đã phủ màu rêu phong, nhưng ngọn đèn biển vẫn kiên định chớp sáng mỗi khi màn đêm buông xuống.
+                    </p>
+                    <p>
+                        Bước chân lên những bậc thang xoắn ốc bằng sắt hoen gỉ, An nghe rõ tiếng sóng biển vỗ vào chân ghềnh đá bên dưới. Đứng từ đỉnh tháp nhìn ra đại dương bao la, cậu nhận ra rằng có những điều tưởng chừng đã lãng quên, nhưng chỉ cần một cơn gió biển quen thuộc thổi qua là tất cả lại ùa về nguyên vẹn.
+                    </p>
+                </div>
+                <a href="#top" class="back-to-toc">↑ Quay về đầu trang mục lục</a>
+            </section>
+
+            <!-- Chương 3 -->
+            <section class="chapter" id="chuong-3">
+                <h2 class="chapter-title">Chương 3: Hẹn Ước Dưới Tán Cây Phong</h2>
+                <div class="chapter-content">
+                    <p>
+                        Dưới gốc phong cổ thụ ở cuối con dốc, bóng một người đang đứng lặng lẽ đợi chờ. Hoàng hôn buông sắc cam vàng rực rỡ lên bờ vai áo khoác len nâu. Không cần một lời hẹn trước qua thư từ hay điện thoại, sự thấu hiểu kỳ lạ giữa hai người như một sợi dây vô hình dẫn lối họ tìm về đúng gốc cây năm ấy.
+                    </p>
+                    <p>
+                        Cả hai nhìn nhau mỉm cười, một nụ cười bình thản chứa chan mười năm cách biệt. Mùa thu không bao giờ thất hẹn, và những người thực lòng trân quý nhau rồi cũng sẽ tìm lại được nhau giữa dòng đời vội vã.
+                    </p>
+                </div>
+                <a href="#top" class="back-to-toc">↑ Quay về đầu trang mục lục</a>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
+'@ | Out-File -FilePath "doc_truyen_ngan.html" -Encoding utf8
