@@ -1,0 +1,29 @@
+@'
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phần 2: Nhúng CSS - Internal Style</title>
+    <!-- Khai báo CSS tập trung trong thẻ style thuộc head -->
+    <style>
+        h1 {
+            color: #d63384;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        p {
+            color: #6f42c1;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tiêu đề trang web (Internal Style)</h1>
+    <p>Đây là đoạn văn bản được định dạng thông qua thẻ style nằm trong phần head của trang.</p>
+
+</body>
+</html>
+'@ | Out-File -FilePath "nhung_css_internal.html" -Encoding utf8
