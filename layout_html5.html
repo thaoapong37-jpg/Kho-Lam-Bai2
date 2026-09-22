@@ -1,0 +1,187 @@
+@'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monday Times - Layout HTML5 & CSS</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: #111111;
+        }
+
+        /* 1. Thẻ <header>: Khối đầu trang nền đen chữ trắng */
+        header {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 25px 30px;
+        }
+
+        header h1 {
+            font-size: 34px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        /* 2. Thẻ <nav>: Thanh điều hướng menu */
+        nav {
+            background-color: #ffffff;
+            padding: 16px 30px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000000;
+            font-size: 16px;
+            font-weight: 500;
+            margin-right: 24px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Khung bọc phần thân giữa gồm section và aside */
+        .main-container {
+            display: flex;
+            min-height: 500px;
+        }
+
+        /* 3. Thẻ <section>: Vùng nội dung chính bên trái (nền xám) */
+        section {
+            flex: 3;
+            background-color: #cccccc;
+            padding: 25px 30px;
+        }
+
+        section > h2 {
+            font-size: 26px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        /* 4. Thẻ <article>: Khối bài viết tin tức con (nền trắng dạng card) */
+        article {
+            background-color: #ffffff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 2px;
+        }
+
+        article:last-child {
+            margin-bottom: 0;
+        }
+
+        article h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #000000;
+        }
+
+        article p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333333;
+            margin-bottom: 12px;
+        }
+
+        article p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 5. Thẻ <aside>: Cột bên phải (sidebar) */
+        aside {
+            flex: 1;
+            background-color: #2b2b2b;
+            color: #ffffff;
+            padding: 25px 20px;
+        }
+
+        aside h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #555555;
+            padding-bottom: 8px;
+        }
+
+        aside p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        /* 6. Thẻ <footer>: Chân trang nền đen chữ trắng */
+        footer {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 20px 30px;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header -->
+    <header>
+        <h1>Monday Times</h1>
+    </header>
+
+    <!-- 2. Nav -->
+    <nav>
+        <a href="#">News</a>
+        <a href="#">Sports</a>
+        <a href="#">Weather</a>
+    </nav>
+
+    <!-- Thân trang chia 2 cột -->
+    <div class="main-container">
+        <!-- 3. Section (chứa các article) -->
+        <section>
+            <h2>News Section</h2>
+
+            <!-- 4. Article 1 -->
+            <article>
+                <h3>News Article</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</p>
+            </article>
+
+            <!-- Article 2 -->
+            <article>
+                <h3>News Article</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in porta lorem. Morbi condimentum est nibh, et consectetur tortor feugiat at.</p>
+            </article>
+        </section>
+
+        <!-- 5. Aside -->
+        <aside>
+            <h3>Sidebar</h3>
+            <p>Khu vực thanh bên (aside) dùng để chứa thông tin quảng cáo, liên kết nổi bật hoặc tin tức phụ liên quan.</p>
+        </aside>
+    </div>
+
+    <!-- 6. Footer -->
+    <footer>
+        <p>&copy; 2014 Monday Times. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+'@ | Out-File -FilePath "layout_html5.html" -Encoding utf8
