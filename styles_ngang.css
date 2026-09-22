@@ -1,0 +1,65 @@
+@'
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Định dạng thanh menu chính nằm ngang */
+#menu {
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    background-color: #000000;
+    border: 1px solid #CDCDCD;
+}
+
+#menu ul, #menu li {
+    padding: 0;
+    margin: 0;
+}
+
+/* Cho các mục menu cha dàn thành hàng ngang bằng float: left */
+#menu li {
+    position: relative; /* Gốc tọa độ cho dropdown con */
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Định dạng kích thước và hiển thị thẻ a của menu cấp 1 */
+#menu li a {
+    width: 100px;
+    height: 30px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    background-color: black;
+    color: white;
+}
+
+/* Tùy chỉnh độ rộng và căn lề cho các mục con ở menu cấp 2 */
+#menu ul ul li a {
+    width: 200px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Hiệu ứng đổi màu đỏ khi rê chuột vào mục bất kỳ */
+#menu li a:hover {
+    background-color: red;
+}
+
+/* Định vị menu con cấp 2: nằm ngay dưới thanh menu cha */
+#menu ul ul {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    visibility: hidden; /* Mặc định ẩn menu con */
+}
+
+/* Thả menu con xuống khi rê chuột vào li cha tương ứng */
+#menu ul li:hover ul {
+    visibility: visible;
+}
+'@ | Out-File -FilePath "styles_ngang.css" -Encoding utf8
