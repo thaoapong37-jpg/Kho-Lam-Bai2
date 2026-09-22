@@ -1,0 +1,361 @@
+@'
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Xem Phim Hoạt Hình Trực Tuyến</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f9f9f9;
+            color: #333333;
+            /* Bù khoảng trống 85px cho Header cố định phía trên */
+            padding-top: 85px;
+        }
+
+        /* ================= 1. FIXED HEADER & HEAD-LINKS ================= */
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #ffffff;
+            border-bottom: 2px solid #e0e0e0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Logo Phim Hoạt Hình */
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 26px;
+            font-weight: 900;
+            text-decoration: none;
+            color: #222222;
+        }
+
+        .logo .highlight-red {
+            background-color: #e50914;
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-left: 6px;
+            letter-spacing: 1px;
+        }
+
+        /* Khối Head-links điều hướng */
+        .head-links {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .head-links a {
+            text-decoration: none;
+            color: #222222;
+            padding: 6px 12px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* Mức trung bình: Bỏ gạch chân, hover bôi đậm và chuyển màu */
+        .head-links a:hover {
+            color: #e50914;
+            font-weight: bold;
+        }
+
+        .head-links .separator {
+            color: #999999;
+            font-size: 13px;
+        }
+
+        /* ================= 2. BỐ CỤC CHÍNH (CONTENT) ================= */
+        .main-wrapper {
+            max-width: 1200px;
+            margin: 20px auto 40px;
+            padding: 0 20px;
+            display: flex;
+            gap: 25px;
+        }
+
+        /* LEFT CONTENT: DANH SÁCH TẬP PHIM MENU BÊN TRÁI */
+        .left-content {
+            flex: 1;
+            max-width: 320px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .video-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+        }
+
+        .video-card img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .video-card-info {
+            padding: 8px 10px;
+        }
+
+        .video-card-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: #111111;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .video-card-meta {
+            font-size: 11px;
+            color: #666666;
+            margin-bottom: 2px;
+        }
+
+        .video-card-channel {
+            font-size: 11px;
+            color: #0066cc;
+            font-weight: 500;
+        }
+
+        /* RIGHT CONTENT: VIDEO PLAYER VÀ THÔNG TIN CHI TIẾT */
+        .right-content {
+            flex: 2.2;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Khung chứa Video Responsive (Tỷ lệ 16:9) */
+        .player-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background-color: #000000;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 18px;
+        }
+
+        .player-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .current-video-title {
+            font-size: 17px;
+            font-weight: bold;
+            color: #222222;
+            margin-bottom: 6px;
+        }
+
+        .current-video-author {
+            font-size: 13px;
+            font-weight: bold;
+            color: #555555;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .current-video-desc p {
+            font-size: 13.5px;
+            line-height: 1.65;
+            color: #444444;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        /* ================= 3. FOOTER ================= */
+        footer {
+            background-color: #222222;
+            color: #cccccc;
+            text-align: center;
+            padding: 24px 20px;
+            font-size: 13px;
+            line-height: 1.6;
+            border-top: 3px solid #e50914;
+        }
+
+        /* ================= 4. RESPONSIVE WEB DESIGN (RWD) ================= */
+        @media screen and (max-width: 900px) {
+            .header-content {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            body {
+                padding-top: 115px;
+            }
+
+            .main-wrapper {
+                flex-direction: column-reverse; /* Đưa video chính lên trên danh sách tập */
+            }
+
+            .left-content {
+                max-width: 100%;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 14px;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .head-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER CỐ ĐỊNH PHÍA TRÊN CÙNG -->
+    <header class="fixed-header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                Phim<span class="highlight-red">HoạtHình</span>
+            </a>
+
+            <!-- HEAD-LINKS -->
+            <nav class="head-links">
+                <a href="#">Phim hoạt hình</a>
+                <span class="separator">|</span>
+                <a href="#">Phim hoạt hình yêu thích</a>
+                <span class="separator">|</span>
+                <a href="#">Nhân vật hoạt hình</a>
+                <span class="separator">|</span>
+                <a href="#">Góp ý</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. BỐ CỤC NỘI DUNG (LEFT CONTENT & RIGHT CONTENT) -->
+    <div class="main-wrapper">
+
+        <!-- LEFT CONTENT: DANH SÁCH MENU CÁC TẬP PHIM -->
+        <aside class="left-content">
+
+            <!-- Item 1 -->
+            <a href="#" class="video-card">
+                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=400&q=80" alt="Khách sạn Nobi">
+                <div class="video-card-info">
+                    <div class="video-card-title">Welcom đến với khách sạn Nobi</div>
+                    <div class="video-card-meta">5,147,528 lượt xem</div>
+                    <div class="video-card-channel">Channel Fun</div>
+                </div>
+            </a>
+
+            <!-- Item 2 -->
+            <a href="#" class="video-card">
+                <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=400&q=80" alt="Suneo khổng lồ">
+                <div class="video-card-info">
+                    <div class="video-card-title">Suneo khổng lồ</div>
+                    <div class="video-card-meta">5,147,528 lượt xem</div>
+                    <div class="video-card-channel">Doreamon Vietsub</div>
+                </div>
+            </a>
+
+            <!-- Item 3 -->
+            <a href="#" class="video-card">
+                <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=400&q=80" alt="Còi điều khiển vật">
+                <div class="video-card-info">
+                    <div class="video-card-title">Còi điều khiển vật</div>
+                    <div class="video-card-meta">5,147,528 lượt xem</div>
+                    <div class="video-card-channel">Doreamon Vietsub</div>
+                </div>
+            </a>
+
+            <!-- Item 4 -->
+            <a href="#" class="video-card">
+                <img src="https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=400&q=80" alt="Chiếc máy tạo kẹo bông">
+                <div class="video-card-info">
+                    <div class="video-card-title">Chiếc máy tạo kẹo bông</div>
+                    <div class="video-card-meta">5,147,528 lượt xem</div>
+                    <div class="video-card-channel">Doreamon Vietsub</div>
+                </div>
+            </a>
+
+        </aside>
+
+        <!-- RIGHT CONTENT: NỘI DUNG VIDEO ĐƯỢC CHỌN -->
+        <main class="right-content">
+            <!-- Trình phát video YouTube qua iframe có âm thanh chuẩn tiếng Việt -->
+            <div class="player-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                    title="Doraemon Video Player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="current-video-title">
+                Tớ là Mari - 5,147,528 lượt xem
+            </div>
+            <div class="current-video-author">
+                Tác giả: Fujiko F. Fujio
+            </div>
+
+            <div class="current-video-desc">
+                <p>
+                    Bộ phim kể về câu chuyện Thạch Sanh chém Trăn Tinh cứu dân, bắn Đại Bàng cứu công chúa, dùng tiếng đàn nhân nghĩa dẹp tan quân xâm lăng. Nhưng cuộc đời Thạch Sanh luôn bị tên Lý Thông làm cho điêu đứng. Cuối cùng chính nghĩa đã thắng. Tên Lý Thông gian ác bị đền tội. Mời các bạn cùng đón xem và cảm nhận.
+                </p>
+                <p>
+                    Bộ phim kể về câu chuyện Thạch Sanh chém Trăn Tinh cứu dân, bắn Đại Bàng cứu công chúa, dùng tiếng đàn nhân nghĩa dẹp tan quân xâm lăng. Nhưng cuộc đời Thạch Sanh luôn bị tên Lý Thông làm cho điêu đứng. Cuối cùng chính nghĩa đã thắng. Tên Lý Thông gian ác bị đền tội. Mời các bạn cùng đón xem và cảm nhận.
+                </p>
+                <p>
+                    Bộ phim kể về câu chuyện Thạch Sanh chém Trăn Tinh cứu dân, bắn Đại Bàng cứu công chúa, dùng tiếng đàn nhân nghĩa dẹp tan quân xâm lăng. Nhưng cuộc đời Thạch Sanh luôn bị tên Lý Thông làm cho điêu đứng. Cuối cùng chính nghĩa đã thắng. Tên Lý Thông gian ác bị đền tội. Mời các bạn cùng đón xem và cảm nhận.
+                </p>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- 3. FOOTER BẢN QUYỀN -->
+    <footer>
+        <p>© 2026 Website Xem Phim Hoạt Hình Trực Tuyến - Sưu tầm và chọn lọc nội dung giáo dục an toàn cho trẻ em.</p>
+        <p>Chuẩn phim HD 720p - FullHD 1080p có Audio Việt Thuyết minh, tốc độ cao, không quảng cáo độc hại.</p>
+    </footer>
+
+</body>
+</html>
+'@ | Out-File -FilePath "xem_hoat_hinh.html" -Encoding utf8
