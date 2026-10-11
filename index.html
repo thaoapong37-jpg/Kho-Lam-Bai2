@@ -1,37 +1,53 @@
-﻿<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thực hành Sử dụng CSS</title>
-    <style>
-        h1 {
-            color: blue;
-            font-family: Tahoma, sans-serif;
-            font-size: 200%;
-        }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Login Form</title>
 
-        p {
-            color: red;
-            font-family: Arial, sans-serif;
-            font-size: 120%;
-            border: 1px solid grey;
-            padding: 10px;
-        }
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
-        #element1 {
-            color: blue;
-        }
-    </style>
+    <!-- CSS tu viet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="text-center">
 
-    <h1>Đây là đề mục</h1>
+    <main class="form-signin">
+        <div class="bootstrap-logo mb-4">B</div>
 
-    <p>Đây là đoạn văn bản.</p>
-    <p>Đây là đoạn văn bản.</p>
-    <p>Đây là đoạn văn bản.</p>
-    <p id="element1">Đoạn văn bản có thuộc tính id</p>
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+        <form>
+            <input type="email"
+                   class="form-control"
+                   placeholder="Email address"
+                   value="thaoapong37@gmail.com"
+                   required>
+
+            <input type="password"
+                   class="form-control"
+                   placeholder="Password"
+                   value="Thaopong1234"
+                   required>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox">
+                    Remember me
+                </label>
+            </div>
+
+            <button class="btn btn-lg btn-primary w-100"
+                    type="submit">
+                Sign in
+            </button>
+
+            <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+        </form>
+    </main>
 
 </body>
 </html>
